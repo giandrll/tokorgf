@@ -176,6 +176,7 @@
             background-color: #EEEEEE;
             color: white;
             padding: 40px 0 20px;
+            padding-bottom: 90px;
         }
 
         .footer .container {
@@ -1018,76 +1019,98 @@
    <div class="container">
     <h1 class="mb-4" style="padding-top: 50px;">Our Products</h1>
     <div class="row">
-        <!-- Sidebar Kategori -->
-        <div class="col-lg-3 col-md-4 mb-4" style="padding: 0 15px;">
-            <div class="card">
-                <div class="card-header bg-light text-dark d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">
-                        <a class="text-dark text-decoration-none" data-toggle="collapse" href="#kategoriCollapse" role="button" aria-expanded="false" aria-controls="kategoriCollapse">
-                            <i class="fas fa-list"></i> Kategori
-                        </a>
-                    </h5>
-                </div>
-                <div class="collapse show" id="kategoriCollapse">
-                    <div class="list-group list-group-flush">
-                        <a href="{{ route('dashboardproduk') }}" class="list-group-item list-group-item-action">
-                            <i class="fas fa-tags"></i> Semua Kategori
-                        </a>
-                        @foreach ($data_kategori as $kategori)
-                            <a href="{{ route('dashboardproduk', ['kategori' => $kategori->id]) }}" class="list-group-item list-group-item-action">
-                                <i class="fas fa-tag"></i> {{ $kategori->nama_kategori }}
+            <!-- Sidebar Kategori -->
+            <div class="col-lg-3 col-md-4 mb-4" style="padding: 0 15px;">
+                <div class="card">
+                    <div class="card-header bg-light text-dark d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">
+                            <a class="text-dark text-decoration-none" data-toggle="collapse" href="#kategoriCollapse" role="button" aria-expanded="false" aria-controls="kategoriCollapse">
+                                <i class="fas fa-list"></i> Kategori
                             </a>
-                        @endforeach
+                        </h5>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Produk -->
-        <div class="col-lg-9 col-md-8">
-            <div class="row row-cols-2">
-                @foreach ($data_produk as $produk)
-                    <div class="col" style="padding: 15px;">
-                        <div class="card h-100">
-                            <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" class="card-img-top" alt="{{ $produk->nama_produk }}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $produk->nama_produk }}</h5>
-                                <p class="card-text">
-                                    <strong>Rp {{ number_format($produk->harga, 0, ',', '.') }}</strong>
-                                </p>
-                                
-                                <!-- Detail Produk -->
-                                <div class="mb-3">
-                                    <div class="row g-2">
-                                        <div class="col-6">
-                                            <div class="text-muted small">Category:</div>
-                                            <div class="fw-semibold">{{ $produk->nama_kategori }}</div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="text-muted small">Stock:</div>
-                                            <div class="fw-semibold">{{ $produk->stok }}</div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="text-muted small">Size:</div>
-                                            <div class="fw-semibold">{{ $produk->size }}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="card-text">{{ Str::limit($produk->deskripsi, 1000) }}</p>
-                            </div>
-                            <div class="card-footer">
-                                <a href="javascript:void(0)" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="showCartModal({{ $produk->id }}, '{{ $produk->nama_produk }}', '{{ $produk->foto }}', {{ $produk->harga }}, {{ $produk->stok }}, '{{ $produk->size }}')">
-                                    <i class="fas fa-shopping-bag"></i> BELI SEKARANG
+                    <div class="collapse show" id="kategoriCollapse">
+                        <div class="list-group list-group-flush">
+                            <a href="{{ route('dashboardproduk') }}" class="list-group-item list-group-item-action {{ request('kategori') == null ? 'bg-secondary text-white' : '' }}">
+                                <i class="fas fa-tags"></i> Semua Kategori
+                            </a>
+                            @foreach ($data_kategori as $kategori)
+                                <a href="{{ route('dashboardproduk', ['kategori' => $kategori->id]) }}"
+                                   class="list-group-item list-group-item-action {{ request('kategori') == $kategori->id ? 'bg-secondary text-white' : '' }}">
+                                    <i class="fas fa-tag"></i> {{ $kategori->nama_kategori }}
                                 </a>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
-                @endforeach
+                </div>
+            </div>
+        
+            <!-- Produk -->
+            <div class="col-lg-9 col-md-8">
+                <!-- Tampilkan Nama Kategori yang Dipilih di Atas Produk -->
+                @if (request('kategori'))
+                    @php
+                        $selectedCategory = $data_kategori->where('id', request('kategori'))->first();
+                    @endphp
+                    <div class="alert alert-info text-center" style="font-size: 16px;">
+                        Anda melihat produk dari kategori: <strong>{{ $selectedCategory ? $selectedCategory->nama_kategori : 'Kategori Tidak Ditemukan' }}</strong>
+                    </div>
+                @endif
+        
+                <div class="row row-cols-2">
+                    @if($data_produk->isEmpty())
+                        <div class="col-12 text-center" style="padding: 20px;">
+                            <p class="text-muted" style="font-size: 18px; font-weight: bold;">Produk belum tersedia</p>
+                        </div>
+                    @else  
+                        @foreach ($data_produk as $produk)
+                            <div class="col" style="padding: 15px;">
+                                <div class="card h-100">
+                                    <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" class="card-img-top" alt="{{ $produk->nama_produk }}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $produk->nama_produk }}</h5>
+                                        <p class="card-text">
+                                            <strong>Rp {{ number_format($produk->harga, 0, ',', '.') }}</strong>
+                                        </p>
+                                        
+                                        <!-- Detail Produk -->
+                                        <div class="mb-3">
+                                            <div class="row g-2">
+                                                <div class="col-6">
+                                                    <div class="text-muted small">Category:</div>
+                                                    <div class="fw-semibold">{{ $produk->nama_kategori }}</div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="text-muted small">Stock:</div>
+                                                    <div class="fw-semibold">{{ $produk->stok }}</div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="text-muted small">Size:</div>
+                                                    <div class="fw-semibold">{{ $produk->size }}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="card-text">
+                                            <span class="short-text">{{ Str::limit($produk->deskripsi, 50) }}...</span>
+                                            <span class="full-text" style="display: none;">{{ $produk->deskripsi }}</span>
+                                            <a href="javascript:void(0)" class="toggle-text">Baca Selengkapnya</a>
+                                        </p>                          
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="javascript:void(0)" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="showCartModal({{ $produk->id }}, '{{ $produk->nama_produk }}', '{{ $produk->foto }}', {{ $produk->harga }}, {{ $produk->stok }}, '{{ $produk->size }}')">
+                                            <i class="fas fa-shopping-bag"></i> BELI SEKARANG
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
             </div>
         </div>
-    </div>
+   </div>
 </div>
-
+        
 <!-- Modal untuk Detail Produk -->
 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -1188,6 +1211,34 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+          
+
+          document.addEventListener('DOMContentLoaded', function() {
+  const toggleLinks = document.querySelectorAll('.toggle-text'); // Ambil semua tombol
+
+  toggleLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      const parentText = link.parentElement;
+      const shortText = parentText.querySelector('.short-text');
+      const fullText = parentText.querySelector('.full-text');
+      
+      // Periksa apakah teks penuh sedang ditampilkan
+      if (fullText.style.display === 'none' || fullText.style.display === '') {
+        fullText.style.display = 'inline';
+        shortText.style.display = 'none';
+        link.innerText = 'Sembunyikan';
+      } else {
+        fullText.style.display = 'none';
+        shortText.style.display = 'inline';
+        link.innerText = 'Baca Selengkapnya';
+      }
+    });
+  });
+});
+
+
+
+
         function showCartModal(id, nama_produk, foto, harga, stok, size) {
             document.getElementById('modalProdukId').value = id;
             document.getElementById('modalNamaProduk').innerText = nama_produk;
