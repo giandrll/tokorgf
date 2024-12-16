@@ -953,49 +953,173 @@
             font-family: 'Poppins', sans-serif;
             /* Adds a subtle shadow to the text */
         }
+
+
         .card {
-      border: none;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    }
-    .card-img-top {
-      height: 300px;
-      object-fit: cover;
-    }
-    .product-colors {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 1rem;
-    }
-    .product-colors .color-option {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      margin: 0 5px;
-      cursor: pointer;
-    }
-    .product-colors .color-option.active {
-      border: 2px solid #007bff;
-    }
-    .btn-buy {
-      background-color: #007bff;
-      color: #fff;
-      font-weight: bold;
-    }
-    .btn-buy:hover {
-      background-color: #0056b3;
-      color: #fff;
-    }
-    .discount-badge {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background-color: #dc3545;
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 3px;
-    }
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 190px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
+.image-container {
+    position: relative;
+}
 
+.thumbnail-image {
+    border-radius: 10px !important;
+}
+
+.discount {
+    background-color: red;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.wishlist {
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.first {
+    position: absolute;
+    width: 100%;
+    padding: 9px;
+}
+
+.dress-name {
+    font-size: 13px;
+    font-weight: bold;
+    width: 75%;
+}
+
+.new-price {
+    font-size: 13px;
+    font-weight: bold;
+    color: red;
+}
+
+.old-price {
+    font-size: 8px;
+    font-weight: bold;
+    color: grey;
+}
+
+.btn {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.creme {
+    background-color: #fff;
+    border: 2px solid grey;
+}
+
+.creme:hover {
+    border: 3px solid grey;
+}
+
+.creme:focus {
+    background-color: grey;
+}
+
+.red {
+    background-color: #fff;
+    border: 2px solid red;
+}
+
+.red:hover {
+    border: 3px solid red;
+}
+
+.red:focus {
+    background-color: red;
+}
+
+.blue {
+    background-color: #fff;
+    border: 2px solid #40C4FF;
+}
+
+.blue:hover {
+    border: 3px solid #40C4FF;
+}
+
+.blue:focus {
+    background-color: #40C4FF;
+}
+
+.item-size {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid grey;
+    color: grey;
+    font-size: 10px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.rating-star {
+    font-size: 10px !important;
+}
+
+.rating-number {
+    font-size: 10px;
+    color: grey;
+}
+
+.buy {
+    font-size: 12px;
+    color: purple;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.buy-button {
+    background-color: #000000; /* Warna biru */
+    color: #fff; /* Warna teks putih */
+    border: none;
+    border-radius: 25px; /* Sudut melingkar */
+    padding: 10px 20px; /* Jarak dalam tombol */
+    font-size: 10px; /* Ukuran teks */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Efek transisi */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+}
+
+.buy-button:hover {
+    background-color: #747474; /* Ubah warna saat hover */
+    transform: translateY(-3px); /* Efek naik sedikit saat hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.buy-button:active {
+    transform: translateY(1px); /* Efek tekan tombol */
+}
+
+.old-price {
+    text-decoration: line-through; /* Garis potongan pada harga lama */
+    color: #888; /* Warna abu-abu untuk membedakan dari harga baru */
+    font-size: 10px;
+}
 
 
         
@@ -1084,63 +1208,84 @@
                     </div>
                 </div>
             </div>
-            <div class="container my-5">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="card">
-                      <div class="position-relative">
-                        <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" class="card-img-top" alt="{{ $produk->nama_produk }}">
-                        <div class="discount-badge">-25%</div>
-                      </div>
-                      <div class="card-body">
-                        <div class="product-colors">
-                          <div class="color-option active" style="background-color: #fff;"></div>
-                          <div class="color-option" style="background-color: #007bff;"></div>
-                          <div class="color-option" style="background-color: #28a745;"></div>
-                        </div>
-                        <h5 class="card-title">{{ $produk->nama_produk }}</h5>
-                        <p class="card-text"><s>Rp {{ number_format($produk->harga, 0, ',', '.') }}</s> <span class="text-danger font-weight-bold">Rp {{ number_format($produk->harga * 0.75, 0, ',', '.') }}</span></p>
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div class="btn-group btn-group-sm">
-                            <button type="button" class="btn btn-outline-secondary">S</button>
-                            <button type="button" class="btn btn-outline-secondary">M</button>
-                            <button type="button" class="btn btn-outline-secondary">L</button>
-                          </div>
-                          <a href="javascript:void(0)" class="btn btn-buy btn-sm" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="showCartModal({{ $produk->id }}, '{{ $produk->nama_produk }}', '{{ $produk->foto }}', {{ $produk->harga * 0.75 }}, {{ $produk->stok }}, '{{ $produk->size }}')">
-                            <i class="fas fa-shopping-bag"></i> Beli Sekarang
-                          </a>
-                        </div>
-                      </div>
+        
+            <!-- Produk -->
+            <div class="col-lg-9 col-md-8">
+                <!-- Tampilkan Nama Kategori yang Dipilih di Atas Produk -->
+                @if (request('kategori'))
+                    @php
+                        $selectedCategory = $data_kategori->where('id', request('kategori'))->first();
+                    @endphp
+                    <div class="alert alert-info text-center" style="font-size: 16px;">
+                        Anda melihat produk dari kategori: <strong>{{ $selectedCategory ? $selectedCategory->nama_kategori : 'Kategori Tidak Ditemukan' }}</strong>
                     </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card">
-                      <div class="position-relative">
-                        <img src="{{ asset('foto/fotoproduk/' . $produk2->foto) }}" class="card-img-top" alt="{{ $produk2->nama_produk }}">
-                        <div class="discount-badge">-25%</div>
-                      </div>
-                      <div class="card-body">
-                        <div class="product-colors">
-                          <div class="color-option active" style="background-color: #007bff;"></div>
-                          <div class="color-option" style="background-color: #6c757d;"></div>
+                @endif
+        
+                <div class="row row-cols-2">
+                    @if($data_produk->isEmpty())
+                        <div class="col-12 text-center" style="padding: 20px;">
+                            <p class="text-muted" style="font-size: 18px; font-weight: bold;">Produk belum tersedia</p>
                         </div>
-                        <h5 class="card-title">{{ $produk2->nama_produk }}</h5>
-                        <p class="card-text"><s>Rp {{ number_format($produk2->harga, 0, ',', '.') }}</s> <span class="text-danger font-weight-bold">Rp {{ number_format($produk2->harga * 0.75, 0, ',', '.') }}</span></p>
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div class="btn-group btn-group-sm">
-                            <button type="button" class="btn btn-outline-secondary">S</button>
-                            <button type="button" class="btn btn-outline-secondary">M</button>
-                            <button type="button" class="btn btn-outline-secondary">L</button>
-                          </div>
-                          <a href="javascript:void(0)" class="btn btn-buy btn-sm" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="showCartModal({{ $produk2->id }}, '{{ $produk2->nama_produk }}', '{{ $produk2->foto }}', {{ $produk2->harga * 0.75 }}, {{ $produk2->stok }}, '{{ $produk2->size }}')">
-                            <i class="fas fa-shopping-bag"></i> Beli Sekarang
-                          </a>
+                    @else  
+                    @foreach ($data_produk as $produk)
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="image-container">
+                                <div class="first">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="discount">-25%</span>
+                                        <span class="wishlist"><i class="fa fa-heart-o"></i></span>
+                                    </div>
+                                </div>
+                                <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" class="img-fluid rounded thumbnail-image" alt="{{ $produk->nama_produk }}">
+                            </div>
+                            
+                            <div class="product-detail-container p-2">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="dress-name">{{ $produk->nama_produk }}</h5>
+                                    <div class="d-flex flex-column mb-2">
+                                        <span class="new-price">Rp {{ number_format($produk->harga, 0, ',', '.') }}</span>
+                                        <small class="old-price text-right">{{ number_format($produk->harga * 1.25, 0, ',', '.') }}</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex">
+                                    <div class="text-muted small">Category:</div>
+                                    <div class="fw-semibold">{{ $produk->nama_kategori }}</div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center pt-1">
+                                    <div class="d-flex">
+                                        <span class="item-size mr-2 btn" type="button">S</span>
+                                        <span class="item-size mr-2 btn" type="button">M</span>
+                                        <span class="item-size mr-2 btn" type="button">L</span>
+                                        <span class="item-size btn" type="button">XL</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex justify-content-between align-items-center pt-1">
+                                    <div>
+                                        <i class="fa fa-star-o rating-star"></i>
+                                        <p class="card-text">
+                                            <span class="short-text">{{ Str::limit($produk->deskripsi, 0) }}</span>
+                                            <span class="full-text" style="display: none;">{{ $produk->deskripsi }}</span>
+                                            <a href="javascript:void(0)" class="toggle-text">Deskripsi</a>
+                                        </p> 
+                                    </div>
+                                    <span class="buy" 
+                                    <a href="javascript:void(0)" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="showCartModal({{ $produk->id }}, '{{ $produk->nama_produk }}', '{{ $produk->foto }}', {{ $produk->harga }}, {{ $produk->stok }}, '{{ $produk->size }}')">
+                                        <button class="buy-button">BUY +</button>                                    </a>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                      </div>
                     </div>
-                  </div>
+                @endforeach
+                    @endif
                 </div>
-              </div>
+            </div>
+        </div>
+   </div>
+</div>
         
 <!-- Modal untuk Detail Produk -->
 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
@@ -1241,17 +1386,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script>
-    // Color option click event
-    $(".color-option").click(function() {
-      $(this).addClass("active").siblings().removeClass("active");
-    });
-  </script>
-
     <script>
           
 
@@ -1272,7 +1406,7 @@
       } else {
         fullText.style.display = 'none';
         shortText.style.display = 'inline';
-        link.innerText = 'Baca Selengkapnya';
+        link.innerText = 'Deskripsi';
       }
     });
   });
