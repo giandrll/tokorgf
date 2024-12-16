@@ -665,8 +665,8 @@ p {
             <!-- Pilihan Tengah -->
             <div class="navbar-center">
                 <a href="/" >Home</a>
-                <a href="/dashboardproduk">Product</a>
-                <a href="/customer/about">About</a>
+                <a href="/produksebelumlogin">Product</a>
+                <a href="javascript:void(0)" onclick="checkLogin()">About</a>            
             </div>
 
             <!-- Pilihan Kanan -->
@@ -709,17 +709,17 @@ p {
 
 <h3 class="h3p"> Produk Andalan Kami!</h3>
 <div class="featured-products">
-<div class="product"><a href="/dashboardproduk">
+<div class="product"><a href="/produksebelumlogin">
         <img src="fotokami/baju1.jpeg" alt="Product 1">
 </a>
         <div class="product-text">T-shirt Oversize | RGF Apparel<br>Rp 105.000</div>
     </div>
-    <div class="product"><a href="/dashboardproduk">
+    <div class="product"><a href="/produksebelumlogin">
     <img src="fotokami/baju4.jpeg"  alt="Product 2">
     </a>
         <div class="product-text">T-shirt Oversize | RGF Apparel<br>Rp 105.000</div>
     </div>
-    <div class="product"><a href="/dashboardproduk">
+    <div class="product"><a href="/produksebelumlogin">
         <img src="fotokami/acuk1.jpeg" alt="Product 3">
 </a>
         <div class="product-text">T-shirt Oversize | RGF Apparel<br>Rp 105.000</div>
@@ -756,7 +756,7 @@ p {
         <h1>KAMI MULAI !</h1>
         <p>Dibuat dengan tugas pkl  penuh keyakinan dan penuh keikhlasan sehingga terjadinya produk yang berkualitas.</p>
         <div class="shop-now-container">
-             <a href="/dashboardproduk" class="shop-now-button">Shop</a>
+             <a href="/produksebelumlogin" class="shop-now-button">Shop</a>
        </div>
     </div>
 </div>
@@ -789,7 +789,7 @@ p {
         <h1>UNTUK KALIAN ! !</h1>
         <p>Menyakini adanya produk berkualitas.</p>
         <div class="shop-now-container">
-             <a href="/dashboardproduk" class="shop-now-button">Get Now</a>
+             <a href="/produksebelumlogin" class="shop-now-button">Get Now</a>
        </div>
     </div>
 </div>
@@ -841,8 +841,23 @@ p {
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+
+function checkLogin() {
+    Swal.fire({
+        title: 'Anda harus login terlebih dahulu!',
+        text: "Silakan login untuk mengakses halaman About.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Login Sekarang',
+        cancelButtonText: 'Batal'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "/authcustomer"; // Arahkan ke halaman login jika pengguna menekan tombol login
+        }
+    });
+}
         let currentSlide = 0;
 
 function showSlide(index) {

@@ -953,7 +953,47 @@
             font-family: 'Poppins', sans-serif;
             /* Adds a subtle shadow to the text */
         }
-
+        .card {
+      border: none;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    .card-img-top {
+      height: 300px;
+      object-fit: cover;
+    }
+    .product-colors {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .product-colors .color-option {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .product-colors .color-option.active {
+      border: 2px solid #007bff;
+    }
+    .btn-buy {
+      background-color: #007bff;
+      color: #fff;
+      font-weight: bold;
+    }
+    .btn-buy:hover {
+      background-color: #0056b3;
+      color: #fff;
+    }
+    .discount-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #dc3545;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
 
 
 
@@ -1044,72 +1084,63 @@
                     </div>
                 </div>
             </div>
-        
-            <!-- Produk -->
-            <div class="col-lg-9 col-md-8">
-                <!-- Tampilkan Nama Kategori yang Dipilih di Atas Produk -->
-                @if (request('kategori'))
-                    @php
-                        $selectedCategory = $data_kategori->where('id', request('kategori'))->first();
-                    @endphp
-                    <div class="alert alert-info text-center" style="font-size: 16px;">
-                        Anda melihat produk dari kategori: <strong>{{ $selectedCategory ? $selectedCategory->nama_kategori : 'Kategori Tidak Ditemukan' }}</strong>
-                    </div>
-                @endif
-        
-                <div class="row row-cols-2">
-                    @if($data_produk->isEmpty())
-                        <div class="col-12 text-center" style="padding: 20px;">
-                            <p class="text-muted" style="font-size: 18px; font-weight: bold;">Produk belum tersedia</p>
+            <div class="container my-5">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="card">
+                      <div class="position-relative">
+                        <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" class="card-img-top" alt="{{ $produk->nama_produk }}">
+                        <div class="discount-badge">-25%</div>
+                      </div>
+                      <div class="card-body">
+                        <div class="product-colors">
+                          <div class="color-option active" style="background-color: #fff;"></div>
+                          <div class="color-option" style="background-color: #007bff;"></div>
+                          <div class="color-option" style="background-color: #28a745;"></div>
                         </div>
-                    @else  
-                        @foreach ($data_produk as $produk)
-                            <div class="col" style="padding: 15px;">
-                                <div class="card h-100">
-                                    <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" class="card-img-top" alt="{{ $produk->nama_produk }}">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $produk->nama_produk }}</h5>
-                                        <p class="card-text">
-                                            <strong>Rp {{ number_format($produk->harga, 0, ',', '.') }}</strong>
-                                        </p>
-                                        
-                                        <!-- Detail Produk -->
-                                        <div class="mb-3">
-                                            <div class="row g-2">
-                                                <div class="col-6">
-                                                    <div class="text-muted small">Category:</div>
-                                                    <div class="fw-semibold">{{ $produk->nama_kategori }}</div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="text-muted small">Stock:</div>
-                                                    <div class="fw-semibold">{{ $produk->stok }}</div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="text-muted small">Size:</div>
-                                                    <div class="fw-semibold">{{ $produk->size }}</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="card-text">
-                                            <span class="short-text">{{ Str::limit($produk->deskripsi, 50) }}...</span>
-                                            <span class="full-text" style="display: none;">{{ $produk->deskripsi }}</span>
-                                            <a href="javascript:void(0)" class="toggle-text">Baca Selengkapnya</a>
-                                        </p>                          
-                                    </div>
-                                    <div class="card-footer">
-                                        <a href="javascript:void(0)" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="showCartModal({{ $produk->id }}, '{{ $produk->nama_produk }}', '{{ $produk->foto }}', {{ $produk->harga }}, {{ $produk->stok }}, '{{ $produk->size }}')">
-                                            <i class="fas fa-shopping-bag"></i> BELI SEKARANG
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    @endif
+                        <h5 class="card-title">{{ $produk->nama_produk }}</h5>
+                        <p class="card-text"><s>Rp {{ number_format($produk->harga, 0, ',', '.') }}</s> <span class="text-danger font-weight-bold">Rp {{ number_format($produk->harga * 0.75, 0, ',', '.') }}</span></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group btn-group-sm">
+                            <button type="button" class="btn btn-outline-secondary">S</button>
+                            <button type="button" class="btn btn-outline-secondary">M</button>
+                            <button type="button" class="btn btn-outline-secondary">L</button>
+                          </div>
+                          <a href="javascript:void(0)" class="btn btn-buy btn-sm" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="showCartModal({{ $produk->id }}, '{{ $produk->nama_produk }}', '{{ $produk->foto }}', {{ $produk->harga * 0.75 }}, {{ $produk->stok }}, '{{ $produk->size }}')">
+                            <i class="fas fa-shopping-bag"></i> Beli Sekarang
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card">
+                      <div class="position-relative">
+                        <img src="{{ asset('foto/fotoproduk/' . $produk2->foto) }}" class="card-img-top" alt="{{ $produk2->nama_produk }}">
+                        <div class="discount-badge">-25%</div>
+                      </div>
+                      <div class="card-body">
+                        <div class="product-colors">
+                          <div class="color-option active" style="background-color: #007bff;"></div>
+                          <div class="color-option" style="background-color: #6c757d;"></div>
+                        </div>
+                        <h5 class="card-title">{{ $produk2->nama_produk }}</h5>
+                        <p class="card-text"><s>Rp {{ number_format($produk2->harga, 0, ',', '.') }}</s> <span class="text-danger font-weight-bold">Rp {{ number_format($produk2->harga * 0.75, 0, ',', '.') }}</span></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group btn-group-sm">
+                            <button type="button" class="btn btn-outline-secondary">S</button>
+                            <button type="button" class="btn btn-outline-secondary">M</button>
+                            <button type="button" class="btn btn-outline-secondary">L</button>
+                          </div>
+                          <a href="javascript:void(0)" class="btn btn-buy btn-sm" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="showCartModal({{ $produk2->id }}, '{{ $produk2->nama_produk }}', '{{ $produk2->foto }}', {{ $produk2->harga * 0.75 }}, {{ $produk2->stok }}, '{{ $produk2->size }}')">
+                            <i class="fas fa-shopping-bag"></i> Beli Sekarang
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-   </div>
-</div>
+              </div>
         
 <!-- Modal untuk Detail Produk -->
 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
@@ -1210,6 +1241,17 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Color option click event
+    $(".color-option").click(function() {
+      $(this).addClass("active").siblings().removeClass("active");
+    });
+  </script>
+
     <script>
           
 
