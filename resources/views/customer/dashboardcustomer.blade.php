@@ -528,7 +528,6 @@
             /* Dark background for contrast */
             border-radius: 8px;
             /* Slightly rounded corners */
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             /* Adds a soft shadow for a lifted look */
         }
 
@@ -930,8 +929,10 @@
     <div class="video-branding">
         <!-- Video autoplay tanpa kontrol -->
         <video autoplay muted loop>
-            <source src="fotokami/dr.mp4" type="video/mp4">
+            @foreach ($data_setting as $item)
+            <source src="{{ asset('video_setting/' . $item->video_toko) }}" type="video/mp4">
             Browser Anda tidak mendukung pemutaran video.
+            @endforeach
         </video>
 
         <!-- Teks di tengah video -->

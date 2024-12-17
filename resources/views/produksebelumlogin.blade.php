@@ -297,109 +297,6 @@
         }
 
    
-
-        .card-footer {
-            background-color: transparent;
-            border-top: none;
-        }
-
-
-        /* Style untuk card */
-        .card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Style untuk gambar produk */
-        .card-img-top {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        /* Style untuk isi card (body) */
-        .card-body {
-            padding: 20px;
-        }
-
-        /* Style untuk judul produk */
-        .card-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        /* Style untuk teks di dalam card */
-        .card-text {
-            font-size: 14px;
-            margin-bottom: 10px;
-            color: black;
-        }
-
-        /* Style untuk tombol checkout */
-        .btn {
-            display: inline-block;
-            padding: 10px 15px;
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-align: center;
-            color: #fff;
-            background-color: #000;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #333;
-        }
-
-        /* Style untuk footer card */
-        .card-footer {
-            padding: 10px 20px;
-            background-color: #f8f9fa;
-            border-top: 1px solid #ddd;
-            text-align: center;
-        }
-
-        .btn1 {
-            display: inline-flex;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #343a40;
-            /* Warna latar belakang hitam gelap */
-            color: white;
-            /* Warna teks putih */
-            border: none;
-            /* Tanpa garis batas */
-            border-radius: 5px;
-            /* Sudut membulat */
-            text-decoration: none;
-            /* Tanpa garis bawah */
-            font-size: 1em;
-            /* Ukuran font */
-            transition: background-color 0.3s ease;
-            /* Transisi halus saat hover */
-        }
-
-        .btn1:hover {
-            background-color: #495057;
-            /* Warna latar belakang saat hover */
-        }
-
-        .btn1 i {
-            margin-right: 8px;
-            /* Jarak antara ikon dan teks */
-        }
-
-
         .cart-icon {
             display: flex;
             align-items: right;
@@ -565,7 +462,244 @@
         }
 
 
+        .card {
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 190px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
+.image-container {
+    position: relative;
+}
+
+.thumbnail-image {
+    border-radius: 10px !important;
+}
+
+.discount {
+    background-color: red;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.wishlist {
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.first {
+    position: absolute;
+    width: 100%;
+    padding: 9px;
+}
+
+.dress-name {
+    font-size: 13px;
+    font-weight: bold;
+    width: 75%;
+}
+
+.new-price {
+    font-size: 13px;
+    font-weight: bold;
+    color: red;
+}
+
+.old-price {
+    font-size: 8px;
+    font-weight: bold;
+    color: grey;
+}
+
+.btn {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.creme {
+    background-color: #fff;
+    border: 2px solid grey;
+}
+
+.creme:hover {
+    border: 3px solid grey;
+}
+
+.creme:focus {
+    background-color: grey;
+}
+
+.red {
+    background-color: #fff;
+    border: 2px solid red;
+}
+
+.red:hover {
+    border: 3px solid red;
+}
+
+.red:focus {
+    background-color: red;
+}
+
+.blue {
+    background-color: #fff;
+    border: 2px solid #40C4FF;
+}
+
+.blue:hover {
+    border: 3px solid #40C4FF;
+}
+
+.blue:focus {
+    background-color: #40C4FF;
+}
+
+.item-size {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid grey;
+    color: grey;
+    font-size: 10px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.rating-star {
+    font-size: 10px !important;
+}
+
+.rating-number {
+    font-size: 10px;
+    color: grey;
+}
+
+.buy {
+    font-size: 12px;
+    color: purple;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.buy-button {
+    background-color: #000000; /* Warna biru */
+    color: #fff; /* Warna teks putih */
+    border: none;
+    border-radius: 5px; /* Sudut melingkar */
+    padding: 10px 20px; /* Jarak dalam tombol */
+    font-size: 10px; /* Ukuran teks */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Efek transisi */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+}
+
+.buy-button:hover {
+    background-color: #747474; /* Ubah warna saat hover */
+    transform: translateY(-3px); /* Efek naik sedikit saat hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.buy-button:active {
+    transform: translateY(1px); /* Efek tekan tombol */
+}
+
+.old-price {
+    text-decoration: line-through; /* Garis potongan pada harga lama */
+    color: #888; /* Warna abu-abu untuk membedakan dari harga baru */
+    font-size: 10px;
+}
+.modal-custom {
+            --bs-modal-bg: #f8f9fa;
+            --bs-modal-border-color: #e9ecef;
+        }
+        .modal-content {
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .modal-header {
+            border-bottom: 2px solid #e9ecef;
+            padding: 1rem 1.5rem;
+        }
+        .modal-body {
+            padding: 1.5rem;
+        }
+        #modalFoto {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        #modalNamaProduk {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .size-option {
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .size-option:hover, .size-option.selected {
+            background-color: #007bff;
+            color: white;
+        }
+        .quantity-wrapper {
+            background-color: #f1f3f5;
+            border-radius: 25px;
+            padding: 0.25rem 0.5rem;
+        }
+        .btn-cart {
+            margin-top: 1rem;
+            width: 100%;
+            padding: 0.75rem;
+        }
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+            margin-top: 0.5rem;
+        }
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            color: white;
+        }
+
+
+.product-container {
+  margin: 10px 0;
+  text-align: right;
+}
+.product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px; /* Menambahkan jarak antar kartu */
+            padding: 20px 0; /* Padding vertikal di luar grid */
+        }
+
+
+        
 
 
         
@@ -676,48 +810,52 @@
                         </div>
                     @else  
                         @foreach ($data_produk as $produk)
-                            <div class="col" style="padding: 15px;">
-                                <div class="card h-100">
-                                    <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" class="card-img-top" alt="{{ $produk->nama_produk }}">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $produk->nama_produk }}</h5>
-                                        <p class="card-text">
-                                            <strong>Rp {{ number_format($produk->harga, 0, ',', '.') }}</strong>
-                                        </p>
-                                        
-                                        <!-- Detail Produk -->
-                                        <div class="mb-3">
-                                            <div class="row g-2">
-                                                <div class="col-6">
-                                                    <div class="text-muted small">Category:</div>
-                                                    <div class="fw-semibold">{{ $produk->kategori ? $produk->kategori->nama_kategori : 'Tidak Ada' }}</div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="text-muted small">Stock:</div>
-                                                    <div class="fw-semibold">{{ $produk->stok }}</div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="text-muted small">Size:</div>
-                                                    <div class="fw-semibold">{{ $produk->size }}</div>
-                                                </div>
-                                            </div>
+                        <div class="col-md-3" style="padding-bottom: 30px;">
+                            <div class="card">
+                                <div class="image-container">
+                                    <div class="first">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="discount">-25%</span>
+                                            <span class="wishlist"><i class="fa fa-heart-o"></i></span>
                                         </div>
-                                        <p class="card-text">
-                                            <span class="short-text">{{ Str::limit($produk->deskripsi, 50) }}...</span>
-                                            <span class="full-text" style="display: none;">{{ $produk->deskripsi }}</span>
-                                            <a href="javascript:void(0)" class="toggle-text">Baca Selengkapnya</a>
-                                        </p>                          
-                                        
-                                            <div class="card-footer">
-                                                <a href="javascript:void(0)" class="btn btn-primary w-100" onclick="checkLogin({{ $produk->id }}, '{{ $produk->nama_produk }}', '{{ $produk->foto }}',
-                                                 {{ $produk->harga }}, {{ $produk->stok }}, '{{ $produk->size }}')">
-                                            <i class="fas fa-shopping-bag"></i> BELI SEKARANG
-                                                </a>
-                                            </div>
-                                            
                                     </div>
+                                    <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" class="img-fluid rounded thumbnail-image" alt="{{ $produk->nama_produk }}">
+                                </div>
+                                
+                                <div class="product-detail-container p-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="dress-name">{{ $produk->nama_produk }}</h5>
+                                        <div class="d-flex flex-column mb-2">
+                                            <span class="new-price">Rp {{ number_format($produk->harga, 0, ',', '.') }}</span>
+                                            <small class="old-price text-right">{{ number_format($produk->harga * 1.25, 0, ',', '.') }}</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex">
+                                        <div class="text-muted small">Category:</div>
+                                        <div class="fw-semibold">{{ $produk->nama_kategori }}</div>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center pt-1">
+                                        <div class="d-flex">
+                                            <span class="item-size mr-2 btn" type="button">S</span>
+                                            <span class="item-size mr-2 btn" type="button">M</span>
+                                            <span class="item-size mr-2 btn" type="button">L</span>
+                                            <span class="item-size btn" type="button">XL</span>
+                                        </div>
+                                    </div>
+                                   
+                                      
+                                    <div class="product-container">
+                                        <span class="buy">
+                                          <a href="javascript:void(0)"  
+                                             onclick="checkLogin({{ $produk->id }}, '{{ $produk->nama_produk }}', '{{ $produk->foto }}', {{ $produk->harga }}, {{ $produk->stok }}, '{{ $produk->size }}')">
+                                            <button class="buy-button">BUY +</button>
+                                          </a>
+                                        </span>
+                                      </div>
                                 </div>
                             </div>
+                        </div>
                         @endforeach
                     @endif
                 </div>

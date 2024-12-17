@@ -20,6 +20,7 @@ class SettingController extends Controller
         $request->validate([
             'nama_toko' => 'required',
             'email_toko' => 'required|email',
+            'video_toko' => 'nullable|mimes:mp4,avi,mov', // Validasi untuk video (maksimal 2MB dan format yang valid)
         ]);
 
         $setting = Setting::first();
@@ -27,6 +28,7 @@ class SettingController extends Controller
             $setting = new Setting;
         }
 
+        // Update data yang dikirim dari form
         $setting->nama_toko = $request->nama_toko;
         $setting->email_toko = $request->email_toko;
         $setting->telefon_toko = $request->telefon_toko;
@@ -40,6 +42,14 @@ class SettingController extends Controller
             $filename = time() . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('foto/fotoSetting'), $filename);
             $setting->logo_toko = $filename;
+        }
+
+        // Upload video jika ada
+        if ($request->hasFile('video_toko')) {
+            $file = $request->file('video_toko');
+            $videoFilename = time() . '_video.' . $file->getClientOriginalExtension();
+            $file->move(public_path('video_setting'), $videoFilename);
+            $setting->video_toko = $videoFilename;
         }
 
         $setting->save();
