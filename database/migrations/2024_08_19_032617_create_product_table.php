@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        
-        Schema::create('product', function (Blueprint $table) {
+
+        Schema::create('produk', function (Blueprint $table) {
             $table->id();
             $table->string('nama_produk');
             $table->foreignId('id_kategori');
             $table->decimal('harga', 10, 2);
             $table->integer('stok');
             $table->timestamps();
-        
-            
-          $table->foreign('id_kategori')->references('id')->on('kategoriproduk');
+
+            $table->foreign('id_kategori')->references('id')->on('kategoriproduk');
         });
 
 
