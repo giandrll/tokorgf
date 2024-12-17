@@ -27,7 +27,7 @@
                 @endforeach
             </div>
 
-        
+
                 <!-- Cart Icon -->
                 <a href="/cart" class="cart-icon ml-3">
                     <i class="fas fa-shopping-cart"></i>
@@ -41,7 +41,7 @@
             <!-- Logo/Kiri -->
             <div class="navbar-left">
                 @foreach ($data_setting as $item)
-                    
+
                 <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
                 @endforeach
             </div>
@@ -50,7 +50,7 @@
                 <a href="/dashboardcustomer" class="nav-item">
                     <div class="icon-container">
                         <i class="fas fa-home icon-hover"></i>
-                    </div>                   
+                    </div>
                     <span>Home</span>
                 </a>
                 <a href="/dashboardproduk" class="nav-item">
@@ -70,7 +70,7 @@
             </div>
         </div>
     </nav>
-    
+
    <div class="container">
     <h1 class="mb-4" style="padding-top: 50px;">Our Products</h1>
     <div class="row">
@@ -99,7 +99,7 @@
                     </div>
                 </div>
             </div>
-        
+
             <!-- Produk -->
             <div class="col-lg-9 col-md-8">
                 <!-- Tampilkan Nama Kategori yang Dipilih di Atas Produk -->
@@ -111,13 +111,13 @@
                         Anda melihat produk dari kategori: <strong>{{ $selectedCategory ? $selectedCategory->nama_kategori : 'Kategori Tidak Ditemukan' }}</strong>
                     </div>
                 @endif
-        
+
                 <div class="row row-cols-2">
                     @if($data_produk->isEmpty())
                         <div class="col-12 text-center" style="padding: 20px;">
                             <p class="text-muted" style="font-size: 18px; font-weight: bold;">Produk belum tersedia</p>
                         </div>
-                    @else  
+                    @else
                     @foreach ($data_produk as $produk)
                     <div class="col-md-3" style="padding-bottom: 30px;">
                         <div class="card">
@@ -130,7 +130,7 @@
                                 </div>
                                 <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" class="img-fluid rounded thumbnail-image" alt="{{ $produk->nama_produk }}">
                             </div>
-                            
+
                             <div class="product-detail-container p-2">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <h5 class="dress-name">{{ $produk->nama_produk }}</h5>
@@ -139,7 +139,7 @@
                                         <small class="old-price text-right">{{ number_format($produk->harga * 1.25, 0, ',', '.') }}</small>
                                     </div>
                                 </div>
-                                
+
                                 <div class="d-flex">
                                     <div class="text-muted small">Category:</div>
                                     <div class="fw-semibold">{{ $produk->nama_kategori }}</div>
@@ -152,13 +152,13 @@
                                         <span class="item-size btn" type="button">XL</span>
                                     </div>
                                 </div>
-                               
-                                  
+
+
                                 <div class="product-container">
                                     <span class="buy">
-                                      <a href="javascript:void(0)"  
-                                         data-bs-toggle="modal" 
-                                         data-bs-target="#cartModal" 
+                                      <a href="javascript:void(0)"
+                                         data-bs-toggle="modal"
+                                         data-bs-target="#cartModal"
                                          onclick="showCartModal({{ $produk->id }}, '{{ $produk->nama_produk }}', '{{ $produk->foto }}', {{ $produk->harga }}, {{ $produk->stok }}, '{{ $produk->size }}', '{{ $produk->deskripsi }}')">
                                         <button class="buy-button">BUY +</button>
                                       </a>
@@ -196,22 +196,26 @@
                     <p class="card-text">
                         {{-- <span class="short-text">{{ Str::limit($produk->deskripsi, 50) }}</span>
                         <span class="full-text" style="display: none;" >{{ $produk->deskripsi }}</span> --}}
-                        <span class="short-text" id="modalDeskripsiSmall" ></span>
+                        {{-- <span class="short-text" id="modalDeskripsiSmall" ></span>
+                        <span class="full-text" style="display: none;" id="modalDeskripsiFull"></span>
+                        <a href="javascript:void(0)" class="toggle-text" id='toggle-text' style="color: grey;">Deskripsi</a> --}}
+
+                        <span class="short-text" id="modalDeskripsiSmall"></span>
                         <span class="full-text" style="display: none;" id="modalDeskripsiFull"></span>
                         <a href="javascript:void(0)" class="toggle-text" id='toggle-text' style="color: grey;">Deskripsi</a>
-                    </p> 
+                    </p>
                 </div>
 
                 <form id="cartForm" action="{{ route('cart.store') }}" method="POST">
                     @csrf
                     <input type="hidden" name="id_produk" id="modalProdukId">
-                    
+
                     <!-- Size -->
                     <div class="form-group mb-3">
                         <label class="mb-2">Pilih Ukuran</label>
                         <div id="sizeOptions" class="d-flex flex-wrap"></div>
                     </div>
-                    
+
                     <!-- Input jumlah beli -->
                     <div class="form-group mb-3">
                         <label class="mb-2">Jumlah Beli</label>
@@ -223,7 +227,7 @@
                     </div>
 
                     <input type="hidden" name="jumlah" id="modalJumlahBeli" value="1">
-                    
+
                     <div class="row">
                         <div class="col-6">
                             <button type="submit" class="btn-cart">
@@ -248,7 +252,7 @@
             <h1> Tunggu Apa Lagi !</h1>
             <p>Ayo Check Out Sekarang.
             </p>
-            
+
         </div>
     </div>
 
@@ -296,115 +300,79 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-          
-
-          document.addEventListener('DOMContentLoaded', function() {
-  const toggleLinks = document.querySelectorAll('.toggle-text'); // Ambil semua tombol
-
-  toggleLinks.forEach(function(link) {
-    link.addEventListener('click', function() {
-      const parentText = link.parentElement;
-      const shortText = parentText.querySelector('.short-text');
-      const fullText = parentText.querySelector('.full-text');
-      
-      // Periksa apakah teks penuh sedang ditampilkan
-      if (fullText.style.display === 'none' || fullText.style.display === '') {
-        fullText.style.display = 'inline';
-        shortText.style.display = 'none';
-        link.innerText = 'Sembunyikan';
-      } else {
-        fullText.style.display = 'none';
-        shortText.style.display = 'inline';
-        link.innerText = 'Deskripsi';
-      }
-    });
-  });
-});
 
 
+    function showCartModal(id, nama_produk, foto, harga, stok, size, deskripsi) {
+        document.getElementById('modalProdukId').value = id;
+        document.getElementById('modalNamaProduk').innerText = nama_produk;
+        document.getElementById('modalFoto').src = `/foto/fotoproduk/${foto}`;
+        document.getElementById('modalHarga').innerText = harga.toLocaleString('id-ID');
+        document.getElementById('modalStok').innerText = stok;
+        document.getElementById('modalJumlahBeli').max = stok;
 
+        const sizeOptions = document.getElementById('sizeOptions');
+        sizeOptions.innerHTML = '';
 
-        function showCartModal(id, nama_produk, foto, harga, stok, size, deskripsi) {
-            document.getElementById('modalProdukId').value = id;
-            document.getElementById('modalNamaProduk').innerText = nama_produk;
-            document.getElementById('modalFoto').src = `/foto/fotoproduk/${foto}`;
-            document.getElementById('modalHarga').innerText = harga.toLocaleString('id-ID');
-            document.getElementById('modalStok').innerText = stok;
-            document.getElementById('modalJumlahBeli').max = stok;
-            // document.getElementById('modalDeskripsiSmall').innerText = deskripsi.length > limit ? text.substring(0, limit) + '...' : text;
-            document.getElementById('modalDeskripsiSmal').innerText = deskripsi;
-    
-            const sizeOptions = document.getElementById('sizeOptions' . id);
-            sizeOptions.innerHTML = '';
+        const sizes = size.split(',');
+        sizes.forEach(function(sizeValue) {
+            const sizeOption = `
+                <div class="size-option-wrapper">
+                    <input type="radio" name="size" value="${sizeValue}" class="size-option-input" id="size_${sizeValue}" required>
+                    <label for="size_${sizeValue}" class="size-option-label">${sizeValue}</label>
+                </div>`;
+            sizeOptions.insertAdjacentHTML('beforeend', sizeOption);
+        });
 
-            const sizes = size.split(',');
-            sizes.forEach(function(sizeValue) {
-                const sizeOption = `
-                    <div class="size-option-wrapper">
-                        <input type="radio" name="size" value="${sizeValue}" class="size-option-input" id="size_${sizeValue}" required>
-                        <label for="size_${sizeValue}" class="size-option-label">${sizeValue}</label>
-                    </div>`;
-                sizeOptions.insertAdjacentHTML('beforeend', sizeOption);
-            });
+        document.getElementById('modalJumlahBeli').value = 1;
+        document.getElementById('jumlahBeliDisplay').innerText = 1;
 
-    
-            document.getElementById('modalJumlahBeli').value = 1;
-            document.getElementById('jumlahBeliDisplay').innerText = 1;
+        const shortTextEl = document.getElementById('modalDeskripsiSmall');
+        const fullTextEl = document.getElementById('modalDeskripsiFull');
+        const toggleLink = document.getElementById('toggle-text');
 
-            // const modal = document.getElementById('cartModal');
-            const shortTextEl = document.getElementById('modalDeskripsiSmall');
-            const fullTextEl = document.getElementById('modalDeskripsiFull');
-            // const toggleLink = modal.querySelector('.toggle-text');
-            const toggleLink = document.getElementById('toggle-text');
+        const shortDescription = limitText(deskripsi, 70);
+        shortTextEl.innerText = shortDescription;
+        fullTextEl.innerText = deskripsi;
+        fullTextEl.style.display = 'none'; // Initially hide full description
+        shortTextEl.style.display = 'inline'; // Show short description
+        toggleLink.innerText = 'Deskripsi'; // Set toggle link initial text
 
-            // Potong teks pendek hingga 50 karakter
-            const shortDescription = limitText(deskripsi, 50);
-
-            shortTextEl.innerText = shortDescription;
-            fullTextEl.innerText = deskripsi;
-
-            fullTextEl.style.display = 'none';
-            shortTextEl.style.display = 'inline';
-            toggleLink.innerText = 'Deskripsi';
-
-            toggleLink.onclick = function () {
-                if (fullTextEl.style.display === 'none') {
+        toggleLink.onclick = function() {
+            if (fullTextEl.style.display === 'none') {
                 fullTextEl.style.display = 'inline';
                 shortTextEl.style.display = 'none';
                 toggleLink.innerText = 'Sembunyikan';
-                } else {
+            } else {
                 fullTextEl.style.display = 'none';
                 shortTextEl.style.display = 'inline';
                 toggleLink.innerText = 'Deskripsi';
-                }
-            };
+            }
+        };
+    }
 
-        }
-
-        // Fungsi untuk memotong teks seperti Str::limit()
-        function limitText(text, limit) {
+    function limitText(text, limit) {
         return text.length > limit ? text.substring(0, limit) + '...' : text;
-        }
-    
+    }
+
         function changeQuantity(amount) {
             const quantityDisplay = document.getElementById('jumlahBeliDisplay');
             const modalJumlahBeli = document.getElementById('modalJumlahBeli');
             const maxStok = parseInt(document.getElementById('modalStok').innerText);
-    
+
             let currentValue = parseInt(quantityDisplay.innerText);
             let newValue = currentValue + amount;
-    
+
             if (newValue > maxStok) {
                 newValue = maxStok;
             }
             if (newValue < 1) {
                 newValue = 1;
             }
-    
+
             quantityDisplay.innerText = newValue;
             modalJumlahBeli.value = newValue;
         }
-    
+
         function buyViaWhatsApp() {
             const selectedSize = document.querySelector('input[name="size"]:checked');
             if (!selectedSize) {
@@ -422,29 +390,29 @@
                     Swal.showLoading();
                 }
             });
-    
-    
+
+
             const produkId = document.getElementById('modalProdukId').value;
             const jumlah = document.getElementById('modalJumlahBeli').value;
             const namaProduk = document.getElementById('modalNamaProduk').innerText;
             const size = selectedSize.value;
-    
+
             const hargaProdukText = document.getElementById('modalHarga').innerText;
             const hargaProduk = parseFloat(hargaProdukText.replace(/\./g, '').replace(/,/g, ''));
             const totalHarga = hargaProduk * jumlah;
-    
+
             const alamat = '{{ $customer->alamat }}';
             const namaCustomer = '{{ $customer->nama }}';
             const noTelpCustomer = '{{ $customer->no_telpon }}';
             const customerId = '{{ $customer->id }}';
-    
+
             const formatter = new Intl.NumberFormat('id-ID', {
                 style: 'currency',
                 currency: 'IDR',
                 minimumFractionDigits: 0
             });
             const formattedTotalHarga = formatter.format(totalHarga);
-    
+
             const message =
                 `Halo, saya *${namaCustomer}*, dan saya tertarik untuk membeli produk berikut dari toko Anda:\n\n` +
                 ` *Nama Produk:* ${namaProduk}\n` +
@@ -456,7 +424,7 @@
                 `Jika ada informasi lebih lanjut yang diperlukan, Anda dapat menghubungi saya melalui nomor telepon:\n` +
                 ` *Nomor Telepon:* ${noTelpCustomer}\n\n` +
                 `Terima kasih sebelumnya, dan saya sangat menantikan untuk segera menerima produk ini!`;
-    
+
             fetch('{{ route("track.wa.order") }}', {
                 method: 'POST',
                 headers: {
@@ -484,7 +452,7 @@
                     }).then(() => {
                         const waUrl = `https://wa.me/6283167735320?text=${encodeURIComponent(message)}`;
                         window.open(waUrl, '_blank');
-    
+
                         const modal = bootstrap.Modal.getInstance(document.getElementById('cartModal'));
                         modal.hide();
                     });
@@ -501,14 +469,14 @@
                 });
             });
         }
-    
+
 // Tambahkan event listener saat dokumen sudah siap
 document.addEventListener('DOMContentLoaded', function() {
     const cartForm = document.getElementById('cartForm');
     if (cartForm) {
         cartForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             // Validasi ukuran
             const selectedSize = document.querySelector('input[name="size"]:checked');
             if (!selectedSize) {
@@ -601,7 +569,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Inisialisasi untuk menampilkan slide pertama
         showSlide(currentSlide);
     </script>
-    
+
 </body>
 
 </html>
