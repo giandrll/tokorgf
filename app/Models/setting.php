@@ -20,6 +20,7 @@ class Setting extends Model
         'telefon_toko', 
         'instagram_toko', 
         'facebook_toko', 
-        'twitter_toko'
+        'twitter_toko',
+        'video_toko'
     ];
 }

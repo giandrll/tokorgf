@@ -117,7 +117,8 @@
                         </div>
                         <div class="form-group">
                             <label>Foto Produk</label>
-                            <input type="file" name="foto" class="form-control" required>
+                            <input type="file" name="foto" class="form-control"  required>
+                            <p>Utamakan Photo 1x!</p>
                         </div>
                     </div>
                     <div class="modal-footer">

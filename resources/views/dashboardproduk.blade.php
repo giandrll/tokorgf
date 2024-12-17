@@ -176,6 +176,7 @@
             background-color: #EEEEEE;
             color: white;
             padding: 40px 0 20px;
+            padding-bottom: 90px;
         }
 
         .footer .container {
@@ -643,170 +644,6 @@
             }
         }
 
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-footer {
-            background-color: transparent;
-            border-top: none;
-        }
-
-        .card-text {
-            font-family: 'Arial', sans-serif;
-            /* Mengatur font family */
-            font-size: 20px;
-            /* Ukuran font default */
-            color: #333;
-            /* Warna teks */
-            line-height: 1.5;
-            /* Spasi antar baris */
-        }
-
-        .card-text strong {
-            font-weight: bold;
-            /* Membuat teks <strong> lebih tebal */
-            font-size: 16px;
-            /* Ukuran font lebih besar untuk elemen strong */
-            color: black;
-            /* Warna teks <strong> */
-        }
-
-        .card-text br {
-            margin-bottom: 5px;
-            /* Memberikan jarak antar baris setelah <br> */
-        }
-
-        /* Style untuk container row */
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            margin-left: -15px;
-            margin-right: -15px;
-        }
-
-        /* Style untuk setiap kolom (card container) */
-        .col-md-4 {
-            padding-left: 15px;
-            padding-right: 15px;
-            margin-bottom: 30px;
-        }
-
-        /* Style untuk card */
-        .card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-            transition: box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Style untuk gambar produk */
-        .card-img-top {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        /* Style untuk isi card (body) */
-        .card-body {
-            padding: 20px;
-        }
-
-        /* Style untuk judul produk */
-        .card-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        /* Style untuk teks di dalam card */
-        .card-text {
-            font-size: 14px;
-            margin-bottom: 10px;
-            color: black;
-        }
-
-        /* Style untuk tombol checkout */
-        .btn {
-            display: inline-block;
-            padding: 10px 15px;
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-align: center;
-            color: #fff;
-            background-color: #000;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #333;
-        }
-
-        /* Style untuk footer card */
-        .card-footer {
-            padding: 10px 20px;
-            background-color: #f8f9fa;
-            border-top: 1px solid #ddd;
-            text-align: center;
-        }
-
-        .btn1 {
-            display: inline-flex;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #343a40;
-            /* Warna latar belakang hitam gelap */
-            color: white;
-            /* Warna teks putih */
-            border: none;
-            /* Tanpa garis batas */
-            border-radius: 5px;
-            /* Sudut membulat */
-            text-decoration: none;
-            /* Tanpa garis bawah */
-            font-size: 1em;
-            /* Ukuran font */
-            transition: background-color 0.3s ease;
-            /* Transisi halus saat hover */
-        }
-
-        .btn1:hover {
-            background-color: #495057;
-            /* Warna latar belakang saat hover */
-        }
-
-        .btn1 i {
-            margin-right: 8px;
-            /* Jarak antara ikon dan teks */
-        }
-
-
-        .cart-icon {
-            display: flex;
-            align-items: right;
-            color: white;
-            text-decoration: none;
-            margin-right: 20px;
-        }
-
-        .cart-icon i {
-            font-size: 24px;
-            color: white;
-            /* Set icon color to white */
-        }
-
-        .cart-icon span {
-            margin-left: 5px;
-            font-size: 16px;
-        }
 
         /* Wrapper untuk ukuran */
 #sizeOptions {
@@ -933,7 +770,6 @@
             /* Dark background for contrast */
             border-radius: 8px;
             /* Slightly rounded corners */
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             /* Adds a soft shadow for a lifted look */
         }
 
@@ -954,7 +790,247 @@
         }
 
 
+        .card {
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 190px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
+.image-container {
+    position: relative;
+}
+
+.thumbnail-image {
+    border-radius: 10px !important;
+}
+
+.discount {
+    background-color: red;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 10px;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.wishlist {
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.first {
+    position: absolute;
+    width: 100%;
+    padding: 9px;
+}
+
+.dress-name {
+    font-size: 13px;
+    font-weight: bold;
+    width: 75%;
+}
+
+.new-price {
+    font-size: 13px;
+    font-weight: bold;
+    color: red;
+}
+
+.old-price {
+    font-size: 8px;
+    font-weight: bold;
+    color: grey;
+}
+
+.btn {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.creme {
+    background-color: #fff;
+    border: 2px solid grey;
+}
+
+.creme:hover {
+    border: 3px solid grey;
+}
+
+.creme:focus {
+    background-color: grey;
+}
+
+.red {
+    background-color: #fff;
+    border: 2px solid red;
+}
+
+.red:hover {
+    border: 3px solid red;
+}
+
+.red:focus {
+    background-color: red;
+}
+
+.blue {
+    background-color: #fff;
+    border: 2px solid #40C4FF;
+}
+
+.blue:hover {
+    border: 3px solid #40C4FF;
+}
+
+.blue:focus {
+    background-color: #40C4FF;
+}
+
+.item-size {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid grey;
+    color: grey;
+    font-size: 10px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.rating-star {
+    font-size: 10px !important;
+}
+
+.rating-number {
+    font-size: 10px;
+    color: grey;
+}
+
+.buy {
+    font-size: 12px;
+    color: purple;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.buy-button {
+    background-color: #000000; /* Warna biru */
+    color: #fff; /* Warna teks putih */
+    border: none;
+    border-radius: 5px; /* Sudut melingkar */
+    padding: 10px 20px; /* Jarak dalam tombol */
+    font-size: 10px; /* Ukuran teks */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Efek transisi */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+}
+
+.buy-button:hover {
+    background-color: #747474; /* Ubah warna saat hover */
+    transform: translateY(-3px); /* Efek naik sedikit saat hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.buy-button:active {
+    transform: translateY(1px); /* Efek tekan tombol */
+}
+
+.old-price {
+    text-decoration: line-through; /* Garis potongan pada harga lama */
+    color: #888; /* Warna abu-abu untuk membedakan dari harga baru */
+    font-size: 10px;
+}
+.modal-custom {
+            --bs-modal-bg: #f8f9fa;
+            --bs-modal-border-color: #e9ecef;
+        }
+        .modal-content {
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .modal-header {
+            border-bottom: 2px solid #e9ecef;
+            padding: 1rem 1.5rem;
+        }
+        .modal-body {
+            padding: 1.5rem;
+        }
+        #modalFoto {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        #modalNamaProduk {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .size-option {
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .size-option:hover, .size-option.selected {
+            background-color: #007bff;
+            color: white;
+        }
+        .quantity-wrapper {
+            background-color: #f1f3f5;
+            border-radius: 25px;
+            padding: 0.25rem 0.5rem;
+        }
+        .btn-cart {
+            margin-top: 1rem;
+            width: 100%;
+            padding: 0.75rem;
+        }
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+            margin-top: 0.5rem;
+        }
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            color: white;
+        }
+
+
+.product-container {
+  margin: 10px 0;
+  text-align: right;
+}
+.product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px; /* Menambahkan jarak antar kartu */
+            padding: 20px 0; /* Padding vertikal di luar grid */
+        }
+          /* Cart Icon Styling */
+          .cart-icon i {
+            font-size: 24px;
+            color: #b9bec2;
+            /* Abu-abu untuk ikon keranjang */
+        }
 
 
         
@@ -1018,79 +1094,110 @@
    <div class="container">
     <h1 class="mb-4" style="padding-top: 50px;">Our Products</h1>
     <div class="row">
-        <!-- Sidebar Kategori -->
-        <div class="col-lg-3 col-md-4 mb-4" style="padding: 0 15px;">
-            <div class="card">
-                <div class="card-header bg-light text-dark d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">
-                        <a class="text-dark text-decoration-none" data-toggle="collapse" href="#kategoriCollapse" role="button" aria-expanded="false" aria-controls="kategoriCollapse">
-                            <i class="fas fa-list"></i> Kategori
-                        </a>
-                    </h5>
-                </div>
-                <div class="collapse show" id="kategoriCollapse">
-                    <div class="list-group list-group-flush">
-                        <a href="{{ route('dashboardproduk') }}" class="list-group-item list-group-item-action">
-                            <i class="fas fa-tags"></i> Semua Kategori
-                        </a>
-                        @foreach ($data_kategori as $kategori)
-                            <a href="{{ route('dashboardproduk', ['kategori' => $kategori->id]) }}" class="list-group-item list-group-item-action">
-                                <i class="fas fa-tag"></i> {{ $kategori->nama_kategori }}
+            <!-- Sidebar Kategori -->
+            <div class="col-lg-3 col-md-4 mb-4" style="padding: 0 15px;">
+                <div class="card">
+                    <div class="card-header bg-light text-dark d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">
+                            <a class="text-dark text-decoration-none" data-toggle="collapse" href="#kategoriCollapse" role="button" aria-expanded="false" aria-controls="kategoriCollapse">
+                                <i class="fas fa-list"></i> Kategori
                             </a>
-                        @endforeach
+                        </h5>
+                    </div>
+                    <div class="collapse show" id="kategoriCollapse">
+                        <div class="list-group list-group-flush">
+                            <a href="{{ route('dashboardproduk') }}" class="list-group-item list-group-item-action {{ request('kategori') == null ? 'bg-secondary text-white' : '' }}">
+                                <i class="fas fa-tags"></i> Semua Kategori
+                            </a>
+                            @foreach ($data_kategori as $kategori)
+                                <a href="{{ route('dashboardproduk', ['kategori' => $kategori->id]) }}"
+                                   class="list-group-item list-group-item-action {{ request('kategori') == $kategori->id ? 'bg-secondary text-white' : '' }}">
+                                    <i class="fas fa-tag"></i> {{ $kategori->nama_kategori }}
+                                </a>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Produk -->
-        <div class="col-lg-9 col-md-8">
-            <div class="row row-cols-2">
-                @foreach ($data_produk as $produk)
-                    <div class="col" style="padding: 15px;">
-                        <div class="card h-100">
-                            <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" class="card-img-top" alt="{{ $produk->nama_produk }}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $produk->nama_produk }}</h5>
-                                <p class="card-text">
-                                    <strong>Rp {{ number_format($produk->harga, 0, ',', '.') }}</strong>
-                                </p>
-                                
-                                <!-- Detail Produk -->
-                                <div class="mb-3">
-                                    <div class="row g-2">
-                                        <div class="col-6">
-                                            <div class="text-muted small">Category:</div>
-                                            <div class="fw-semibold">{{ $produk->nama_kategori }}</div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="text-muted small">Stock:</div>
-                                            <div class="fw-semibold">{{ $produk->stok }}</div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="text-muted small">Size:</div>
-                                            <div class="fw-semibold">{{ $produk->size }}</div>
-                                        </div>
+        
+            <!-- Produk -->
+            <div class="col-lg-9 col-md-8">
+                <!-- Tampilkan Nama Kategori yang Dipilih di Atas Produk -->
+                @if (request('kategori'))
+                    @php
+                        $selectedCategory = $data_kategori->where('id', request('kategori'))->first();
+                    @endphp
+                    <div class="alert alert-info text-center" style="font-size: 16px;">
+                        Anda melihat produk dari kategori: <strong>{{ $selectedCategory ? $selectedCategory->nama_kategori : 'Kategori Tidak Ditemukan' }}</strong>
+                    </div>
+                @endif
+        
+                <div class="row row-cols-2">
+                    @if($data_produk->isEmpty())
+                        <div class="col-12 text-center" style="padding: 20px;">
+                            <p class="text-muted" style="font-size: 18px; font-weight: bold;">Produk belum tersedia</p>
+                        </div>
+                    @else  
+                    @foreach ($data_produk as $produk)
+                    <div class="col-md-3" style="padding-bottom: 30px;">
+                        <div class="card">
+                            <div class="image-container">
+                                <div class="first">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="discount">-25%</span>
+                                        <span class="wishlist"><i class="fa fa-heart-o"></i></span>
                                     </div>
                                 </div>
-                                <p class="card-text">{{ Str::limit($produk->deskripsi, 1000) }}</p>
+                                <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" class="img-fluid rounded thumbnail-image" alt="{{ $produk->nama_produk }}">
                             </div>
-                            <div class="card-footer">
-                                <a href="javascript:void(0)" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#cartModal" onclick="showCartModal({{ $produk->id }}, '{{ $produk->nama_produk }}', '{{ $produk->foto }}', {{ $produk->harga }}, {{ $produk->stok }}, '{{ $produk->size }}')">
-                                    <i class="fas fa-shopping-bag"></i> BELI SEKARANG
-                                </a>
+                            
+                            <div class="product-detail-container p-2">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="dress-name">{{ $produk->nama_produk }}</h5>
+                                    <div class="d-flex flex-column mb-2">
+                                        <span class="new-price">Rp {{ number_format($produk->harga, 0, ',', '.') }}</span>
+                                        <small class="old-price text-right">{{ number_format($produk->harga * 1.25, 0, ',', '.') }}</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex">
+                                    <div class="text-muted small">Category:</div>
+                                    <div class="fw-semibold">{{ $produk->nama_kategori }}</div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center pt-1">
+                                    <div class="d-flex">
+                                        <span class="item-size mr-2 btn" type="button">S</span>
+                                        <span class="item-size mr-2 btn" type="button">M</span>
+                                        <span class="item-size mr-2 btn" type="button">L</span>
+                                        <span class="item-size btn" type="button">XL</span>
+                                    </div>
+                                </div>
+                               
+                                  
+                                <div class="product-container">
+                                    <span class="buy">
+                                      <a href="javascript:void(0)"  
+                                         data-bs-toggle="modal" 
+                                         data-bs-target="#cartModal" 
+                                         onclick="showCartModal({{ $produk->id }}, '{{ $produk->nama_produk }}', '{{ $produk->foto }}', {{ $produk->harga }}, {{ $produk->stok }}, '{{ $produk->size }}', '{{ $produk->deskripsi }}')">
+                                        <button class="buy-button">BUY +</button>
+                                      </a>
+                                    </span>
+                                  </div>
                             </div>
                         </div>
                     </div>
                 @endforeach
+                    @endif
+                </div>
             </div>
         </div>
-    </div>
+   </div>
 </div>
-
-<!-- Modal untuk Detail Produk -->
-<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+   <!-- Modal untuk Detail Produk -->
+   @foreach ($data_produk as $produk)
+   <div class="modal fade modal-custom" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="cartModalLabel">Detail Produk</h5>
@@ -1098,42 +1205,63 @@
             </div>
             <div class="modal-body">
                 <img id="modalFoto" src="" alt="" class="img-fluid mb-3">
-                <h5 id="modalNamaProduk"></h5>
-                <p><strong>Harga:</strong> Rp <span id="modalHarga"></span></p>
-                <p><strong>Stok Tersedia:</strong> <span id="modalStok"></span></p>
+                <h5 id="modalNamaProduk" class="text-center"></h5>
+                <div class="text-center mb-3">
+                    <p class="text-muted"><strong>Harga:</strong> Rp <span id="modalHarga"></span>
+                    </p>
+                    <p class="text-muted"><strong>Stok Tersedia:</strong> <span id="modalStok"></span></p>
+                </div>
+                <div>
+                    <i class="fa fa-star-o rating-star"></i>
+                    <p class="card-text">
+                        {{-- <span class="short-text">{{ Str::limit($produk->deskripsi, 50) }}</span>
+                        <span class="full-text" style="display: none;" >{{ $produk->deskripsi }}</span> --}}
+                        <span class="short-text" id="modalDeskripsiSmall" ></span>
+                        <span class="full-text" style="display: none;" id="modalDeskripsiFull"></span>
+                        <a href="javascript:void(0)" class="toggle-text" id='toggle-text' style="color: grey;">Deskripsi</a>
+                    </p> 
+                </div>
 
                 <form id="cartForm" action="{{ route('cart.store') }}" method="POST">
                     @csrf
                     <input type="hidden" name="id_produk" id="modalProdukId">
-
+                    
                     <!-- Size -->
-                    <div class="form-group">
-                        <label>Size</label>
+                    <div class="form-group mb-3">
+                        <label class="mb-2">Pilih Ukuran</label>
                         <div id="sizeOptions" class="d-flex flex-wrap"></div>
                     </div>
-
+                    
                     <!-- Input jumlah beli -->
-                    <div class="form-group">
-                        <label>Jumlah Beli</label>
-                        <div class="quantity-wrapper d-flex align-items-center">
-                            <button type="button" class="minus-btn btn btn-outline-secondary" onclick="changeQuantity(-1)">-</button>
+                    <div class="form-group mb-3">
+                        <label class="mb-2">Jumlah Beli</label>
+                        <div class="quantity-wrapper d-flex align-items-center justify-content-center">
+                            <button type="button" class="minus-btn btn btn-sm btn-outline-secondary" onclick="changeQuantity(-1)">-</button>
                             <span id="jumlahBeliDisplay" class="mx-3">1</span>
-                            <button type="button" class="plus-btn btn btn-outline-secondary" onclick="changeQuantity(1)">+</button>
+                            <button type="button" class="plus-btn btn btn-sm btn-outline-secondary" onclick="changeQuantity(1)">+</button>
                         </div>
                     </div>
 
-                    <!-- Input hidden untuk menyimpan jumlah yang dipilih -->
                     <input type="hidden" name="jumlah" id="modalJumlahBeli" value="1">
-
-                    <button type="submit" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Keranjang</button>
-                    <button type="button" class="btn btn-success" onclick="buyViaWhatsApp()"><i class="fab fa-whatsapp"></i> Beli via WA</button>
+                    
+                    <div class="row">
+                        <div class="col-6">
+                            <button type="submit" class="btn-cart">
+                                <i class="fas fa-cart-plus"></i> Keranjang
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="btn-cart" onclick="buyViaWhatsApp()">
+                                <i class="fab fa-whatsapp"></i> Beli via WA
+                            </button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-
+@endforeach
 
     <div class="brand2">
         <div class="brand-content">
@@ -1188,30 +1316,95 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        function showCartModal(id, nama_produk, foto, harga, stok, size) {
+          
+
+          document.addEventListener('DOMContentLoaded', function() {
+  const toggleLinks = document.querySelectorAll('.toggle-text'); // Ambil semua tombol
+
+  toggleLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      const parentText = link.parentElement;
+      const shortText = parentText.querySelector('.short-text');
+      const fullText = parentText.querySelector('.full-text');
+      
+      // Periksa apakah teks penuh sedang ditampilkan
+      if (fullText.style.display === 'none' || fullText.style.display === '') {
+        fullText.style.display = 'inline';
+        shortText.style.display = 'none';
+        link.innerText = 'Sembunyikan';
+      } else {
+        fullText.style.display = 'none';
+        shortText.style.display = 'inline';
+        link.innerText = 'Deskripsi';
+      }
+    });
+  });
+});
+
+
+
+
+        function showCartModal(id, nama_produk, foto, harga, stok, size, deskripsi) {
             document.getElementById('modalProdukId').value = id;
             document.getElementById('modalNamaProduk').innerText = nama_produk;
             document.getElementById('modalFoto').src = `/foto/fotoproduk/${foto}`;
             document.getElementById('modalHarga').innerText = harga.toLocaleString('id-ID');
             document.getElementById('modalStok').innerText = stok;
             document.getElementById('modalJumlahBeli').max = stok;
+            // document.getElementById('modalDeskripsiSmall').innerText = deskripsi.length > limit ? text.substring(0, limit) + '...' : text;
+            // document.getElementById('modalDeskripsiSmall').innerText = deskripsi;
+            // document.getElementById('modalDeskripsiFull').innerText = deskripsi;
     
-            const sizeOptions = document.getElementById('sizeOptions');
-sizeOptions.innerHTML = '';
+            const sizeOptions = document.getElementById('sizeOptions' . id);
+            sizeOptions.innerHTML = '';
 
-const sizes = size.split(',');
-sizes.forEach(function(sizeValue) {
-    const sizeOption = `
-        <div class="size-option-wrapper">
-            <input type="radio" name="size" value="${sizeValue}" class="size-option-input" id="size_${sizeValue}" required>
-            <label for="size_${sizeValue}" class="size-option-label">${sizeValue}</label>
-        </div>`;
-    sizeOptions.insertAdjacentHTML('beforeend', sizeOption);
-});
+            const sizes = size.split(',');
+            sizes.forEach(function(sizeValue) {
+                const sizeOption = `
+                    <div class="size-option-wrapper">
+                        <input type="radio" name="size" value="${sizeValue}" class="size-option-input" id="size_${sizeValue}" required>
+                        <label for="size_${sizeValue}" class="size-option-label">${sizeValue}</label>
+                    </div>`;
+                sizeOptions.insertAdjacentHTML('beforeend', sizeOption);
+            });
 
     
             document.getElementById('modalJumlahBeli').value = 1;
             document.getElementById('jumlahBeliDisplay').innerText = 1;
+
+            // const modal = document.getElementById('cartModal');
+            const shortTextEl = document.getElementById('modalDeskripsiSmall');
+            const fullTextEl = document.getElementById('modalDeskripsiFull');
+            // const toggleLink = modal.querySelector('.toggle-text');
+            const toggleLink = document.getElementById('toggle-text');
+
+            // Potong teks pendek hingga 50 karakter
+            const shortDescription = limitText(deskripsi, 50);
+
+            shortTextEl.innerText = shortDescription;
+            fullTextEl.innerText = deskripsi;
+
+            fullTextEl.style.display = 'none';
+            shortTextEl.style.display = 'inline';
+            toggleLink.innerText = 'Deskripsi';
+
+            toggleLink.onclick = function () {
+                if (fullTextEl.style.display === 'none') {
+                fullTextEl.style.display = 'inline';
+                shortTextEl.style.display = 'none';
+                toggleLink.innerText = 'Sembunyikan';
+                } else {
+                fullTextEl.style.display = 'none';
+                shortTextEl.style.display = 'inline';
+                toggleLink.innerText = 'Deskripsi';
+                }
+            };
+
+        }
+
+        // Fungsi untuk memotong teks seperti Str::limit()
+        function limitText(text, limit) {
+        return text.length > limit ? text.substring(0, limit) + '...' : text;
         }
     
         function changeQuantity(amount) {

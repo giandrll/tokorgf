@@ -20,6 +20,7 @@ use App\Http\Controllers\LaporanProdukController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\KategoriProdukController;
 use App\Http\Controllers\DashboardProdukController;
+use App\Http\Controllers\ProdukSebelumloginController;
 
 
 Route::get('/', [DashboardController::class, 'index']);
@@ -95,7 +96,7 @@ Route::post('/register', [AuthCustomerController::class, 'register'])->name("cus
 
 
 
-
+Route::get('/produksebelumlogin', [ProdukSebelumloginController::class, 'produksebelumlogin'])->name('produksebelumlogin');
 
 
 

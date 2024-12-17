@@ -8,6 +8,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logomerah.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+       <!-- Sertakan SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
         body {
             background-color: white;
@@ -435,21 +438,46 @@
                 <i class="fas fa-chevron-right"></i>
             </div>
         </a>
-            <div class="menu-item">
-                <form action="{{ route('customer.logout') }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-link p-0">
-                        <div class="menu-item-text">
-                            <i class="fas fa-sign-out-alt" style=" color: grey;"></i> Logout
-                        </div>
-                    </button>
-                </form>
-            </div>
-        </div>
+ 
+<div class="menu-item" onclick="confirmLogout()">
+  <form id="logoutForm" action="{{ route('customer.logout') }}" method="POST">
+    @csrf
+    <div class="menu-item-text">
+        <i class="fas fa-sign-out-alt"  style="color: grey;"></i>Logout
+    </div>
+  </form>
+</div>
+
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        
+  function confirmLogout() {
+    Swal.fire({
+      title: 'Apakah Anda yakin?',
+      text: "Anda akan keluar dari akun ini!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Ya, Logout',
+      cancelButtonText: 'Batal',
+      reverseButtons: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Jika konfirmasi di-klik, submit form logout
+        document.getElementById('logoutForm').submit();
+      } else {
+        Swal.fire({
+          title: 'Batal',
+          text: "Anda tetap berada di akun ini.",
+          icon: 'info',
+          timer: 1000,
+          showConfirmButton: false,
+        });
+      }
+    });
+  }
         document.getElementById('userAvatar').addEventListener('click', function() {
             fetch('/customer/profile')
                 .then(response => response.json())
