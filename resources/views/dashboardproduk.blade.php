@@ -9,7 +9,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logomerah.png">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="customer/css/dashboardproduk.css">
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -70,9 +69,9 @@
         </div>
     </nav>
 
-   <div class="container">
-    <h1 class="mb-4" style="padding-top: 50px;">Our Products</h1>
-    <div class="row">
+    <div class="container">
+        <h1 class="mb-4" style="padding-top: 50px;">Our Products</h1>
+        <div class="row">
             <!-- Sidebar Kategori -->
             <div class="col-lg-3 col-md-4 mb-4" style="padding: 0 15px;">
                 <div class="card">
@@ -98,7 +97,7 @@
                     </div>
                 </div>
             </div>
-
+    
             <!-- Produk -->
             <div class="col-lg-9 col-md-8">
                 <!-- Tampilkan Nama Kategori yang Dipilih di Atas Produk -->
@@ -110,7 +109,7 @@
                         Anda melihat produk dari kategori: <strong>{{ $selectedCategory ? $selectedCategory->nama_kategori : 'Kategori Tidak Ditemukan' }}</strong>
                     </div>
                 @endif
-
+    
                 <div class="row row-cols-2">
                     @if($data_produk->isEmpty())
                         <div class="col-12 text-center" style="padding: 20px;">
@@ -129,7 +128,7 @@
                                 </div>
                                 <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" class="img-fluid rounded thumbnail-image" alt="{{ $produk->nama_produk }}">
                             </div>
-
+    
                             <div class="product-detail-container p-2">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <h5 class="dress-name">{{ $produk->nama_produk }}</h5>
@@ -138,11 +137,18 @@
                                         <small class="old-price text-right">{{ number_format($produk->harga * 1.25, 0, ',', '.') }}</small>
                                     </div>
                                 </div>
-
+    
                                 <div class="d-flex">
                                     <div class="text-muted small">Category:</div>
-                                    <div class="fw-semibold">{{ $produk->nama_kategori }}</div>
+                                    <div class="fw-semibold ms-1">
+                                        <a href="{{ route('dashboardproduk', ['kategori' => $produk->kategori_id]) }}" 
+                                           class="text-dark text-decoration-none">
+                                            {{ $produk->nama_kategori }}
+                                        </a>
+                                    </div>
                                 </div>
+                                
+                                <!-- Sisa kode tetap sama -->
                                 <div class="d-flex justify-content-between align-items-center pt-1">
                                     <div class="d-flex">
                                         <span class="item-size mr-2 btn" type="button">S</span>
@@ -151,8 +157,7 @@
                                         <span class="item-size btn" type="button">XL</span>
                                     </div>
                                 </div>
-
-
+    
                                 <div class="product-container">
                                     <span class="buy">
                                       <a href="javascript:void(0)"
@@ -162,17 +167,16 @@
                                         <button class="buy-button">BUY +</button>
                                       </a>
                                     </span>
-                                  </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                @endforeach
+                    @endforeach
                     @endif
                 </div>
             </div>
         </div>
-   </div>
-</div>
+    </div>
    <!-- Modal untuk Detail Produk -->
    @foreach ($data_produk as $produk)
    <div class="modal fade modal-custom" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
