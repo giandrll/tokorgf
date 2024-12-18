@@ -127,11 +127,6 @@ body {
 
 }
 
-.product-card img {
-    width: 350px;
-    /* Atur lebar gambar produk */
-    height: auto;
-}
 
 .navigation {
     position: absolute;
@@ -550,84 +545,6 @@ p {
     /* Darker background on hover */
 }
 
-.featured-products {
-    display: flex;
-    /* Use flexbox to arrange products in a row */
-    justify-content: space-around;
-    /* Space out the products */
-    margin: 20px;
-    /* Add some margin around the container */
-}
-
-.product {
-    position: relative;
-    /* Set position relative for absolute positioning of text */
-    width: 450px;
-    /* Set a fixed width for each product */
-}
-
-.product img {
-    width: 100%;
-    /* Make the image fill the product div */
-    height: auto;
-    /* Maintain aspect ratio */
-    border-radius: 5px;
-    /* Optional: rounded corners for images */
-}
-
-.product-text {
-    position: absolute;
-    /* Position text inside the image */
-    bottom: 10px;
-    /* Position it at the bottom */
-    left: 10px;
-    /* Add some padding from the left */
-    color: white;
-    /* White text */
-    background-color: rgba(0, 0, 0, 0.6);
-    /* Semi-transparent background */
-    padding: 5px;
-    /* Padding around the text */
-    border-radius: 3px;
-    /* Optional: rounded corners for text background */
-}
-
-.h3p {
-    color: black;
-    /* Set text color to black */
-    padding: 10px;
-    /* Add padding */
-    margin: 0 20px;
-    /* Add margin on the left and right for spacing */
-    left: 18px;
-    font-weight: bold;
-}
-
-/* Style untuk marquee */
-.marquee {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.marquee p {
-    display: inline-block;
-    padding-left: 100%;
-    font-size: 16px;
-    color: black;
-    animation: slide 15s linear infinite;
-}
-
-@keyframes slide {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
 
 /* Wrapper untuk ukuran */
 #sizeOptions {
@@ -704,22 +621,6 @@ font-weight: bold;
     background-color: #eaeaea;
 }
 
-.card {
-background-color: #f0f0f0; /* Warna abu-abu muda untuk kartu */
-}
-
-.card-header {
-background-color: #d3d3d3; /* Warna abu-abu untuk header */
-cursor: pointer; /* Menunjukkan bahwa header bisa diklik */
-}
-
-.list-group-item {
-transition: background-color 0.3s;
-}
-
-.list-group-item:hover {
-background-color: #e0e0e0; /* Efek hover pada item daftar */
-}
 /* Navbar Styling */
 .navbar3 {
     background-color: #333;
@@ -773,14 +674,77 @@ background-color: #e0e0e0; /* Efek hover pada item daftar */
     /* Adds a subtle shadow to the text */
 }
 
-
-.card {
-background-color: #fff;
-border: none;
-border-radius: 10px;
-width: 190px;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.cardkategori {
+    background-color: #ffffff; /* Latar belakang putih untuk kebersihan desain */
+    border: none;
+    border-radius: 10px; /* Sudut membulat untuk memberikan kesan lembut */
+    width: 100%; /* Menggunakan 100% dari ruang yang tersedia */
+    max-width: 230px; /* Batas lebar maksimum untuk menjaga responsivitas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* Bayangan untuk kedalaman */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animasi lembut ketika hover */
 }
+
+.cardkategori:hover {
+    transform: translateY(-3px); /* Efek mengangkat ketika hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 8px 25px rgba(0, 0, 0, 0.2); /* Perbaikan bayangan ketika hover */
+}
+
+.card-header {
+    background-color: #f8f9fa; /* Warna abu-abu lembut untuk header */
+    color: #333333; /* Warna teks yang kontras dan mudah dibaca */
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.list-group-item {
+    color: #535353; /* Warna teks utama untuk item */
+    border: none; /* Menghilangkan border bawaan dari list-group-item */
+    padding: 10px 15px; 
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.list-group-item:hover {
+    background-color: #8c8d8d; /* Warna biru menarik saat hover */
+    color: #ffffff; /* Mengubah teks putih saat hover */
+}
+
+.list-group-item-active {
+    background-color: #6c757d !important; /* Aktif dengan warna abu yang konsisten */
+    color: #ffffff !important;
+}
+
+.fa-tags,
+.fa-tag {
+    margin-right: 8px; /* Memberi ruang antara ikon dan teks */
+}
+.card {
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 100%; /* Menggunakan 100% dari ruang yang tersedia dengan lebar maksimum */
+    max-width: 200px; /* Membatasi lebar maksimum agar tidak melebihi ukuran yang ditentukan */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: transform 0.2s ease; /* Efek animasi */
+}
+
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .card {
+        width: 230px; /* Lebar lebih kecil untuk tablet atau layar sedang */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%; /* Mengisi seluruh lebar wadah pada layar HP */
+        max-width: none; /* Menghilangkan batas lebar jika diperlukan */
+    }
+}
+
 
 .image-container {
 position: relative;
@@ -801,17 +765,6 @@ border-radius: 6px;
 color: #fff;
 }
 
-.wishlist {
-height: 25px;
-width: 25px;
-background-color: #eee;
-display: flex;
-justify-content: center;
-align-items: center;
-border-radius: 50%;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 .first {
 position: absolute;
 width: 100%;
@@ -821,20 +774,16 @@ padding: 9px;
 .dress-name {
 font-size: 13px;
 font-weight: bold;
-width: 75%;
+width: 100%;
+text-align: center;
 }
 
 .new-price {
-font-size: 13px;
+font-size: 15px;
 font-weight: bold;
 color: red;
 }
 
-.old-price {
-font-size: 8px;
-font-weight: bold;
-color: grey;
-}
 
 .btn {
 width: 14px;
@@ -886,7 +835,7 @@ background-color: #40C4FF;
 width: 15px;
 height: 15px;
 border-radius: 50%;
-background: #fff;
+background: #e9e7e7;
 border: 1px solid grey;
 color: grey;
 font-size: 10px;
@@ -896,20 +845,12 @@ display: flex;
 justify-content: center;
 }
 
-.rating-star {
-font-size: 10px !important;
-}
-
-.rating-number {
-font-size: 10px;
-color: grey;
-}
-
 .buy {
 font-size: 12px;
 color: purple;
 font-weight: 500;
 cursor: pointer;
+padding-left: 20px;
 }
 
 .buy-button {
@@ -1015,6 +956,8 @@ text-align: right;
     color: #b9bec2;
     /* Abu-abu untuk ikon keranjang */
 }
+
+
 
 
 

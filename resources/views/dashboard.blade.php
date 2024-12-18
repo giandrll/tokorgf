@@ -7,6 +7,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logomerah.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap" rel="stylesheet">
     <style>
         body {
             background-image: white;
@@ -394,8 +397,9 @@ body {
     font-family: Arial, sans-serif;
 }
 .navbar-logo {
-    height: 50px; /* Set initial height of the logo */
-    width: auto;  /* Maintain aspect ratio */
+    height: 65px; /* Set initial height of the logo */
+    width: auto;
+    bottom: 20px  /* Maintain aspect ratio */
     max-height: 100%; /* Ensure it doesn't exceed navbar height */
 }
 * Responsive adjustments */
@@ -411,7 +415,7 @@ body {
 
 @media (max-width: 480px) {
     .navbar-logo {
-        height: 25px;
+        height: 50px;
     }
 }/* Style untuk link 'RGF Store' */
 
@@ -469,57 +473,119 @@ p {
 
 .shop-now-button:hover {
     background-color: #333; /* Darker background on hover */
+}/* Reset default margin/padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.featured-products {
-    display: flex; /* Use flexbox to arrange products in a row */
-    justify-content: space-around; /* Space out the products */
-    margin: 20px; /* Add some margin around the container */
-}
-
-.product {
-    position: relative; /* Set position relative for absolute positioning of text */
-    width: 350px; /* Set a fixed width for each product */
-}
-
-.product img {
-    width: 100%; /* Make the image fill the product div */
-    height: auto; /* Maintain aspect ratio */
-    padding: 10px;
-    border-radius: 5px; /* Optional: rounded corners for images */
-}
-.product-text {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 5px;
-    border-radius: 3px;
-    font-size: 16px; /* Default font size */
-}
-
-@media (max-width: 768px) { /* Tablet and below */
-    .product-text {
-        font-size: 6px; /* Smaller font for tablets */
-        padding: 4px;
-    }
-}
-
-@media (max-width: 500px) { /* Mobile screens */
-    .product-text {
-        font-size: 6px; /* Smaller font for mobile */
-        padding: 3px;
-    }
-}
-
 .h3p {
-    color: black; /* Set text color to black */
-    padding: 10px; /* Add padding */
-    margin: 0 20px; /* Add margin on the left and right for spacing */
-    left: 18px;
-    font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  color: #000000;
+  font-size: 35px;
+  font-weight: 700;
 }
 
+/* Container Produk */
+.featured-products {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 10px;
+}
+
+/* Gaya tiap produk */
+.product {
+  position: relative;
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Gambar Produk */
+.image-container {
+  position: relative;
+}
+
+.product-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 3px solid #f2f2f2;
+}
+
+/* Discount Badge */
+.discount {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: red;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+/* Wishlist Icon */
+.wishlist {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 18px;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.wishlist:hover {
+  color: red;
+}
+
+/* Informasi Produk */
+.product-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.product-info h5 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.price {
+  font-size: 14px;
+  color: #555;
+}
+
+.new-price {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  .product {
+    width: 45%;
+  }
+}
+
+@media (max-width: 500px) {
+  .product {
+    width: 100%;
+  }
+}
 .navbar-right {
     display: flex;                   /* Menggunakan flexbox untuk penataan */
     align-items: center;            /* Memusatkan elemen secara vertikal */
@@ -528,7 +594,7 @@ p {
 
 .navbar-right a {
     display: inline-block;           /* Membuat link berperilaku seperti tombol */
-    padding: 10px 30px;             /* Memberikan padding */
+    padding: 5px 30px;             /* Memberikan padding */
     background-color: hsl(0, 45%, 98%);      /* Latar belakang berwarna biru */
     color: rgb(12, 9, 9);                   /* Warna teks putih */
     border: none;                   /* Menghilangkan border default */
@@ -536,7 +602,6 @@ p {
     text-decoration: none;           /* Menghilangkan garis bawah */
     font-size: 16px;                /* Ukuran font */
     font-weight: bold;               /* Menebalkan teks */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Memberikan bayangan */
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transisi halus untuk hover */
 }
 
@@ -601,7 +666,7 @@ p {
 
         .navbarm {
     background-color: #736e6e;
-    height: 20px;
+    height: 25px;
     width: 100%;
     overflow: hidden;
     position: fixed;
@@ -617,7 +682,7 @@ p {
     font-weight: 600;
     white-space: nowrap;
     animation: marqueem 20s linear infinite;
-    font-size: 14px;
+    font-size: 17px;
     line-height: 20px;
 }
 
@@ -648,6 +713,32 @@ p {
     object-fit: cover; /* Maintain image proportions */
     border-radius: 10px; /* Optional: add rounded corners */
 }
+    /* Styling for the AKU div */
+.AKU {
+    display: flex;
+    justify-content: flex-start; /* Aligns content to the left */
+    align-items: center; /* Centers text vertically */
+    padding: 10px 20px; /* Adds some padding for spacing */
+    border-radius: 8px; /* Slightly rounded corners */
+}
+
+/* Styling for the text inside the AKU div */
+.AKU p {
+    margin: 0;
+    font-size: 20px; /* Increase font size for visibility */
+    font-weight: 700; /* Makes text bold */
+    color: #fff; /* Sets text color to white */
+    letter-spacing: 1px; /* Adds slight spacing between letters for readability */
+    font-family: 'Changa', serif;
+}
+
+/* Media Query for very small devices (mobile phones) */
+@media (max-width: 768px) {
+    .AKU {
+        display: none; /* Hide the entire AKU div on smaller screens */
+    }
+}
+
     </style>
 </head>
 <body>
@@ -660,7 +751,12 @@ p {
                     
                 <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
                 @endforeach
-        </div>
+            </div>
+            <div class="AKU">
+                @foreach ($data_setting as $item)
+                    <p>{{ $item->nama_toko }}</p>
+                @endforeach
+            </div>
             
             <!-- Pilihan Tengah -->
             <div class="navbar-center">
@@ -679,9 +775,9 @@ p {
     <div class="navbarm">
         <div class="marqueem">
             <b>Login untuk Akses Lebih!</b>
-                Masuk ke akun Anda untuk membuka akses ke berbagai fitur menarik dan pilihan produk spesial. Belum punya akun? Daftar sekarang dan temukan lebih banyak keuntungan di RGF STORE!
-                
-                  </div>
+                Masuk ke akun Anda untuk membuka akses ke berbagai fitur menarik dan pilihan produk spesial. 
+                Belum punya akun? Daftar sekarang dan temukan lebih banyak keuntungan di RGF STORE!          
+        </div>
     </div>
 <div class="video-branding">
     <!-- Video autoplay tanpa kontrol -->
@@ -709,27 +805,62 @@ p {
        </div>
     </div>
 </div>
-
-<h3 class="h3p"> Produk Andalan Kami!</h3>
+<h3 class="h3p">Produk Andalan Kami!</h3>
 <div class="featured-products">
-<div class="product"><a href="/produksebelumlogin">
-        <img src="fotokami/baju1.jpeg" alt="Product 1">
-</a>
-        <div class="product-text">T-shirt Oversize | RGF Apparel<br>Rp 105.000</div>
+  <div class="product">
+    <div class="image-container">
+      <div class="discount">-25%</div>
+      <div class="wishlist">
+        <i class="fa fa-heart-o"></i>
+      </div>
+      <a href="/produksebelumlogin">
+        <img src="fotokami/baju1.jpeg" alt="Product 1" class="product-image">
+      </a>
     </div>
-    <div class="product"><a href="/produksebelumlogin">
-    <img src="fotokami/baju4.jpeg"  alt="Product 2">
-    </a>
-        <div class="product-text">T-shirt Oversize | RGF Apparel<br>Rp 105.000</div>
+    <div class="product-info">
+      <h5>T-shirt Oversize | RGF Apparel</h5>
+      <div class="price">
+        <span class="new-price">Rp 105.000</span>
+      </div>
     </div>
-    <div class="product"><a href="/produksebelumlogin">
-        <img src="fotokami/acuk1.jpeg" alt="Product 3">
-</a>
-        <div class="product-text">T-shirt Oversize | RGF Apparel<br>Rp 105.000</div>
+  </div>
+  
+  <div class="product">
+    <div class="image-container">
+      <div class="discount">-25%</div>
+      <div class="wishlist">
+        <i class="fa fa-heart-o"></i>
+      </div>
+      <a href="/produksebelumlogin">
+        <img src="fotokami/baju4.jpeg" alt="Product 2" class="product-image">
+      </a>
     </div>
+    <div class="product-info">
+      <h5>T-shirt Oversize | RGF Apparel</h5>
+      <div class="price">
+        <span class="new-price">Rp 105.000</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="product">
+    <div class="image-container">
+      <div class="discount">-25%</div>
+      <div class="wishlist">
+        <i class="fa fa-heart-o"></i>
+      </div>
+      <a href="/produksebelumlogin">
+        <img src="fotokami/acuk1.jpeg" alt="Product 3" class="product-image">
+      </a>
+    </div>
+    <div class="product-info">
+      <h5>T-shirt Oversize | RGF Apparel</h5>
+      <div class="price">
+        <span class="new-price">Rp 105.000</span>
+      </div>
+    </div>
+  </div>
 </div>
-
-
 
      
 
@@ -763,19 +894,64 @@ p {
        </div>
     </div>
 </div>
-
+  
 <h3 class="h3p">Collaborate!</h3>
 <div class="featured-products">
-    <div class="product">
-        <img src="fotokami/limitededitionrezaalfa.jpeg" alt="Product 1">
+  <div class="product">
+    <div class="image-container">
+      <div class="discount">100% Ori</div>
+      <div class="wishlist">
+        <i class="fa fa-heart-o"></i>
+      </div>
+      <a href="/produksebelumlogin">
+        <img src="fotokami/limitededitionrezaalfa.jpeg" alt="Product 1" class="product-image">
+      </a>
     </div>
-    <div class="product">
-        <img src="fotokami/c0lpat.jpeg" alt="Product 2">
+    <div class="product-info">
+      <h5>HOODIE Fluto | RGF STORE X RezaAlfa</h5>
+      <div class="price">
+        <span class="new-price">Rp 499.999</span>
+      </div>
     </div>
-    <div class="product">
-        <img src="fotokami/ozan.jpeg" alt="Product 3">
+  </div>
+  
+  <div class="product">
+    <div class="image-container">
+      <div class="discount">100% Ori</div>
+      <div class="wishlist">
+        <i class="fa fa-heart-o"></i>
+      </div>
+      <a href="/produksebelumlogin">
+        <img src="fotokami/c0lpat.jpeg" alt="Product 2" class="product-image">
+      </a>
     </div>
+    <div class="product-info">
+      <h5>T-Shirt Have Or Fun | RGF STORE X Giandrll</h5>
+      <div class="price">
+        <span class="new-price">Rp 300.000</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="product">
+    <div class="image-container">
+      <div class="discount">100% Ori</div>
+      <div class="wishlist">
+        <i class="fa fa-heart-o"></i>
+      </div>
+      <a href="/produksebelumlogin">
+        <img src="fotokami/ozan.jpeg" alt="Product 3" class="product-image">
+      </a>
+    </div>
+    <div class="product-info">
+      <h5>Crewneck Kojek | RGF STORE X FauzanM</h5>
+      <div class="price">
+        <span class="new-price">Rp 400.000</span>
+      </div>
+    </div>
+  </div>
 </div>
+
 
 <h3 class="h3p"> Sedang Trend !</h3>
 <div class="produkandalan">

@@ -74,7 +74,7 @@
         <div class="row">
             <!-- Sidebar Kategori -->
             <div class="col-lg-3 col-md-4 mb-4" style="padding: 0 15px;">
-                <div class="card">
+                <div class="cardkategori">
                     <div class="card-header bg-light text-dark d-flex justify-content-between align-items-center">
                         <h5 class="mb-0">
                             <a class="text-dark text-decoration-none" data-toggle="collapse" href="#kategoriCollapse" role="button" aria-expanded="false" aria-controls="kategoriCollapse">
@@ -122,20 +122,16 @@
                             <div class="image-container">
                                 <div class="first">
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <span class="discount">-25%</span>
+                                        <span class="discount">100% Ori</span>
                                         <span class="wishlist"><i class="fa fa-heart-o"></i></span>
                                     </div>
                                 </div>
-                                <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" class="img-fluid rounded thumbnail-image" alt="{{ $produk->nama_produk }}">
+                                <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" style=" width: 200px; height: 200px; object-fit: cover; border-radius: 8px;" class="img-fluid rounded thumbnail-image" alt="{{ $produk->nama_produk }}">
                             </div>
     
                             <div class="product-detail-container p-2">
-                                <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex justify-content-between align-items-center" style="padding: 10px 15px;">
                                     <h5 class="dress-name">{{ $produk->nama_produk }}</h5>
-                                    <div class="d-flex flex-column mb-2">
-                                        <span class="new-price">Rp {{ number_format($produk->harga, 0, ',', '.') }}</span>
-                                        <small class="old-price text-right">{{ number_format($produk->harga * 1.25, 0, ',', '.') }}</small>
-                                    </div>
                                 </div>
     
                                 <div class="d-flex">
@@ -157,8 +153,9 @@
                                         <span class="item-size btn" type="button">XL</span>
                                     </div>
                                 </div>
-    
+                             
                                 <div class="product-container">
+                                    <span class="new-price">Rp {{ number_format($produk->harga, 0, ',', '.') }}</span>
                                     <span class="buy">
                                       <a href="javascript:void(0)"
                                          data-bs-toggle="modal"

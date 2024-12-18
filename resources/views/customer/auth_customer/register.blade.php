@@ -234,17 +234,6 @@
             text-decoration: underline;
         }
 
-        .slide {
-            transform: translateX(-100%);
-            opacity: 0;
-            transition: transform 1.2s ease, opacity 1.2s ease;
-        }
-
-        .visible {
-            transform: translateX(0);
-            opacity: 1;
-        }
-
         .alert {
             color: #ff3333;
             text-align: center;
@@ -300,7 +289,6 @@
 
     <div class="register-container">
         <div class="register-image">
-            <img src="fotokami/l2.png" class="visible" id="slideImage" alt="Register Image">
             <img src="fotokami/l2.png" class="slide" alt="Register Image">
         </div>
 
