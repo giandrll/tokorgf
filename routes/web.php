@@ -74,7 +74,7 @@ Route::middleware('auth.customer')->group(function () {
 // dashboardproduk
   Route::get('/dashboardproduk', [DashboardProdukController::class, 'dashboardproduk'])->name('dashboardproduk');
 //search
-  Route::get('/dashboard/search', [DashboardProdukController::class, 'search'])->name('dashboard.search');
+  Route::get('/dashboardproduk/search', [DashboardProdukController::class, 'search'])->name('dashboardproduk.search');
 // Route untuk halaman profil customer
 Route::get('/customer/profile', [ProfileController::class, 'profile'])->name('customer.profile');
 Route::get('/customer/about', [AboutController::class, 'about'])->name('customer.about');

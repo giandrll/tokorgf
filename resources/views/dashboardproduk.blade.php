@@ -69,111 +69,119 @@
         </div>
     </nav>
 
-    <div class="container">
-        <h1 class="mb-4" style="padding-top: 50px;">Our Products</h1>
-        <div class="row">
-            <!-- Sidebar Kategori -->
-            <div class="col-lg-3 col-md-4 mb-4" style="padding: 0 15px;">
-                <div class="cardkategori">
-                    <div class="card-header bg-light text-dark d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">
-                            <a class="text-dark text-decoration-none" data-toggle="collapse" href="#kategoriCollapse" role="button" aria-expanded="false" aria-controls="kategoriCollapse">
-                                <i class="fas fa-list"></i> Kategori
-                            </a>
-                        </h5>
-                    </div>
-                    <div class="collapse show" id="kategoriCollapse">
-                        <div class="list-group list-group-flush">
-                            <a href="{{ route('dashboardproduk') }}" class="list-group-item list-group-item-action {{ request('kategori') == null ? 'bg-secondary text-white' : '' }}">
-                                <i class="fas fa-tags"></i> Semua Kategori
-                            </a>
-                            @foreach ($data_kategori as $kategori)
-                                <a href="{{ route('dashboardproduk', ['kategori' => $kategori->id]) }}"
-                                   class="list-group-item list-group-item-action {{ request('kategori') == $kategori->id ? 'bg-secondary text-white' : '' }}">
-                                    <i class="fas fa-tag"></i> {{ $kategori->nama_kategori }}
-                                </a>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Produk -->
-            <div class="col-lg-9 col-md-8">
-                <!-- Tampilkan Nama Kategori yang Dipilih di Atas Produk -->
-                @if (request('kategori'))
-                    @php
-                        $selectedCategory = $data_kategori->where('id', request('kategori'))->first();
-                    @endphp
-                    <div class="alert alert-info text-center" style="font-size: 16px;">
-                        Anda melihat produk dari kategori: <strong>{{ $selectedCategory ? $selectedCategory->nama_kategori : 'Kategori Tidak Ditemukan' }}</strong>
-                    </div>
-                @endif
-    
-                <div class="row row-cols-2">
-                    @if($data_produk->isEmpty())
-                        <div class="col-12 text-center" style="padding: 20px;">
-                            <p class="text-muted" style="font-size: 18px; font-weight: bold;">Produk belum tersedia</p>
-                        </div>
-                    @else
-                    @foreach ($data_produk as $produk)
-                    <div class="col-md-3" style="padding-bottom: 30px;">
-                        <div class="card">
-                            <div class="image-container">
-                                <div class="first">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="discount">100% Ori</span>
-                                        <span class="wishlist"><i class="fa fa-heart-o"></i></span>
-                                    </div>
-                                </div>
-                                <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" style=" width: 200px; height: 200px; object-fit: cover; border-radius: 8px;" class="img-fluid rounded thumbnail-image" alt="{{ $produk->nama_produk }}">
-                            </div>
-    
-                            <div class="product-detail-container p-2">
-                                <div class="d-flex justify-content-between align-items-center" style="padding: 10px 15px;">
-                                    <h5 class="dress-name">{{ $produk->nama_produk }}</h5>
-                                </div>
-    
-                                <div class="d-flex">
-                                    <div class="text-muted small">Category:</div>
-                                    <div class="fw-semibold ms-1">
-                                        <a href="{{ route('dashboardproduk', ['kategori' => $produk->kategori_id]) }}" 
-                                           class="text-dark text-decoration-none">
-                                            {{ $produk->nama_kategori }}
-                                        </a>
-                                    </div>
-                                </div>
-                                
-                                <!-- Sisa kode tetap sama -->
-                                <div class="d-flex justify-content-between align-items-center pt-1">
-                                    <div class="d-flex">
-                                        <span class="item-size mr-2 btn" type="button">S</span>
-                                        <span class="item-size mr-2 btn" type="button">M</span>
-                                        <span class="item-size mr-2 btn" type="button">L</span>
-                                        <span class="item-size btn" type="button">XL</span>
-                                    </div>
-                                </div>
-                             
-                                <div class="product-container">
-                                    <span class="new-price">Rp {{ number_format($produk->harga, 0, ',', '.') }}</span>
-                                    <span class="buy">
-                                      <a href="javascript:void(0)"
-                                         data-bs-toggle="modal"
-                                         data-bs-target="#cartModal"
-                                         onclick="showCartModal({{ $produk->id }}, '{{ $produk->nama_produk }}', '{{ $produk->foto }}', {{ $produk->harga }}, {{ $produk->stok }}, '{{ $produk->size }}', '{{ $produk->deskripsi }}')">
-                                        <button class="buy-button">BUY +</button>
-                                      </a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                    @endif
-                </div>
+   <div class="container">
+    <h1 class="mb-4" style="padding-top: 50px;">Our Products</h1>
+    <div class="row">
+      <!-- Sidebar Kategori -->
+<div class="col-lg-3 col-md-4 mb-4" style="padding: 0 15px;">
+    <div class="cardkategori">
+        <div class="card-header bg-light text-dark d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">
+                <a class="text-dark text-decoration-none" data-toggle="collapse" href="#kategoriCollapse" role="button" aria-expanded="false" aria-controls="kategoriCollapse">
+                    <i class="fas fa-list"></i> Kategori
+                </a>
+            </h5>
+        </div>
+        <div class="collapse show" id="kategoriCollapse">
+            <div class="list-group list-group-flush">
+                <!-- Link untuk semua kategori -->
+                <a href="{{ route('dashboardproduk', ['search' => request('search')]) }}" 
+                   class="list-group-item list-group-item-action {{ request('kategori') == null ? 'bg-secondary text-white' : '' }}">
+                    <i class="fas fa-tags"></i> Semua Kategori
+                </a>
+                <!-- Loop untuk menampilkan kategori -->
+                @foreach ($data_kategori as $kategori)
+                    <a href="{{ route('dashboardproduk', ['kategori' => $kategori->id, 'search' => request('search')]) }}"
+                       class="list-group-item list-group-item-action {{ request('kategori') == $kategori->id ? 'bg-secondary text-white' : '' }}">
+                        <i class="fas fa-tag"></i> {{ $kategori->nama_kategori }}
+                    </a>
+                @endforeach
             </div>
         </div>
     </div>
+</div>
+
+<!-- Produk -->
+<div class="col-lg-9 col-md-8">
+    <!-- Indikator pencarian dan kategori -->
+    @if (request('search'))
+        <div class="alert alert-info text-center" style="font-size: 16px;">
+            Menampilkan hasil pencarian untuk: <strong>{{ request('search') }}</strong>
+        </div>
+    @endif
+
+    @if (request('kategori'))
+        <div class="alert alert-info text-center" style="font-size: 16px;">
+            Anda melihat produk dari kategori: 
+            <strong>{{ $selectedCategory ? $selectedCategory->nama_kategori : 'Kategori Tidak Ditemukan' }}</strong>
+        </div>
+    @endif
+
+    <!-- Produk Grid -->
+    <div class="row row-cols-2">
+        @if($data_produk->isEmpty())
+            <div class="col-12 text-center" style="padding: 20px;">
+                <p class="text-muted" style="font-size: 18px; font-weight: bold;">Produk belum tersedia</p>
+            </div>
+        @else
+            @foreach ($data_produk as $produk)
+            <div class="col-md-3" style="padding-bottom: 30px;">
+                <div class="card">
+                    <div class="image-container">
+                        <div class="first">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="discount">100% Ori</span>
+                                <span class="wishlist"><i class="fa fa-heart-o"></i></span>
+                            </div>
+                        </div>
+                        <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" style=" width: 200px; height: 200px; object-fit: cover; border-radius: 8px;" class="img-fluid rounded thumbnail-image" alt="{{ $produk->nama_produk }}">
+                    </div>
+
+                    <div class="product-detail-container p-2">
+                        <div class="d-flex justify-content-between align-items-center" style="padding: 10px 15px;">
+                            <h5 class="dress-name">{{ $produk->nama_produk }}</h5>
+                        </div>
+
+                        <div class="d-flex">
+                            <div class="text-muted small">Category:</div>
+                            <div class="fw-semibold ms-1">
+                                <a href="{{ route('dashboardproduk', ['kategori' => $produk->kategori_id, 'search' => request('search')]) }}" 
+                                   class="text-dark text-decoration-none">
+                                    {{ $produk->nama_kategori }}
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center pt-1">
+                            <div class="d-flex">
+                                <span class="item-size mr-2 btn" type="button">S</span>
+                                <span class="item-size mr-2 btn" type="button">M</span>
+                                <span class="item-size mr-2 btn" type="button">L</span>
+                                <span class="item-size btn" type="button">XL</span>
+                            </div>
+                        </div>
+                        
+                        <div class="product-container">
+                            <span class="new-price">Rp {{ number_format($produk->harga, 0, ',', '.') }}</span>
+                            <span class="buy">
+                                <a href="javascript:void(0)"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#cartModal"
+                                   onclick="showCartModal({{ $produk->id }}, '{{ $produk->nama_produk }}', '{{ $produk->foto }}', {{ $produk->harga }}, {{ $produk->stok }}, '{{ $produk->size }}', '{{ $produk->deskripsi }}')">
+                                    <button class="buy-button">BUY +</button>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        @endif
+    </div>
+</div>
+</div>
+</div>
+
    <!-- Modal untuk Detail Produk -->
    @foreach ($data_produk as $produk)
    <div class="modal fade modal-custom" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
@@ -255,45 +263,7 @@
 
         </div>
     </div>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer2">
-                @foreach ($data_setting as $item)
-            {{-- @dd($item) --}}
-            <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" width="230">
-            <h4>{{ $item->nama_toko }}</h4>
-                <p>To Infinity And Beyond</p>
-            </div>
-            <div class="footer3">
-                <h4
-                    style=" font-weight: bold; font-weight: 900; cursor: pointer; text-decoration: none;  text-decoration: underline;">
-                    Company</h4>
-                <h6><a href="#about" style="color: black;">About {{ $item->nama_toko }}</a></h6>
-                <h6><a href="#contact" style="color: black;">News</a></h6>
-                <h6><a href="#produk" style="color: black;">Carrers</a></h6>
-            </div>
-            <div class="footer4">
-                <h4 style=" font-weight: bold; font-weight: 900; cursor: pointer; text-decoration: none;  text-decoration: underline;" id="contact">Contac Us</h4>
-                <h6 style="color: black;">Email</a></h6>
-                <p><a href="{{ $item->email_toko }}" style="color: #6495ED;"><i class="fas fa-envelope" style="color: #6495ED;"></i>  {{ $item->email_toko }}</a></p>
-                <h6 style="color: black;">Telepon</a></h6>
-                <p><a href="https://wa.me/62{{ $item->telefon_toko }}"  style="color: #6495ED;">      <i class="fab fa-whatsapp"></i>  Whatapp
-                </a></p>
-
-                <h6 style="color: black;">Media Sosial</a></h6>
-                <p  style="color: #6495ED;">
-                        <a href="{{ $item->facebook_toko }}"  style="color: #6495ED;"><i class="fab fa-facebook"></i></a> |
-                        <a href="{{ $item->twitter_toko }}"  style="color: #6495ED;">      <i class="fab fa-twitter"></i>
-                        </a> |
-                        <a href="https://www.instagram.com/{{ $item->instagram_toko }}"  style="color: #6495ED;">      <i class="fab fa-instagram"></i>
-                        </a>
-                    </p>
-            </div>
-            <p class="text-center">&copy; 2024 {{ $item->nama_toko }}, Idn. All rights reserved</p>
-            @endforeach
-        </div>
-    </footer>
+    @include('footer.footer') 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
