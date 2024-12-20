@@ -195,7 +195,7 @@
                 <img id="modalFoto" src="" alt="" class="img-fluid mb-3">
                 <h5 id="modalNamaProduk" class="text-center"></h5>
                 <div class="text-center mb-3">
-                    <p class="text-muted"><strong>Harga:</strong> Rp <span id="modalHarga"></span>
+                    <p class="text-muted"><strong>Harga:</strong><span  class="new-price"> Rp <span id="modalHarga"></span></span>
                     </p>
                     <p class="text-muted"><strong>Stok Tersedia:</strong> <span id="modalStok"></span></p>
                 </div>

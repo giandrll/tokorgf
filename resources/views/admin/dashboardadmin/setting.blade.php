@@ -52,7 +52,7 @@
 
                                 <div class="form-group">
                                     <label for="telefon_toko">Telepon Toko</label>
-                                    <input type="text" name="telefon_toko" class="form-control"
+                                    <input type="number" name="telefon_toko" class="form-control"
                                         value="{{ $setting->telefon_toko ?? '' }}">
                                 </div>
 
@@ -73,6 +73,13 @@
                                     <input type="text" name="twitter_toko" class="form-control"
                                         value="{{ $setting->twitter_toko ?? '' }}">
                                 </div>
+
+                                
+                                <div class="form-group">
+                                    <label for="textbranding_toko">Text Branding</label>
+                                    <textarea name="textbranding_toko" id="textbranding_toko" class="form-control" rows="5">{{ $setting->textbranding_toko ?? '' }}</textarea>
+                                </div>
+                                
 
                                 <div class="form-group">
                                     <label for="video_toko">Video Toko</label>

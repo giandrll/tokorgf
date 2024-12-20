@@ -20,7 +20,8 @@ class SettingController extends Controller
         $request->validate([
             'nama_toko' => 'required',
             'email_toko' => 'required|email',
-            'video_toko' => 'nullable|mimes:mp4,avi,mov', // Validasi untuk video (maksimal 2MB dan format yang valid)
+            'video_toko' => 'nullable|mimes:mp4,avi,mov', // Validasi untuk video (format yang valid)
+            'textbranding_toko' => 'nullable|string', // Validasi untuk text branding
         ]);
 
         $setting = Setting::first();
@@ -35,6 +36,7 @@ class SettingController extends Controller
         $setting->instagram_toko = $request->instagram_toko;
         $setting->facebook_toko = $request->facebook_toko;
         $setting->twitter_toko = $request->twitter_toko;
+        $setting->textbranding_toko = $request->textbranding_toko; // Tambahkan ini
 
         // Upload logo jika ada
         if ($request->hasFile('logo_toko')) {

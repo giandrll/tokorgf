@@ -18,9 +18,7 @@
     <div class="navbarm">
         <div class="marqueem">
             @foreach ($data_setting as $item)
-            Hai, {{$customer->nama}}! Selamat datang di {{$item->nama_toko}} Temukan berbagai penawaran menarik hanya untuk Anda!
-             Kami sangat senang Anda mengunjungi toko kami. Nikmati berbagai promo menarik dan temukan produk favorit Anda yang
-              siap mempercantik hidup Anda. Selamat berbelanja dan semoga hari Anda menyenankan!</div>
+            Hai, {{$customer->nama}}!{{$item->textbranding_toko}}</div>
             @endforeach
         </div>
     <nav class="navbar">

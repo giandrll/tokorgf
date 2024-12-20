@@ -46,9 +46,9 @@
     </nav>
     <div class="navbarm">
         <div class="marqueem">
-            <b>Login untuk Akses Lebih!</b>
-                Masuk ke akun Anda untuk membuka akses ke berbagai fitur menarik dan pilihan produk spesial. 
-                Belum punya akun? Daftar sekarang dan temukan lebih banyak keuntungan di RGF STORE!          
+          @foreach ($data_setting as $item)
+          Hai,{{$item->textbranding_toko}}</div>
+          @endforeach
         </div>
     </div>
 <div class="video-branding">

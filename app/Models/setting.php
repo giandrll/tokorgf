@@ -21,6 +21,8 @@ class Setting extends Model
         'instagram_toko', 
         'facebook_toko', 
         'twitter_toko',
-        'video_toko'
+        'video_toko',
+        'textbranding_toko',
+
     ];
 }
