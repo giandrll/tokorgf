@@ -87,7 +87,6 @@
       </div>
       <a href="/produksebelumlogin">
         @foreach ($data_setting as $item)
-
         <img src="{{ asset('foto/fotoSetting/' . $item->fotoandalan_slide1 ) }}" alt="Slide1" class="product-image">
         @endforeach
       </a>
@@ -247,7 +246,7 @@
 </div>
 
 
-<a href="https://wa.me/6281297535513" class="whatsapp-logo" target="_blank" onclick="showHelpText()">
+<a href="https://wa.me/62{{ $item->telefon_toko }}" class="whatsapp-logo" target="_blank" onclick="showHelpText()">
     <img src="/foto/help.png" alt="Help">
     <span class="help-text">Butuh Bantuan? Klik di sini!</span>
 </a>

@@ -55,7 +55,7 @@
 
                                 <!-- Telepon Toko -->
                                 <div class="form-group">
-                                    <label for="telefon_toko">Telepon Toko</label>
+                                    <label for="telefon_toko">Telepon Toko + Icon Butuh BAntuan</label>
                                     <input type="number" name="telefon_toko" class="form-control"
                                         value="{{ $setting->telefon_toko ?? '' }}">
                                 </div>
@@ -115,6 +115,7 @@
                                         </div>
                                     </div>
                                     @endfor
+                                    <p>Note : * Utamakan foto 1:1</p>
                                 </div>
 
                                 <!-- Foto Kolaborasi Slides - Displayed Side by Side -->
@@ -130,6 +131,7 @@
                                         </div>
                                     </div>
                                     @endfor
+                                    <p>Note : * Utamakan foto 1:1</p>
                                 </div>
 
                                 <!-- Foto Sedang Trend Slides - Displayed Side by Side -->
@@ -145,6 +147,7 @@
                                         </div>
                                     </div>
                                     @endfor
+                                    <p>Note : * Utamakan foto 16:9</p>
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Simpan Pengaturan</button>
