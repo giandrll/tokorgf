@@ -112,9 +112,6 @@
     </div>
     <div class="product-info">
       <h5>T-shirt Oversize | RGF Apparel</h5>
-      <div class="price">
-        <span class="new-price">Rp 105.000</span>
-      </div>
     </div>
   </div>
 
@@ -132,9 +129,6 @@
     </div>
     <div class="product-info">
       <h5>T-shirt Oversize | RGF Apparel</h5>
-      <div class="price">
-        <span class="new-price">Rp 105.000</span>
-      </div>
     </div>
   </div>
 </div>
@@ -191,9 +185,6 @@
     </div>
     <div class="product-info">
       <h5>HOODIE Fluto | RGF STORE X RezaAlfa</h5>
-      <div class="price">
-        <span class="new-price">Rp 499.999</span>
-      </div>
     </div>
   </div>
 
@@ -212,9 +203,6 @@
     </div>
     <div class="product-info">
       <h5>T-Shirt Have Or Fun | RGF STORE X Giandrll</h5>
-      <div class="price">
-        <span class="new-price">Rp 300.000</span>
-      </div>
     </div>
   </div>
 
@@ -233,9 +221,6 @@
     </div>
     <div class="product-info">
       <h5>Crewneck Kojek | RGF STORE X FauzanM</h5>
-      <div class="price">
-        <span class="new-price">Rp 400.000</span>
-      </div>
     </div>
   </div>
 </div>
