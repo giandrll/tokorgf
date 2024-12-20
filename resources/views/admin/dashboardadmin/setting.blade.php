@@ -55,7 +55,7 @@
 
                                 <!-- Telepon Toko -->
                                 <div class="form-group">
-                                    <label for="telefon_toko">Telepon Toko</label>
+                                    <label for="telefon_toko">Telepon Toko + Icon Butuh BAntuan</label>
                                     <input type="number" name="telefon_toko" class="form-control"
                                         value="{{ $setting->telefon_toko ?? '' }}">
                                 </div>
