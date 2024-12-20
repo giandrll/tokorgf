@@ -14,7 +14,7 @@ class CartController extends Controller
     public function index()
     {
         $customer = Auth::guard('customer')->user();
-    
+    123
         if ($customer) {
             // Mengambil item keranjang berdasarkan customer_id
             $cartItems = Cart::where('customer_id', $customer->id)->with('produk')->get();
