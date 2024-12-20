@@ -87,64 +87,124 @@
                                     <textarea name="textbranding_toko" id="textbranding_toko" class="form-control" rows="5">{{ $setting->textbranding_toko ?? '' }}</textarea>
                                 </div>
 
-                                <!-- Video Toko -->
-                                <div class="form-group">
-                                    <label for="video_toko">Video Toko</label>
-                                    <input type="file" name="video_toko" class="form-control">
-                                    @if ($setting && $setting->video_toko)
-                                        <video width="25%" class="mt-2" controls>
-                                            <source src="{{ asset('video_setting/' . $setting->video_toko) }}"
-                                                type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    @endif
-                                    <p>Note :
-                                        * Video resolusi harus 16:9</p>
-                                </div>
-
-                                <!-- Foto Andalan Slides - Displayed Side by Side -->
-                                <div class="form-row">
-                                    @for ($i = 1; $i <= 3; $i++)
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="fotoandalan_slide{{ $i }}">Foto Andalan Slide {{ $i }}</label>
-                                            <input type="file" name="fotoandalan_slide{{ $i }}" class="form-control">
-                                            @if ($setting && $setting->{'fotoandalan_slide' . $i})
-                                                <img src="{{ asset('foto/fotoSetting/' . $setting->{'fotoandalan_slide' . $i}) }}" alt="Foto Andalan Slide {{ $i }}" width="100" class="mt-2">
-                                            @endif
+                                <div class="container-fluid">
+                                    <!-- Video Store Section -->
+                                    <div class="card mb-4">
+                                        <div class="card-header bg-primary text-white">
+                                            <h5 class="mb-0">Video Toko</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="form-group">
+                                                <label for="video_toko" class="form-label">Upload Video</label>
+                                                <input type="file" name="video_toko" class="form-control" accept="video/mp4,video/x-m4v,video/*">
+                                                @if ($setting && $setting->video_toko)
+                                                    <div class="mt-3">
+                                                        <label class="form-label">Preview Video:</label>
+                                                        <video width="100%" style="max-width: 400px;" controls class="mt-2 rounded">
+                                                            <source src="{{ asset('video_setting/' . $setting->video_toko) }}" type="video/mp4">
+                                                            Your browser does not support the video tag.
+                                                        </video>
+                                                    </div>
+                                                @endif
+                                                <small class="text-muted mt-2 d-block">
+                                                    <i class="fas fa-info-circle"></i> Video harus memiliki rasio aspek 16:9
+                                                </small>
+                                            </div>
                                         </div>
                                     </div>
-                                    @endfor
-                                </div>
-
-                                <!-- Foto Kolaborasi Slides - Displayed Side by Side -->
-                                <div class="form-row">
-                                    @for ($i = 1; $i <= 3; $i++)
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="fotokolaburasi_slide{{ $i }}">Foto Kolaborasi Slide {{ $i }}</label>
-                                            <input type="file" name="fotokolaburasi_slide{{ $i }}" class="form-control">
-                                            @if ($setting && $setting->{'fotokolaburasi_slide' . $i})
-                                                <img src="{{ asset('foto/fotoSetting/' . $setting->{'fotokolaburasi_slide' . $i}) }}" alt="Foto Kolaborasi Slide {{ $i }}" width="100" class="mt-2">
-                                            @endif
+                                
+                                    <!-- Featured Photos Section -->
+                                    <div class="card mb-4">
+                                        <div class="card-header bg-primary text-white">
+                                            <h5 class="mb-0">Produk Andalan</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                @for ($i = 1; $i <= 3; $i++)
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="card h-100">
+                                                        <div class="card-body">
+                                                            <h6 class="card-title">Slide {{ $i }}</h6>
+                                                            <div class="form-group">
+                                                                <input type="file" name="fotoandalan_slide{{ $i }}" class="form-control" accept="image/*">
+                                                                @if ($setting && $setting->{'fotoandalan_slide' . $i})
+                                                                    <div class="mt-3 text-center">
+                                                                        <img src="{{ asset('foto/fotoSetting/' . $setting->{'fotoandalan_slide' . $i}) }}" 
+                                                             alt="Foto Andalan Slide {{ $i }}" 
+                                                             class="img-thumbnail" 
+                                                             style="max-height: 150px; object-fit: cover;">
+                                                                    </div>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @endfor
+                                            </div>
                                         </div>
                                     </div>
-                                    @endfor
-                                </div>
-
-                                <!-- Foto Sedang Trend Slides - Displayed Side by Side -->
-                                <div class="form-row">
-                                    @for ($i = 1; $i <= 2; $i++)
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="fotosedangtrend_slide{{ $i }}">Foto Sedang Trend Slide {{ $i }}</label>
-                                            <input type="file" name="fotosedangtrend_slide{{ $i }}" class="form-control">
-                                            @if ($setting && $setting->{'fotosedangtrend_slide' . $i})
-                                                <img src="{{ asset('foto/fotoSetting/' . $setting->{'fotosedangtrend_slide' . $i}) }}" alt="Foto Sedang Trend Slide {{ $i }}" width="100" class="mt-2">
-                                            @endif
+                                
+                                    <!-- Collaboration Photos Section -->
+                                    <div class="card mb-4">
+                                        <div class="card-header bg-primary text-white">
+                                            <h5 class="mb-0">Produk Kolaborasi</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                @for ($i = 1; $i <= 3; $i++)
+                                                <div class="col-md-4 mb-3">
+                                                    <div class="card h-100">
+                                                        <div class="card-body">
+                                                            <h6 class="card-title">Slide {{ $i }}</h6>
+                                                            <div class="form-group">
+                                                                <input type="file" name="fotokolaburasi_slide{{ $i }}" class="form-control" accept="image/*">
+                                                                @if ($setting && $setting->{'fotokolaburasi_slide' . $i})
+                                                                    <div class="mt-3 text-center">
+                                                                        <img src="{{ asset('foto/fotoSetting/' . $setting->{'fotokolaburasi_slide' . $i}) }}" 
+                                                             alt="Foto Kolaborasi Slide {{ $i }}" 
+                                                             class="img-thumbnail" 
+                                                             style="max-height: 150px; object-fit: cover;">
+                                                                    </div>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @endfor
+                                            </div>
                                         </div>
                                     </div>
-                                    @endfor
+                                
+                                    <!-- Trending Photos Section -->
+                                    <div class="card mb-4">
+                                        <div class="card-header bg-primary text-white">
+                                            <h5 class="mb-0">Produk Sedang Trend</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                @for ($i = 1; $i <= 2; $i++)
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="card h-100">
+                                                        <div class="card-body">
+                                                            <h6 class="card-title">Slide {{ $i }}</h6>
+                                                            <div class="form-group">
+                                                                <input type="file" name="fotosedangtrend_slide{{ $i }}" class="form-control" accept="image/*">
+                                                                @if ($setting && $setting->{'fotosedangtrend_slide' . $i})
+                                                                    <div class="mt-3 text-center">
+                                                                        <img src="{{ asset('foto/fotoSetting/' . $setting->{'fotosedangtrend_slide' . $i}) }}" 
+                                                             alt="Foto Sedang Trend Slide {{ $i }}" 
+                                                             class="img-thumbnail" 
+                                                             style="max-height: 150px; object-fit: cover;">
+                                                                    </div>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @endfor
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Simpan Pengaturan</button>

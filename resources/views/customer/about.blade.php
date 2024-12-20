@@ -369,11 +369,8 @@
     
     <div class="container">
         <nav class="navbar8">
-            <a href="/dashboardcustomer">
-                <i class="fas fa-arrow-left close-icon" style="color:black"></i> <!-- Icon close dari Font Awesome -->
-            </a>
-            <div class="page-title">About</div>
-
+            <i class="fas fa-arrow-left close-icon" onclick="closePage()"></i> <!-- Icon close dari Font Awesome -->
+    <div class="page-title">About</div>
         </nav>
         <nav class="navbar">
             <div class="navbar-container">
@@ -382,7 +379,7 @@
                     @foreach ($data_setting as $item)
                         
                     <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
-                    @endforeach  
+                    @endforeach
                 </div>
     
                 <div class="navbar-center">
@@ -490,7 +487,9 @@
                     document.getElementById('userEmail').textContent = data.email;
                 });
         });
-       
+        function closePage() {
+        window.history.back(); // Kembali ke halaman sebelumnya
+    }
     </script>
 </body>
 

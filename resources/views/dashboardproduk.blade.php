@@ -269,6 +269,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    @foreach ($data_setting as $item)
+
     <script>
 
 
@@ -420,7 +422,7 @@
                         timer: 2000,
                         showConfirmButton: false
                     }).then(() => {
-                        const waUrl = `https://wa.me/6283167735320?text=${encodeURIComponent(message)}`;
+                    const waUrl = `https://wa.me/62{{ $item->telefon_toko }}?text=${encodeURIComponent(message)}`;
                         window.open(waUrl, '_blank');
 
                         const modal = bootstrap.Modal.getInstance(document.getElementById('cartModal'));
@@ -539,7 +541,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Inisialisasi untuk menampilkan slide pertama
         showSlide(currentSlide);
     </script>
-
+@endforeach
 </body>
 
 </html>

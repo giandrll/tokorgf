@@ -32,6 +32,7 @@
                 <a href="/dashboardcustomer"><i class="fas fa-home"></i> Home</a>
                 <a href="/dashboardproduk"><i class="fas fa-cubes"></i> Product</a>
                 <a href="/customer/about"><i class="fas fa-user"></i> About</a>
+                
             </div>
 
             <!-- Pilihan Kanan -->
@@ -120,7 +121,7 @@
             </form>
         @endif
     </div>
-    
+    @foreach ($data_setting as $item)
     <script>
             function confirmDelete(id) {
         Swal.fire({
@@ -269,7 +270,7 @@ message += `Terima kasih banyak, dan saya sangat menantikan produk ini!`;
             });
     
             // Open WhatsApp
-            const waUrl = `https://wa.me/6283167735320?text=${encodeURIComponent(message)}`;
+            const waUrl = `https://wa.me/62{{ $item->telefon_toko }}?text=${encodeURIComponent(message)}`;
             window.open(waUrl, '_blank');
     
             // Reload page after successful order
@@ -290,6 +291,7 @@ message += `Terima kasih banyak, dan saya sangat menantikan produk ini!`;
     // Initialize total on page load
     document.addEventListener('DOMContentLoaded', updateTotal);
     </script>
+    @endforeach
 </body>
 
 </html>
