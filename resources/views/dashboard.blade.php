@@ -14,13 +14,13 @@
 
 </head>
 <body>
-    
+
 <nav class="navbar">
         <div class="navbar-container">
             <!-- Logo/Kiri -->
             <div class="navbar-left">
                 @foreach ($data_setting as $item)
-                    
+
                 <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
                 @endforeach
             </div>
@@ -29,19 +29,19 @@
                     <p>{{ $item->nama_toko }}</p>
                 @endforeach
             </div>
-            
+
             <!-- Pilihan Tengah -->
             <div class="navbar-center">
                 <a href="/" >Home</a>
                 <a href="/produksebelumlogin">Product</a>
-                <a href="javascript:void(0)" onclick="checkLogin()">About</a>            
+                <a href="javascript:void(0)" onclick="checkLogin()">About</a>
             </div>
 
             <!-- Pilihan Kanan -->
             <div class="navbar-right">
                 <a href="/authcustomer" class="btn-login">Login</a>
             </div>
-            
+
         </div>
     </nav>
     <div class="navbarm">
@@ -53,7 +53,7 @@
     </div>
 <div class="video-branding">
     <!-- Video autoplay tanpa kontrol -->
-    
+
     <video autoplay muted loop>
         @foreach ($data_setting as $item)
         <source src="{{ asset('video_setting/' . $item->video_toko) }}" type="video/mp4">
@@ -86,8 +86,29 @@
         <i class="fa fa-heart-o"></i>
       </div>
       <a href="/produksebelumlogin">
-        <img src="fotokami/baju1.jpeg" alt="Product 1" class="product-image">
+        @foreach ($data_setting as $item)
+
+        <img src="{{ asset('foto/fotoSetting/' . $item->fotoandalan_slide1 ) }}" alt="Slide1" class="product-image">
+        @endforeach
       </a>
+    </div>
+    <div class="product-info">
+      <h5>T-shirt Oversize | RGF Apparel</h5>
+    </div>
+  </div>
+
+  <div class="product">
+    <div class="image-container">
+      <div class="discount">100% Ori</div>
+      <div class="wishlist">
+        <i class="fa fa-heart-o"></i>
+      </div>
+      <a href="/produksebelumlogin">
+        @foreach ($data_setting as $item)
+
+        <img src="{{ asset('foto/fotoSetting/' . $item->fotoandalan_slide2 ) }}" alt="Slide1" class="product-image">
+        @endforeach
+     </a>
     </div>
     <div class="product-info">
       <h5>T-shirt Oversize | RGF Apparel</h5>
@@ -96,7 +117,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="product">
     <div class="image-container">
       <div class="discount">100% Ori</div>
@@ -104,26 +125,10 @@
         <i class="fa fa-heart-o"></i>
       </div>
       <a href="/produksebelumlogin">
-        <img src="fotokami/baju4.jpeg" alt="Product 2" class="product-image">
-      </a>
-    </div>
-    <div class="product-info">
-      <h5>T-shirt Oversize | RGF Apparel</h5>
-      <div class="price">
-        <span class="new-price">Rp 105.000</span>
-      </div>
-    </div>
-  </div>
-  
-  <div class="product">
-    <div class="image-container">
-      <div class="discount">100% Ori</div>
-      <div class="wishlist">
-        <i class="fa fa-heart-o"></i>
-      </div>
-      <a href="/produksebelumlogin">
-        <img src="fotokami/acuk1.jpeg" alt="Product 3" class="product-image">
-      </a>
+        @foreach ($data_setting as $item)
+
+        <img src="{{ asset('foto/fotoSetting/' . $item->fotoandalan_slide3 ) }}" alt="Slide1" class="product-image">
+        @endforeach      </a>
     </div>
     <div class="product-info">
       <h5>T-shirt Oversize | RGF Apparel</h5>
@@ -134,7 +139,7 @@
   </div>
 </div>
 
-     
+
 
 <h3 class="h3p">Lihat Produk Kami!</h3>
 <div class="product-section" id="produk">
@@ -168,7 +173,7 @@
        </div>
     </div>
 </div>
-  
+
 <h3 class="h3p">Collaborate!</h3>
 <div class="featured-products">
   <div class="product">
@@ -178,8 +183,11 @@
         <i class="fa fa-heart-o"></i>
       </div>
       <a href="/produksebelumlogin">
-        <img src="fotokami/limitededitionrezaalfa.jpeg" alt="Product 1" class="product-image">
-      </a>
+        @foreach ($data_setting as $item)
+
+        <img src="{{ asset('foto/fotoSetting/' . $item->fotokolaburasi_slide1 ) }}" alt="Slide1" class="product-image">
+        @endforeach
+    </a>
     </div>
     <div class="product-info">
       <h5>HOODIE Fluto | RGF STORE X RezaAlfa</h5>
@@ -188,7 +196,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="product">
     <div class="image-container">
       <div class="discount">100% Ori</div>
@@ -196,8 +204,11 @@
         <i class="fa fa-heart-o"></i>
       </div>
       <a href="/produksebelumlogin">
-        <img src="fotokami/c0lpat.jpeg" alt="Product 2" class="product-image">
-      </a>
+        @foreach ($data_setting as $item)
+
+        <img src="{{ asset('foto/fotoSetting/' . $item->fotokolaburasi_slide2 ) }}" alt="Slide1" class="product-image">
+        @endforeach
+    </a>
     </div>
     <div class="product-info">
       <h5>T-Shirt Have Or Fun | RGF STORE X Giandrll</h5>
@@ -206,7 +217,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="product">
     <div class="image-container">
       <div class="discount">100% Ori</div>
@@ -214,8 +225,11 @@
         <i class="fa fa-heart-o"></i>
       </div>
       <a href="/produksebelumlogin">
-        <img src="fotokami/ozan.jpeg" alt="Product 3" class="product-image">
-      </a>
+        @foreach ($data_setting as $item)
+
+        <img src="{{ asset('foto/fotoSetting/' . $item->fotokolaburasi_slide3 ) }}" alt="Slide1" class="product-image">
+        @endforeach
+    </a>
     </div>
     <div class="product-info">
       <h5>Crewneck Kojek | RGF STORE X FauzanM</h5>
