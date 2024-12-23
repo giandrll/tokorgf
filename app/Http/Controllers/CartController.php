@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class CartController extends Controller
-{
+{ 
     public function index()
     {
         $customer = Auth::guard('customer')->user();
