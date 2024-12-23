@@ -130,7 +130,7 @@
         .navbar-center a {
             text-decoration: none;
             color: white;
-            padding: 10px 20px;
+            padding: 10px 10px;
             font-size: 16px;
         }
 
@@ -373,7 +373,7 @@
         /* Styling for the text inside the AKU div */
         .AKU p {
             margin: 0;
-            font-size: 15px;
+            font-size: 17px;
             /* Increase font size for visibility */
             font-weight: 700;
             /* Makes text bold */
