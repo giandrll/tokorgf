@@ -101,7 +101,7 @@
     </div>
 </div>
 
-<!-- Produk -->
+<!-- Modified Blade Template -->
 <div class="col-lg-9 col-md-8">
     <!-- Indikator pencarian dan kategori -->
     @if (request('search'))
@@ -124,61 +124,68 @@
                 <p class="text-muted" style="font-size: 18px; font-weight: bold;">Produk belum tersedia</p>
             </div>
         @else
-            @foreach ($data_produk as $produk)
-            <div class="col-md-3" style="padding-bottom: 30px;">
-                <div class="card">
-                    <div class="image-container">
-                        <div class="first">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="discount">100% Ori</span>
-                                <span class="wishlist"><i class="fa fa-heart-o"></i></span>
-                            </div>
+        @foreach ($data_produk as $produk)
+        <div class="col-md-3" style="padding-bottom: 30px;">
+            <div class="card">
+                <div class="image-container">
+                    <div class="first">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="discount">100% Ori</span>
+                            <span class="wishlist"><i class="fa fa-heart-o"></i></span>
                         </div>
-                        <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" style=" width: 200px; height: 200px; object-fit: cover; border-radius: 8px;" class="img-fluid rounded thumbnail-image" alt="{{ $produk->nama_produk }}">
+                    </div>
+                    <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" style=" width: 200px; height: 200px; object-fit: cover; border-radius: 8px;" class="img-fluid rounded thumbnail-image" alt="{{ $produk->nama_produk }}">
+                </div>
+
+                <div class="product-detail-container p-2">
+                    <div class="d-flex justify-content-between align-items-center" style="padding: 10px 15px;">
+                        <h5 class="dress-name">{{ $produk->nama_produk }}</h5>
                     </div>
 
-                    <div class="product-detail-container p-2">
-                        <div class="d-flex justify-content-between align-items-center" style="padding: 10px 15px;">
-                            <h5 class="dress-name">{{ $produk->nama_produk }}</h5>
+                    <div class="d-flex">
+                        <div class="text-muted small">Category:</div>
+                        <div class="fw-semibold ms-1">
+                            <a href="{{ route('dashboardproduk', ['kategori' => $produk->kategori_id, 'search' => request('search')]) }}" 
+                               class="text-dark text-decoration-none">
+                                {{ $produk->nama_kategori }}
+                            </a>
                         </div>
+                    </div>
 
+                    <div class="d-flex justify-content-between align-items-center pt-1">
                         <div class="d-flex">
-                            <div class="text-muted small">Category:</div>
-                            <div class="fw-semibold ms-1">
-                                <a href="{{ route('dashboardproduk', ['kategori' => $produk->kategori_id, 'search' => request('search')]) }}" 
-                                   class="text-dark text-decoration-none">
-                                    {{ $produk->nama_kategori }}
-                                </a>
-                            </div>
+                            <span class="item-size mr-2 btn" type="button">S</span>
+                            <span class="item-size mr-2 btn" type="button">M</span>
+                            <span class="item-size mr-2 btn" type="button">L</span>
+                            <span class="item-size btn" type="button">XL</span>
                         </div>
-
-                        <div class="d-flex justify-content-between align-items-center pt-1">
-                            <div class="d-flex">
-                                <span class="item-size mr-2 btn" type="button">S</span>
-                                <span class="item-size mr-2 btn" type="button">M</span>
-                                <span class="item-size mr-2 btn" type="button">L</span>
-                                <span class="item-size btn" type="button">XL</span>
-                            </div>
-                        </div>
-                        
-                        <div class="product-container">
-                            <span class="new-price">Rp {{ number_format($produk->harga, 0, ',', '.') }}</span>
-                            <span class="buy">
-                                <a href="javascript:void(0)"
-                                   data-bs-toggle="modal"
-                                   data-bs-target="#cartModal"
-                                   onclick="showCartModal({{ $produk->id }}, '{{ $produk->nama_produk }}', '{{ $produk->foto }}', {{ $produk->harga }}, {{ $produk->stok }}, '{{ $produk->size }}', '{{ $produk->deskripsi }}')">
-                                    <button class="buy-button">BUY +</button>
-                                </a>
-                            </span>
-                        </div>
+                    </div>
+                    
+                    <div class="product-container">
+                        <span class="new-price">Rp {{ number_format($produk->harga, 0, ',', '.') }}</span>
+                        <span class="buy">
+                            <a href="javascript:void(0)"
+                               data-bs-toggle="modal"
+                               data-bs-target="#cartModal"
+                               onclick="showCartModal({{ $produk->id }}, '{{ $produk->nama_produk }}', '{{ $produk->foto }}', {{ $produk->harga }}, {{ $produk->stok }}, '{{ $produk->size }}', '{{ $produk->deskripsi }}')">
+                                <button class="buy-button">BUY +</button>
+                            </a>
+                        </span>
                     </div>
                 </div>
             </div>
-            @endforeach
+        </div>
+        @endforeach
         @endif
     </div>
-</div>
+    </div>
+    </div>
+   
+
+    <!-- Pagination Links -->
+   <!-- Pagination yang lebih sederhana -->
+   <div class="d-flex justify-content-center mt-4">
+    {{ $data_produk->links('pagination::simple-bootstrap-4') }}
 </div>
 </div>
 

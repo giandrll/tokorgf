@@ -242,7 +242,7 @@
       </div>
       <a href="/dashboardproduk">
         @foreach ($data_setting as $item)
-        <img src="{{ asset('foto/fotoSetting/' . $item->fotokolaborasi_slide1 ) }}" alt="Slide1" class="product-image">
+        <img src="{{ asset('foto/fotoSetting/' . $item->fotokolaburasi_slide1 ) }}" alt="Slide1" class="product-image">
         @endforeach      </a>
     </div>
     <div class="product-info">
@@ -259,7 +259,7 @@
         </div>
         <a href="/dashboardproduk">
             @foreach ($data_setting as $item)
-            <img src="{{ asset('foto/fotoSetting/' . $item->fotokolaborasi_slide2 ) }}" alt="Slide2" class="product-image">
+            <img src="{{ asset('foto/fotoSetting/' . $item->fotokolaburasi_slide2 ) }}" alt="Slide2" class="product-image">
             @endforeach
         </a>
     </div>
@@ -276,7 +276,7 @@
         </div>
         <a href="/dashboardproduk">
             @foreach ($data_setting as $item)
-            <img src="{{ asset('foto/fotoSetting/' . $item->fotokolaborasi_slide3 ) }}" alt="Slide3" class="product-image">
+            <img src="{{ asset('foto/fotoSetting/' . $item->fotokolaburasi_slide3 ) }}" alt="Slide3" class="product-image">
             @endforeach
         </a>
     </div>
@@ -291,12 +291,12 @@
 <div class="produkandalan">
     <div class="andalan">
             @foreach ($data_setting as $item)
-            <img src="{{ asset('foto/fotoSetting/' . $item->fotosedangtren_slide1 ) }}" alt="Slide1" >
+            <img src="{{ asset('foto/fotoSetting/' . $item->fotosedangtrend_slide1 ) }}" alt="Slide1" >
             @endforeach
         </div>
         <div class="andalan">
             @foreach ($data_setting as $item)
-            <img src="{{ asset('foto/fotoSetting/' . $item->fotosedangtren_slide2 ) }}" alt="Slide2">
+            <img src="{{ asset('foto/fotoSetting/' . $item->fotosedangtrend_slide2 ) }}" alt="Slide2">
             @endforeach
         </div>
     </div>
