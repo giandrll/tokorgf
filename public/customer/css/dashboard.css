@@ -593,7 +593,7 @@ border-radius: 8px; /* Slightly rounded corners */
 /* Styling for the text inside the AKU div */
 .AKU p {
 margin: 0;
-font-size: 20px; /* Increase font size for visibility */
+font-size: 17px; /* Increase font size for visibility */
 font-weight: 700; /* Makes text bold */
 color: #fff; /* Sets text color to white */
 letter-spacing: 1px; /* Adds slight spacing between letters for readability */
