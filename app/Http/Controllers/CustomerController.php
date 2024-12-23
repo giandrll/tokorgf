@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
-use App\Models\setting;
+use App\Models\Setting;
 use App\Models\Customer;
 use App\Models\DetailTransaksi;
 use Illuminate\Http\Request;    
@@ -17,7 +17,7 @@ class CustomerController extends Controller
     {
         $customer = Auth::guard('customer')->user(); // Ambil informasi customer yang sedang login
         $data_produk = Produk::all(); // Fetch all products
-        $data_setting = setting::all();
+        $data_setting = Setting::all();
     
         // Mengembalikan view dengan data customer dan produk
         return view('customer.dashboardcustomer', compact('customer', 'data_produk', 'data_setting'));
