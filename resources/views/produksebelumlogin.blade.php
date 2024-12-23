@@ -367,7 +367,6 @@
             /* Dark background for contrast */
             border-radius: 8px;
             /* Slightly rounded corners */
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
             /* Adds a soft shadow for a lifted look */
         }
 
@@ -382,7 +381,6 @@
             /* Sets text color to white */
             letter-spacing: 1px;
             /* Adds slight spacing between letters for readability */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             font-family: 'Poppins', sans-serif;
             /* Adds a subtle shadow to the text */
         }
