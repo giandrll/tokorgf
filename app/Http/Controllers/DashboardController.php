@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
-use App\Models\setting;
+use App\Models\Setting;
 
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-  
+
     public function index()
     {
         $data_produk = Produk::all(); // Fetch all products
-        $data_setting = setting::all();
+        $data_setting = Setting::all();
         return view('dashboard', compact('data_produk', 'data_setting'));
     }
 
