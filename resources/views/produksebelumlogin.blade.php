@@ -492,6 +492,18 @@ width: 100%;
 text-align: center;
 }
 
+
+.product-container {
+margin: 10px 0;
+text-align: right;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px; /* Menambahkan jarak antar kartu */
+    padding: 20px 0; /* Padding vertikal di luar grid */
+}
+
 .new-price {
 font-size: 15px;
 font-weight: bold;
@@ -654,16 +666,6 @@ font-size: 10px;
 }
 
 
-.product-container {
-margin: 10px 0;
-text-align: right;
-}
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px; /* Menambahkan jarak antar kartu */
-    padding: 20px 0; /* Padding vertikal di luar grid */
-}
         
 
 
