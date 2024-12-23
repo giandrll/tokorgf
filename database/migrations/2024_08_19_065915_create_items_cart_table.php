@@ -11,19 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('items_transaksi', function (Blueprint $table) {
+        Schema::create('items_cart', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_transaksi')->constrained();
-            $table->foreignId('id_produk')->constrained();
+            // $table->foreignId('id_transaksi')->constrained();
+            // $table->foreignId('id_produk')->constrained();
+            $table->foreignId('id_transaksi');
+            $table->foreignId('id_produk');
             $table->decimal('harga', 10, 2);
             $table->integer('jumlah');
             $table->timestamps();
 
             $table->foreign('id_transaksi')->references('id')->on('transaksi');
-            $table->foreign('id_produk')->references('id')->on('product');
+            $table->foreign('id_produk')->references('id')->on('produk');
         });
     }
-    
+
 
     /**
      * Reverse the migrations.

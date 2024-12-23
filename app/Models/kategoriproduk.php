@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\kategoriproduk;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -12,12 +11,12 @@ class kategoriproduk extends Model
 
     protected $table = 'kategoriproduk';
 
-    protected $fillable = [ 
+    protected $fillable = [
         'nama_kategori',
     ];
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-    
+
 
 }

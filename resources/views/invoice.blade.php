@@ -13,7 +13,6 @@
             --text-primary: #1e293b;
             --text-secondary: #64748b;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -32,7 +31,6 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05),
                         0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
-
         .invoice-header {
             display: flex;
             justify-content: space-between;
@@ -42,7 +40,6 @@
             margin-bottom: 40px;
             position: relative;
         }
-
         .invoice-header::after {
             content: '';
             position: absolute;
