@@ -459,215 +459,291 @@
     }
 }
 
-
+/* Basic Styles */
 .image-container {
-position: relative;
+  position: relative;
 }
 
 .thumbnail-image {
-border-radius: 10px !important;
+  border-radius: 10px !important;
 }
 
 .discount {
-background-color: red;
-padding-top: 1px;
-padding-bottom: 1px;
-padding-left: 4px;
-padding-right: 4px;
-font-size: 10px;
-border-radius: 6px;
-color: #fff;
+  background-color: red;
+  padding: 1px 4px;
+  font-size: 10px;
+  border-radius: 6px;
+  color: #fff;
 }
 
 .first {
-position: absolute;
-width: 100%;
-padding: 9px;
+  position: absolute;
+  width: 100%;
+  padding: 9px;
 }
 
 .dress-name {
-font-size: 13px;
-font-weight: bold;
-width: 100%;
-text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
 }
-
 
 .product-container {
-margin: 10px 0;
-text-align: right;
+  margin: 10px 0;
+  text-align: right;
 }
+
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px; /* Menambahkan jarak antar kartu */
-    padding: 20px 0; /* Padding vertikal di luar grid */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
 }
 
 .new-price {
-font-size: 15px;
-font-weight: bold;
-color: red;
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
 }
 
-
 .btn {
-width: 14px;
-height: 14px;
-border-radius: 50%;
-padding: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  padding: 3px;
 }
 
 .creme {
-background-color: #fff;
-border: 2px solid grey;
+  background-color: #fff;
+  border: 2px solid grey;
 }
 
 .creme:hover {
-border: 3px solid grey;
+  border: 3px solid grey;
 }
 
 .creme:focus {
-background-color: grey;
+  background-color: grey;
 }
 
 .red {
-background-color: #fff;
-border: 2px solid red;
+  background-color: #fff;
+  border: 2px solid red;
 }
 
 .red:hover {
-border: 3px solid red;
+  border: 3px solid red;
 }
 
 .red:focus {
-background-color: red;
+  background-color: red;
 }
 
 .blue {
-background-color: #fff;
-border: 2px solid #40C4FF;
+  background-color: #fff;
+  border: 2px solid #40C4FF;
 }
 
 .blue:hover {
-border: 3px solid #40C4FF;
+  border: 3px solid #40C4FF;
 }
 
 .blue:focus {
-background-color: #40C4FF;
+  background-color: #40C4FF;
 }
 
 .item-size {
-width: 15px;
-height: 15px;
-border-radius: 50%;
-background: #e9e7e7;
-border: 1px solid grey;
-color: grey;
-font-size: 10px;
-text-align: center;
-align-items: center;
-display: flex;
-justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #e9e7e7;
+  border: 1px solid grey;
+  color: grey;
+  font-size: 10px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .buy {
-font-size: 12px;
-color: purple;
-font-weight: 500;
-cursor: pointer;
-padding-left: 20px;
+  font-size: 12px;
+  color: purple;
+  font-weight: 500;
+  cursor: pointer;
+  padding-left: 20px;
 }
 
 .buy-button {
-background-color: #000000; /* Warna biru */
-color: #fff; /* Warna teks putih */
-border: none;
-border-radius: 5px; /* Sudut melingkar */
-padding: 10px 20px; /* Jarak dalam tombol */
-font-size: 10px; /* Ukuran teks */
-cursor: pointer;
-transition: all 0.3s ease; /* Efek transisi */
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .buy-button:hover {
-background-color: #747474; /* Ubah warna saat hover */
-transform: translateY(-3px); /* Efek naik sedikit saat hover */
-box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  background-color: #747474;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
 
 .buy-button:active {
-transform: translateY(1px); /* Efek tekan tombol */
+  transform: translateY(1px);
 }
 
 .old-price {
-text-decoration: line-through; /* Garis potongan pada harga lama */
-color: #888; /* Warna abu-abu untuk membedakan dari harga baru */
-font-size: 10px;
+  text-decoration: line-through;
+  color: #888;
+  font-size: 10px;
 }
+
 .modal-custom {
-    --bs-modal-bg: #f8f9fa;
-    --bs-modal-border-color: #e9ecef;
+  --bs-modal-bg: #f8f9fa;
+  --bs-modal-border-color: #e9ecef;
 }
+
 .modal-content {
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
+
 .modal-header {
-    border-bottom: 2px solid #e9ecef;
-    padding: 1rem 1.5rem;
+  border-bottom: 2px solid #e9ecef;
+  padding: 1rem 1.5rem;
 }
+
 .modal-body {
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
+
 #modalFoto {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 1rem;
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
+
 #modalNamaProduk {
-    color: #333;
-    margin-bottom: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
 }
+
 .size-option {
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
 .size-option:hover, .size-option.selected {
-    background-color: #007bff;
-    color: white;
+  background-color: #007bff;
+  color: white;
 }
+
 .quantity-wrapper {
-    background-color: #f1f3f5;
-    border-radius: 25px;
-    padding: 0.25rem 0.5rem;
+  background-color: #f1f3f5;
+  border-radius: 25px;
+  padding: 0.25rem 0.5rem;
 }
+
 .btn-cart {
-    margin-top: 1rem;
-    width: 100%;
-    padding: 0.75rem;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.75rem;
 }
+
 .btn-whatsapp {
-    background-color: #25d366;
-    color: white;
-    margin-top: 0.5rem;
+  background-color: #25d366;
+  color: white;
+  margin-top: 0.5rem;
 }
+
 .btn-whatsapp:hover {
-    background-color: #20ba5a;
-    color: white;
+  background-color: #20ba5a;
+  color: white;
 }
 
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Reduce min-width for mobile */
+  }
 
-        
+  .new-price {
+    font-size: 13px; /* Slightly smaller price on mobile */
+  }
 
+  .buy-button {
+    padding: 8px 16px; /* Reduce padding for smaller screens */
+    font-size: 9px; /* Smaller text on mobile */
+  }
+
+  .modal-content {
+    border-radius: 10px; /* Smaller border radius for modal */
+  }
+
+  #modalFoto {
+    max-height: 200px; /* Limit image height for mobile */
+  }
+
+  .size-option {
+    padding: 0.25rem 0.5rem; /* Smaller padding for size options */
+  }
+
+  .item-size {
+    width: 12px; /* Smaller size indicators */
+    height: 12px;
+    font-size: 9px;
+  }
+
+  .product-container {
+    text-align: left; /* Align text to the left on smaller screens */
+  }
+
+  .first {
+    padding: 7px; /* Less padding in product labels */
+  }
+
+  .dress-name {
+    font-size: 12px; /* Smaller font for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* Single column layout for very small screens */
+  }
+
+  .buy-button {
+    font-size: 8px;
+    padding: 6px 12px;
+  }
+
+  .discount {
+    font-size: 8px; /* Reduce font size for mobile */
+  }
+
+  .item-size {
+    width: 10px;
+    height: 10px;
+    font-size: 8px;
+  }
+
+  .size-option {
+    padding: 0.25rem;
+    font-size: 8px; /* Smaller size option text */
+  }
+}
 
         
     </style>
