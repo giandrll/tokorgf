@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
-{
+{ 
     public function hitoriTransaksi()
     {
         $customer = Auth::guard('customer')->user();
