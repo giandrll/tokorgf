@@ -374,7 +374,7 @@
         /* Styling for the text inside the AKU div */
         .AKU p {
             margin: 0;
-            font-size: 20px;
+            font-size: 15px;
             /* Increase font size for visibility */
             font-weight: 700;
             /* Makes text bold */
