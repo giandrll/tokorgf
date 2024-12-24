@@ -17,8 +17,8 @@
   
 <div class="navbarm1">
 <div class="navbar-center">
-            <a href="/" class="navbar-link">Home</a>|
-            <a href="/produksebelumlogin" class="navbar-link">Product</a>|
+            <a href="/" class="navbar-link">Home |</a>
+            <a href="/produksebelumlogin" class="navbar-link">Product |</a>
             <a href="javascript:void(0)" onclick="checkLogin()" class="navbar-link">About</a>
         </div>
     </div>
