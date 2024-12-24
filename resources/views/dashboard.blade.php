@@ -51,7 +51,7 @@
         <a href="/" class="sidebar-link">Home</a>
         <a href="/produksebelumlogin" class="sidebar-link">Product</a>
         <a href="javascript:void(0)" onclick="checkLogin()" class="sidebar-link">About</a>
-        <a href="/authcustomer" class="btn-login sidebar-link">Login</a> <!-- Login Button in Sidebar -->
+        <a href="/authcustomer" class="sidebar-link">Login</a> <!-- Login Button in Sidebar -->
     </div>
 </div>
 
