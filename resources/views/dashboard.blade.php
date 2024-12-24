@@ -23,6 +23,9 @@
 
                 <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
                 @endforeach
+                @foreach ($data_setting as $item)
+                    <p>{{ $item->nama_toko }}</p>
+                @endforeach
             </div>
             <div class="AKU">
                 @foreach ($data_setting as $item)
