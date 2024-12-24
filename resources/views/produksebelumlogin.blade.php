@@ -87,8 +87,7 @@
         .content {
             padding: 20px;
 
-        }
-/* Navbar Styling */
+        }/* Navbar Styling */
 .navbar {
     width: 100%;
     background-color: #333;
@@ -96,16 +95,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 0px;
+    padding: 10px 20px; /* Menambahkan padding agar navbar tidak menempel pada tepi layar */
     position: fixed;
     bottom: 0;
-    /* Make the navbar stick to the bottom */
+    /* Navbar tetap berada di bawah */
     left: 0;
     z-index: 1000;
-    /* Ensure it's on top */
     box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Navbar Container */
 .navbar-container {
     display: flex;
     justify-content: space-between;
@@ -113,31 +112,27 @@
     max-width: 1200px;
     margin: auto;
 }
-/* Styling untuk navbar-left */
+
+/* Navbar Left (Logo) */
 .navbar-left {
-    position: fixed; /* Agar tetap di posisi kiri walau halaman di-scroll */
-    left: 0; /* Tempatkan di kiri halaman */
-    transform: translateY(-50%); /* Agar posisi elemen tepat di tengah vertikal */
-    z-index: 1000; /* Pastikan elemen ini berada di atas elemen lain */
-    padding: 10px; /* Beri sedikit ruang */
+    display: flex;
+    align-items: center;
+    /* Agar logo tetap di kiri dan sejajar dengan item lainnya */
 }
 
-/* Logo dalam navbar-left */
-.navbar-left .navbar-logo {
+.navbar-logo {
     width: 50px; /* Ukuran logo, sesuaikan dengan kebutuhan */
-    height: auto; /* Pastikan logo tidak terdistorsi */
+    height: auto; /* Menjaga proporsi logo */
 }
-
 
 /* Navbar Center (Middle Links) */
 .navbar-center {
     display: flex;
     justify-content: space-around;
-    /* Menjaga elemen tetap bersebelahan */
     width: 100%;
+    align-items: center;
 }
 
-/* Navbar Center Links */
 .navbar-center a {
     text-decoration: none;
     color: white;
@@ -146,7 +141,6 @@
 }
 
 .navbar-center a:hover {
-    /* background-color: #575757; */
     border-radius: 5px;
 }
 
@@ -166,22 +160,18 @@
 .nav-item {
     display: inline-flex;
     flex-direction: column;
-    /* Agar icon di atas teks */
     align-items: center;
     text-decoration: none;
     color: inherit;
     margin: 0 15px;
-    /* Memberi sedikit jarak antara item */
 }
 
 .nav-item i {
     font-size: 24px;
-    /* Ukuran ikon */
 }
 
 .nav-item span {
     font-size: 12px;
-    /* Ukuran teks */
     margin-top: 4px;
 }
 
@@ -190,11 +180,6 @@
 
 /* Mobile Styling (for screens smaller than 768px) */
 @media (max-width: 768px) {
-    /* Pastikan logo tetap muncul di kiri */
-    .navbar-logo {
-        display: block;
-    }
-
     /* Navbar center tetap berada di tengah */
     .navbar-center {
         justify-content: center;
@@ -228,7 +213,6 @@
         text-align: center; /* Teks di tengah */
     }
 }
-
 
         .brand2 {
             display: flex;
