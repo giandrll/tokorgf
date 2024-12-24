@@ -595,7 +595,7 @@ margin-bottom: 5px;
 /* Styling untuk navbar-center (Link tengah) */
 .navbar-center {
     display: flex;
-    justify-content: center;
+    left: 40px;
     flex-grow: 1;
 }
 
