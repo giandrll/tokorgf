@@ -412,7 +412,6 @@ p {
         font-size: 22px; /* Menurunkan ukuran font pada h3p */
     }
 }
-
 /* Container Produk */
 .featured-products {
     display: flex;
@@ -437,9 +436,35 @@ p {
 
 /* Hover effect for product */
 .product:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Efek geser ke atas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek kedalaman */
 }
+
+/* Responsif untuk layar kecil (maksimal 768px) */
+@media (max-width: 768px) {
+    .featured-products {
+        justify-content: center; /* Tengah kan produk pada layar kecil */
+    }
+
+    .product {
+        width: 250px; /* Lebar produk sedikit lebih kecil */
+        margin-bottom: 20px; /* Jarak antar produk */
+    }
+}
+
+/* Responsif untuk layar sangat kecil (maksimal 480px) */
+@media (max-width: 480px) {
+    .featured-products {
+        justify-content: center; /* Tengah kan produk */
+        gap: 10px; /* Jarak antar produk lebih kecil */
+    }
+
+    .product {
+        width: 200px; /* Lebar produk lebih kecil lagi */
+        margin-bottom: 15px; /* Jarak antar produk sedikit lebih kecil */
+    }
+}
+
 
 /* Gambar Produk */
 .image-container {
