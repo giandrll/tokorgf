@@ -43,17 +43,42 @@
         <div class="navbar-toggle" onclick="toggleSidebar()">☰</div>
     </div>
 </nav>
-
-  <!-- Sidebar -->
-  <div id="sidebar" class="sidebar">
+<!-- Sidebar -->
+<div id="sidebar" class="sidebar">
+    <!-- Close Button -->
     <div class="sidebar-close" onclick="toggleSidebar()">×</div>
+
+    <!-- Sidebar Content -->
     <div class="sidebar-content">
-        <a href="/" class="sidebar-link">Home</a>
-        <a href="/produksebelumlogin" class="sidebar-link">Product</a>
-        <a href="javascript:void(0)" onclick="checkLogin()" class="sidebar-link">About</a>
-        <a href="/authcustomer" class="sidebar-link">Login</a> <!-- Login Button in Sidebar -->
+        <!-- Logo -->
+        <div class="sidebar-logo">
+        @foreach ($data_setting as $item)
+            <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
+            @endforeach       
+       </div>
+
+        <!-- Navigation Links with Arrow -->
+        <a href="/" class="sidebar-link">
+        Home<span class="sidebar-arrow">></span> 
+        </a>
+        <a href="/produksebelumlogin" class="sidebar-link">
+        Product<span class="sidebar-arrow">></span> 
+        </a>
+        <a href="javascript:void(0)" onclick="checkLogin()" class="sidebar-link">
+        About<span class="sidebar-arrow">></span> 
+        </a>
+        <a href="/authcustomer" class="sidebar-link">
+        Login<span class="sidebar-arrow">></span> 
+        </a>
+
+        <!-- Join Section -->
+        <div class="sidebar-join">
+            <p class="sidebar-join-text">Join Us!</p>
+            <a href="/register" class="sidebar-join-link">Sign Up</a>
+        </div>
     </div>
 </div>
+
 
     <div class="navbarm">
         <div class="marqueem">

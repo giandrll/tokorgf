@@ -549,6 +549,7 @@ margin-bottom: 5px;
 /* Navbar Styling */
 /* Navbar Styling */
 /* Sidebar styling */
+/* Sidebar Styling */
 .sidebar {
     position: fixed;
     top: 0;
@@ -562,6 +563,30 @@ margin-bottom: 5px;
     padding-top: 50px; /* Memberikan ruang untuk header */
 }
 
+/* Close Button */
+.sidebar-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Logo Styling */
+.sidebar-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-logo-img {
+    width: 80%;
+    max-width: 200px;
+    height: auto;
+}
+
+/* Sidebar Link Styling */
 .sidebar-link {
     display: block;
     padding: 15px;
@@ -570,10 +595,49 @@ margin-bottom: 5px;
     font-size: 18px;
     font-weight: 900;
     transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
 }
 
+.sidebar-arrow {
+    margin-right: 10px; /* Memberikan jarak antara panah dan teks */
+}
+
+/* Hover Effect for Links */
 .sidebar-link:hover {
     background-color: #575757;
+}
+
+/* Join Section Styling */
+.sidebar-join {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.sidebar-join-text {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.sidebar-join-link {
+    display: inline-block;
+    background-color: #f0a500;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.sidebar-join-link:hover {
+    background-color: #e08b00;
+}
+
+/* Animasi untuk Sidebar (Menampilkan Sidebar) */
+#sidebar.show {
+    left: 0; /* Menampilkan sidebar */
 }
 
 /* Tombol untuk membuka sidebar di mobile */
