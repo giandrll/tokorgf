@@ -608,34 +608,49 @@ margin-bottom: 5px;
 .sidebar-link:hover {
     background-color: #575757;
 }
-/* Styling untuk .sidebar-join agar elemen di dalamnya sejajar dan terpusat */
+/* Join Section Styling */
 .sidebar-join {
+    margin-top: 20px;
     display: flex; /* Menggunakan Flexbox */
-    align-items: center; /* Vertikal center */
-    justify-content: center; /* Menjaga elemen di tengah secara horizontal */
-    gap: 15px; /* Memberikan jarak antara teks dan tombol */
-    padding: 20px; /* Memberikan padding untuk jarak */
+    justify-content: center; /* Menyusun elemen secara horizontal di tengah */
+    gap: 15px; /* Jarak antara tombol Login dan Sign Up */
+    text-align: center;
 }
 
-.sidebar-join-text {
-    font-size: 18px;
-    font-weight: 600;
+/* Styling untuk Login */
+.sidebar-join-link1 {
+    display: inline-block;
+    background-color: #000000;
     color: white;
-}
-
-.sidebar-join-link {
-    font-size: 16px;
-    font-weight: bold;
-    color: #ffffff;
+    padding: 10px 20px;
     text-decoration: none;
-    padding: 8px 15px;
-    background-color: #007bff; /* Warna latar belakang tombol */
-    border-radius: 25px;
+    border-radius: 30px;
+    font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
+/* Hover effect untuk Login */
+.sidebar-join-link1:hover {
+    background-color: #444444; /* Mengubah warna latar belakang saat hover */
+}
+
+/* Styling untuk Sign Up */
+.sidebar-join-link {
+    display: inline-block;
+    background-color: #333333; /* Ganti background ke #333 untuk keseragaman */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-color: white;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect untuk Sign Up */
 .sidebar-join-link:hover {
-    background-color: #0056b3; /* Warna latar belakang saat hover */
+    background-color: #ffffff;
+    color: #333; /* Mengubah warna teks menjadi gelap saat hover */
 }
 
 /* Animasi untuk Sidebar (Menampilkan Sidebar) */

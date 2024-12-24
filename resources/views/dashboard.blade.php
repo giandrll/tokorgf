@@ -63,13 +63,10 @@
         <a href="javascript:void(0)" onclick="checkLogin()" class="sidebar-link">
             <span class="sidebar-arrow">→ </span> About
         </a>
-        <a href="/authcustomer" class="sidebar-link">
-            <span class="sidebar-arrow">→ </span> Login
-        </a>
 
         <!-- Join Section -->
         <div class="sidebar-join">
-            <p class="sidebar-join-text">Join Us!</p>
+            <a href="/authcustomer" class="sidebar-join-link1">Login</a>
             <a href="/register" class="sidebar-join-link">Sign Up</a>
         </div>
         <div class="sidebar-logo">
