@@ -499,14 +499,34 @@
   position: absolute;
   width: 100%;
   padding: 9px;
-}
-
-.dress-name {
-  font-size: 10qqqpx;
-  font-weight: bold;
-  width: 100%;
-  text-align: center;
-}
+}.dress-name {
+    font-size: 16px; /* Ukuran font default */
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    display: -webkit-box;            /* Membuat kontainer berbentuk kotak fleksibel */
+    -webkit-line-clamp: 2;           /* Membatasi jumlah baris menjadi 2 */
+    -webkit-box-orient: vertical;    /* Mengatur orientasi kotak ke vertikal */
+    overflow: hidden;                /* Menyembunyikan konten yang melebihi batas */
+    text-overflow: ellipsis;         /* Menambahkan elipsis "..." ketika teks terpotong */
+    line-height: 1.2em;              /* Menyesuaikan jarak antar baris */
+    max-height: 2.4em;               /* Membatasi tinggi elemen untuk 2 baris */
+  }
+  
+  /* Responsif untuk ukuran layar kecil (max-width: 768px) */
+  @media (max-width: 768px) {
+    .dress-name {
+      font-size: 14px;  /* Ukuran font lebih kecil untuk layar tablet */
+    }
+  }
+  
+  /* Responsif untuk ukuran layar sangat kecil (max-width: 480px) */
+  @media (max-width: 480px) {
+    .dress-name {
+      font-size: 12px;  /* Ukuran font lebih kecil untuk layar ponsel */
+    }
+  }
+  
 
 .product-container {
   margin: 10px 0;
