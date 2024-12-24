@@ -168,7 +168,7 @@ body {
 
 @media (max-width: 768px) {
     .navbar-logo {
-        height: 50px;
+       display: none;
     }
 
     .navbar-left a,
