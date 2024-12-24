@@ -14,14 +14,6 @@
 
 </head>
 <body>
-  
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-    <a href="/" class="sidebar-link">Home</a>
-    <a href="/produksebelumlogin" class="sidebar-link">Product</a>
-    <a href="javascript:void(0)" onclick="checkLogin()" class="sidebar-link">About</a>
-</div>
-
 <!-- Konten utama -->
 <nav class="navbar">
     <div class="navbar-container">
@@ -41,13 +33,21 @@
             <a href="/produksebelumlogin" class="navbar-link">Product</a>
             <a href="javascript:void(0)" onclick="checkLogin()" class="navbar-link">About</a>
         </div>
-        <div class="navbar-right">
-            <a href="/authcustomer" class="btn-login">Login</a>
-        </div>
         <!-- Tombol untuk toggle sidebar pada mobile -->
         <div class="navbar-toggle" onclick="toggleSidebar()">☰</div>
     </div>
 </nav>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-close" onclick="toggleSidebar()">×</div>
+    <div class="sidebar-content">
+        <a href="/" class="sidebar-link">Home</a>
+        <a href="/produksebelumlogin" class="sidebar-link">Product</a>
+        <a href="javascript:void(0)" onclick="checkLogin()" class="sidebar-link">About</a>
+        <a href="/authcustomer" class="btn-login sidebar-link">Login</a> <!-- Login Button in Sidebar -->
+    </div>
+</div>
 
     <div class="navbarm">
         <div class="marqueem">
