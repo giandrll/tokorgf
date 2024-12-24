@@ -138,9 +138,9 @@
                 </div>
 
                 <div class="product-detail-container p-2">
-                    <div class="d-flex justify-content-between align-items-center" style="padding: 10px 15px;">
-                        <h5 class="dress-name">{{ $produk->nama_produk }}</h5>
-                    </div>
+                <div class="product-name-wrapper" style="padding: 10px 15px;">
+                                <h5 class="dress-name">{{ $produk->nama_produk }}</h5>
+                            </div>
 
                     <div class="d-flex">
                         <div class="text-muted small">Category:</div>

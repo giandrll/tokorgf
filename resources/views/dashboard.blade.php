@@ -42,8 +42,8 @@
                 <a href="/authcustomer" class="btn-login">Login</a>
             </div>
 
-        </div>
-    </nav>
+        </div> 
+</nav>
     <div class="navbarm">
         <div class="marqueem">
           @foreach ($data_setting as $item)
