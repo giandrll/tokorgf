@@ -402,6 +402,25 @@ const SliderOne = {
     }
 };
 
+// JavaScript untuk Toggle Sidebar
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("show"); // Mengaktifkan atau menonaktifkan kelas 'show'
+}
+
+// Untuk membuka sidebar
+function openSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.add("show");
+}
+
+// Untuk menutup sidebar
+function closeSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.remove("show");
+}
+
+
 // Second Slider Implementation
 const SliderTwo = {
     currentSlide: 0,

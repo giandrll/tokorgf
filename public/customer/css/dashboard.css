@@ -551,7 +551,7 @@ margin-bottom: 5px;
 .sidebar {
     position: fixed;
     top: 100px;
-    right: -250px; /* Mulai disembunyikan di luar layar */
+    left: -250px; /* Mulai disembunyikan di luar layar */
     width: 250px;
     height: 100%;
     background-color: #333;
@@ -591,7 +591,7 @@ margin-bottom: 5px;
     text-decoration: none;
     color: white;
     font-size: 18px;
-    font-weight: 900;
+    font-weight: 600;
     transition: background-color 0.3s;
     display: flex;
     align-items: center;
