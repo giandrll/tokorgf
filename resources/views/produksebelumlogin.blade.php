@@ -113,12 +113,22 @@
     max-width: 1200px;
     margin: auto;
 }
-
-/* Navbar Left (Logo) */
-.navbar-logo {
-    width: 55px;
-    height: auto;
+/* Styling untuk navbar-left */
+.navbar-left {
+    position: fixed; /* Agar tetap di posisi kiri walau halaman di-scroll */
+    top: 50%; /* Posisikan di tengah secara vertikal */
+    left: 0; /* Tempatkan di kiri halaman */
+    transform: translateY(-50%); /* Agar posisi elemen tepat di tengah vertikal */
+    z-index: 1000; /* Pastikan elemen ini berada di atas elemen lain */
+    padding: 10px; /* Beri sedikit ruang */
 }
+
+/* Logo dalam navbar-left */
+.navbar-left .navbar-logo {
+    width: 50px; /* Ukuran logo, sesuaikan dengan kebutuhan */
+    height: auto; /* Pastikan logo tidak terdistorsi */
+}
+
 
 /* Navbar Center (Middle Links) */
 .navbar-center {
