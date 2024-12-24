@@ -14,34 +14,32 @@
 
 </head>
 <body>
+  
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <a href="/" class="sidebar-link">Home</a>
+    <a href="/produksebelumlogin" class="sidebar-link">Product</a>
+    <a href="javascript:void(0)" onclick="checkLogin()" class="sidebar-link">About</a>
+</div>
+
+<!-- Konten utama -->
 <nav class="navbar">
     <div class="navbar-container">
-        <!-- Logo/Kiri -->
+        <!-- Logo dan tombol untuk membuka sidebar di mobile -->
         <div class="navbar-left">
-            @foreach ($data_setting as $item)
-                <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
-            @endforeach
-
-            <div class="AKU">
-            @foreach ($data_setting as $item)
-                <p>{{ $item->nama_toko }}</p>
-            @endforeach
+            <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
         </div>
-
-        </div>
-
-        <!-- Pilihan Tengah -->
         <div class="navbar-center">
-            <a href="/">Home</a>
-            <a href="/produksebelumlogin">Product</a>
-            <a href="javascript:void(0)" onclick="checkLogin()">About</a>
+            <a href="/" class="navbar-link">Home</a>
+            <a href="/produksebelumlogin" class="navbar-link">Product</a>
+            <a href="javascript:void(0)" onclick="checkLogin()" class="navbar-link">About</a>
         </div>
-
-        <!-- Pilihan Kanan -->
         <div class="navbar-right">
             <a href="/authcustomer" class="btn-login">Login</a>
         </div>
-    </div> 
+        <!-- Tombol untuk toggle sidebar pada mobile -->
+        <div class="navbar-toggle" onclick="toggleSidebar()">☰</div>
+    </div>
 </nav>
 
     <div class="navbarm">
@@ -283,6 +281,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+
+    // Fungsi untuk toggle sidebar
+function toggleSidebar() {
+    var sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('open'); // Menambahkan kelas 'open' untuk membuka sidebar
+}
+
+
 
 function checkLogin() {
     Swal.fire({
