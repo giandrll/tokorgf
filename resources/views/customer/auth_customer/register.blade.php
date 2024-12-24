@@ -288,8 +288,10 @@
     </div>
 
     <div class="register-container">
-        <div class="register-image">
-            <img src="fotokami/l2.png" class="slide" alt="Register Image">
+        <div class="register-image">  
+             @foreach ($data_setting as $item)
+            <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Register Image">
+            @endforeach
         </div>
 
         <div class="register-form">

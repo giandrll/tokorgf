@@ -326,7 +326,10 @@
         </div>
 
         <div class="login-image">
-            <img src="fotokami/l2.png" class="slide" alt="Login Image">
+            @foreach ($data_setting as $item)
+
+            <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="slide">
+            @endforeach
         </div>
     </div>
 
