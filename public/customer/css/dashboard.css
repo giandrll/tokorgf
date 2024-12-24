@@ -659,19 +659,6 @@ margin-bottom: 5px;
 }
 
 
-/* Styling untuk div dengan teks di Sidebar */
-.sidebar-text-container {
-    margin-bottom: 30px; /* Memberikan jarak bawah antara teks dan link berikutnya */
-}
-
-.sidebar-text {
-    text-align: left; /* Mengatur teks agar rata kiri */
-    font-size: 18px; /* Ukuran font yang nyaman dibaca */
-    font-weight: 600; /* Menebalkan teks */
-    line-height: 1.5; /* Memberikan jarak antar baris */
-    color: rgba(255, 255, 255, 0.8); /* Teks dengan transparansi */
-    margin: 0; /* Menghilangkan margin default pada paragraf */
-}
 /* Tombol untuk membuka sidebar di mobile */
 .navbar-toggle {
     display: none;

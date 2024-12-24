@@ -69,9 +69,6 @@
             <a href="/authcustomer" class="sidebar-join-link1">Login</a>
             <a href="/register" class="sidebar-join-link">Sign Up</a>
         </div>
-        <div class="sidebar-text-container">
-        <p class="sidebar-text">Selamat datang di toko kami! Temukan berbagai produk menarik dan dapatkan penawaran terbaik hanya di sini.</p>
-    </div>
         <div class="sidebar-logo">
         @foreach ($data_setting as $item)
             <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
