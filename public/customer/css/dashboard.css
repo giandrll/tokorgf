@@ -487,171 +487,138 @@ margin-bottom: 5px;
     }
 }
 
-/* Navbar Styling */
+
 .navbar {
     background-color: #333;
     height: 70px; /* Tinggi navbar */
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed; /* Navbar fixed */
-    top: 0; /* Menempel di bagian atas */
+    position: fixed; /* Membuat navbar mengambang */
+    top: 0; /* Menempel di bagian atas halaman */
     left: 0;
     right: 0;
     z-index: 9000;
-    border-bottom: 1px solid #f7f3f3; /* Border bawah navbar */
-}
-
-/* Kontainer untuk Navbar */
-.navbar-container {
+    border-bottom: 1px solid #f7f3f3;/* Menjamin navbar di atas elemen lain */
+    }
+    
+    
+    .navbar-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-/* Styling untuk bagian kiri navbar */
-.navbar-left a {
+    }
+    
+    .navbar-left a {
     color: rgb(255, 253, 253);
     padding: 0 10px;
     text-decoration: none;
     font-size: 14px;
-}
-
-/* Styling untuk navbar-center (Link tengah) */
-.navbar-center {
+    }
+    
+    .navbar-center {
     display: flex;
     justify-content: center;
     flex-grow: 1;
-}
-
-.navbar-center a {
+    }
+    
+    .navbar-center a {
     color: white;
     font-family: 'Sans-serif', Helvetica;
     padding: 0 10px;
     font-weight: bold;
     text-decoration: none;
     font-size: 14px;
-}
-
-.navbar-center a:hover, .navbar-left a:hover {
+    }
+    
+    .navbar-center a:hover, .navbar-left a:hover{
     color: #ddd;
-}
-
-/* Styling untuk logo navbar */
-.navbar-logo {
-    height: 65px; /* Logo default */
+    }
+    
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    }
+    .navbar-logo {
+    height: 65px; /* Set initial height of the logo */
     width: auto;
-    max-height: 100%; /* Pastikan tidak lebih besar dari navbar */
-    transition: height 0.3s ease; /* Transisi saat mengubah ukuran */
-}
-
-/* Styling Responsif untuk Navbar */
-@media (max-width: 768px) {
-    .navbar-logo {
-        height: 30px; /* Ukuran logo lebih kecil */
+    bottom: 20px;  /* Maintain aspect ratio */
+    max-height: 100%; /* Ensure it doesn't exceed navbar height */
     }
+    @media (max-width: 768px) {
+    .navbar-logo {
+    height: 30px; /* Make logo smaller on smaller screens */
+    }
+    
     .navbar-left a, .navbar-center a {
-        font-size: 12px; /* Ukuran font lebih kecil di layar kecil */
+    font-size: 12px;
     }
-}
-
-@media (max-width: 480px) {
+    }
+    
+    @media (max-width: 480px) {
     .navbar-logo {
-        height: 50px; /* Ukuran logo menyesuaikan untuk layar ponsel */
+    height: 50px;
     }
-}
-
-/* Styling untuk tombol di bagian kanan Navbar */
+    }/* Style untuk link 'RGF Store' */
+    
+    /* Reset default margin/padding */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    
 .navbar-right {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
+display: flex;                   /* Menggunakan flexbox untuk penataan */
+align-items: center;            /* Memusatkan elemen secara vertikal */
+margin-right: 20px;             /* Memberikan margin kanan untuk pemisahan dari tepi */
 }
-
 .navbar-right a {
-    display: inline-block;
-    padding: 5px 30px;
-    background-color: hsl(0, 45%, 98%);
-    color: rgb(12, 9, 9);
-    border: none;
-    border-radius: 60px;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+display: inline-block;           /* Membuat link berperilaku seperti tombol */
+padding: 5px 30px;             /* Memberikan padding */
+background-color: hsl(0, 45%, 98%);      /* Latar belakang berwarna biru */
+color: rgb(12, 9, 9);                   /* Warna teks putih */
+border: none;                   /* Menghilangkan border default */
+border-radius: 60px;            /* Sudut melengkung 60px */
+text-decoration: none;           /* Menghilangkan garis bawah */
+font-size: 16px;                /* Ukuran font */
+font-weight: bold;               /* Menebalkan teks */
+transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transisi halus untuk hover */
 }
 
 .navbar-right a:hover {
-    background-color: #a1a1a1;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+background-color: #a1a1a1;      /* Warna latar belakang saat hover */
+transform: translateY(-2px);    /* Menggeser sedikit ke atas saat hover */
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Meningkatkan bayangan saat hover */
 }
 
-/* Styling untuk tombol login */
 .btn-login {
-    display: inline-block;
-    padding: 10px 10px;
-    background-color: white;
-    color: black;
-    border: none;
-    border-radius: 60px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s;
+display: inline-block;            /* Membuat link berperilaku seperti tombol */
+padding: 10px 10px;              /* Memberikan padding untuk tampilan yang baik */
+background-color: white;         /* Latar belakang putih */
+color: black;                    /* Warna teks hitam */
+border: none;                    /* Menghilangkan border default */
+border-radius: 60px;             /* Sudut melengkung 60px */
+text-decoration: none;           /* Menghilangkan garis bawah */
+font-size: 16px;                 /* Ukuran font */
+transition: background-color 0.3s; /* Transisi halus untuk hover */
 }
 
 .btn-login:hover {
-    background-color: #f0f0f0;
-}
-
-/* Styling untuk video branding */
-.video-branding {
+background-color: #f0f0f0;       /* Warna latar belakang saat hover */
+} .video-branding {
     position: relative;
-    width: 70%; /* Mengatur lebar video menjadi 70% */
-    max-width: 1200px; /* Membatasi lebar maksimum */
-    margin: 0 auto;
+    width: 70%; /* Mengatur lebar video menjadi 90% agar tidak mepet */
+    max-width: 1200px; /* Membatasi lebar maksimum video */
+    margin: 0 auto; /* Agar video berada di tengah layar */
     height: auto;
     padding: 20px;
     padding-top: 110px;
-    padding-bottom: 40px;
-    box-sizing: border-box;
+    padding-bottom: 40px; /* Menambahkan padding di sekeliling video */
+    box-sizing: border-box; /* Memastikan padding tidak menambah ukuran total elemen */
 }
-
-/* Reset default margin/padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Styling untuk Wrapper video */
-.video-branding iframe {
-    width: 100%;
-    height: 400px;
-    border: none;
-}
-
-/* Responsif untuk tampilan lebih kecil */
-@media (max-width: 768px) {
-    .video-branding {
-        width: 90%; /* Mengurangi lebar video di layar tablet */
-    }
-    .video-branding iframe {
-        height: 250px; /* Mengurangi tinggi video untuk layar kecil */
-    }
-}
-
-@media (max-width: 480px) {
-    .video-branding {
-        width: 100%; /* Video mengambil seluruh lebar pada ponsel */
-        padding-top: 50px; /* Adjust padding untuk ponsel */
-    }
-    .video-branding iframe {
-        height: 200px; /* Lebih kecil di ponsel */
-    }
-}
-
 
 /* Video */
 .video-branding video {
@@ -754,78 +721,4 @@ font-family: 'Changa', serif;
 display: none; /* Hide the entire AKU div on smaller screens */
 }
 }
-
-/* GENERAL STYLING */
-.productt-section {
-    position: relative;
-    background: linear-gradient(135deg, #868484, #9b9998);
-    padding: 60px 0;
-    overflow: hidden;
-    text-align: center;
-}
-
-.h4p {
-    font-size: 2rem; /* Ukuran font yang cukup besar */
-    font-weight: bold; /* Menebalkan teks */
-    color: #333; /* Warna teks */
-    text-transform: uppercase; /* Mengubah teks menjadi huruf kapital */
-    letter-spacing: 2px; /* Memberikan jarak antar huruf */
-    text-align: center; /* Mengatur teks agar berada di tengah */
-    margin: 20px 0; /* Menambahkan jarak atas dan bawah */
-    padding: 20px; /* Menambahkan ruang di sekitar teks */
-    border-bottom: 2px solid #a5a4a1; /* Memberikan garis bawah dekoratif */
-    background: linear-gradient(90deg, #5e5e5c, #999897); /* Latar gradasi */
-    color: white; /* Warna teks putih untuk kontras */
-    border-radius: 5px; /* Membuat sudut elemen sedikit melengkung */
-}
-/* SLIDER WRAPPER */
-.sliderr-container {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.slidess {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slidee {
-    flex: 0 0 33.33%; /* 3 produk per slide */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.productt-card {
-    position: relative;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    width: 90%; /* Sesuaikan ukuran card produk */
-    margin: 0 10px; /* Tambahkan jarak antar produk */
-}
-
-.image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 300px;
-}
-
-.image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .slidee {
-        flex: 0 0 100%; /* Untuk layar kecil, tampilkan satu produk per slide */
-    }
-}
-
-
 
