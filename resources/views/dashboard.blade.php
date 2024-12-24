@@ -61,7 +61,7 @@
               @foreach ($data_produk as $produk)
               <div class="slidee">
                   <div class="productt-card">
-                      <a href="dashboardproduk">
+                      <a href="produksebelumlogin">
                           <div class="image-wrapper">
                               <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" alt="{{ $produk->nama_produk }}">
                           </div>
@@ -165,7 +165,7 @@
             @foreach($data_produk as $produk)
                 <div class="slide">
                     <div class="product-card">
-                        <a href="dashboardproduk">
+                        <a href="produksebelumlogin">
                         <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" alt="{{ $produk->nama_produk }}">
                     </a>
                         <h4>{{ $produk->nama_produk }}</h4>
@@ -175,8 +175,8 @@
             @endforeach
         </div>
         <div class="navigation">
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            <button class="prev" onclick="SliderTwo.moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="SliderTwo.moveSlide(1)">&#10095;</button>
         </div>
     </div>
 </div>

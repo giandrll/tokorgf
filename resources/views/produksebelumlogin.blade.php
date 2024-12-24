@@ -177,6 +177,9 @@
                 </div>
             </div>
         </div>
+        <div class="pagination">
+            {{ $data_produk->links('pagination::simple-bootstrap-4') }}
+        </div>
     </div>
     <div class="brand2">
         <div class="brand-content">

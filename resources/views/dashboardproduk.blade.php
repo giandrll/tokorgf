@@ -182,9 +182,8 @@
     </div>
    
 
-    <!-- Pagination Links -->
    <!-- Pagination yang lebih sederhana -->
-   <div class="d-flex justify-content-center mt-4">
+   <div class="pagination">
     {{ $data_produk->links('pagination::simple-bootstrap-4') }}
 </div>
 </div>

@@ -787,4 +787,58 @@
   }
 }
 
+/* Styling untuk pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination .page-link {
+  padding: 12px 20px;
+  margin: 0 8px;
+  border: 1px solid #ddd;
+  border-radius: 50px; /* Membuat tombol lebih bulat */
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease; /* Menambahkan transisi halus */
+  text-decoration: none;
+}
+
+/* Efek hover */
+.pagination .page-link:hover {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+  transform: translateY(-2px); /* Efek tombol terangkat */
+}
+
+/* Ketika tombol aktif */
+.pagination .active .page-link {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+  font-weight: bold;
+}
+
+/* Tombol previous & next */
+.pagination .page-item:first-child .page-link {
+  border-radius: 50% 0 0 50%; /* Membuat border kiri tombol previous melengkung */
+}
+
+.pagination .page-item:last-child .page-link {
+  border-radius: 0 50% 50% 0; /* Membuat border kanan tombol next melengkung */
+}
+
+/* Responsif - Mengubah ukuran pagination pada layar kecil */
+@media (max-width: 576px) {
+  .pagination .page-link {
+      padding: 8px 15px;
+      font-size: 12px;
+  }
+}
+
         
