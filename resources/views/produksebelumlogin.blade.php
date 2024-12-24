@@ -116,17 +116,25 @@
 }
 
 /* Navbar Left (Logo) */
-.navbar-logo {
-    width: 55px;
-    height: auto;
+.navbar-left {
+    display: flex;
+    align-items: center;
+    /* Agar logo tetap di kiri dan sejajar dengan item lainnya */
 }
+
+/* Ukuran logo disesuaikan agar tidak terlalu besar */
+.navbar-logo {
+    width: 40px; /* Ukuran logo yang lebih kecil */
+    height: auto; /* Menjaga proporsi logo */
+}
+
 
 /* Navbar Center (Middle Links) */
 .navbar-center {
     display: flex;
     justify-content: space-around;
     /* Menjaga elemen tetap bersebelahan */
-    width: 12%;
+    width: 50%;
 }
 
 /* Navbar Center Links */
