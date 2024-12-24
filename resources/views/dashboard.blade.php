@@ -27,7 +27,9 @@
     <div class="navbar-container">
         <!-- Logo dan tombol untuk membuka sidebar di mobile -->
         <div class="navbar-left">
+        @foreach ($data_setting as $item)
             <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
+            @endforeach
         </div>
         <div class="navbar-center">
             <a href="/" class="navbar-link">Home</a>
