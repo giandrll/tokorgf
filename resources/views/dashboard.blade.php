@@ -17,7 +17,9 @@
     <div class="navbar-container">
         <!-- Logo dan Nama Toko (Sebelah kiri) -->
         <div class="navbar-left">
+        @foreach ($data_setting as $item)
             <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
+            @endforeach
             @foreach ($data_setting as $item)
                 <div class="AKU">
                     <p>{{ $item->nama_toko }}</p>
