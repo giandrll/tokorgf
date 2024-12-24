@@ -546,6 +546,7 @@ margin-bottom: 5px;
     }
 }
 /* Navbar Styling */
+/* Navbar Styling */
 .navbar {
     background-color: #333;
     height: 70px; /* Tinggi navbar */
@@ -563,11 +564,11 @@ margin-bottom: 5px;
 
 /* Kontainer untuk Navbar */
 .navbar-container {
-    width: 100%;
+    width: 100%; /* Mengisi seluruh lebar navbar */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px; /* Maksimal lebar navbar */
+    max-width: 100%; /* Pastikan kontainer mengisi lebar penuh */
 }
 
 /* Styling untuk bagian kiri navbar */
