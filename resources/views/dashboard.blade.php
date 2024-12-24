@@ -36,6 +36,9 @@
                 </div>
             @endforeach
         </div>
+        <div class="navbar-right">
+        <a href="/authcustomer" class="btn-login sidebar-link">Login</a> <!-- Login Button in Sidebar -->
+        </div>
         <!-- Tombol untuk toggle sidebar pada mobile -->
         <div class="navbar-toggle" onclick="toggleSidebar()">☰</div>
     </div>

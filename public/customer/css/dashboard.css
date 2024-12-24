@@ -720,6 +720,12 @@ margin-bottom: 5px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Menyembunyikan navbar-right pada layar lebih kecil dari 768px */
+@media (max-width: 768px) {
+    .navbar-right {
+        display: none; /* Menyembunyikan navbar-right */
+    }
+}
 /* Styling untuk tombol login */
 .btn-login {
     display: inline-block;
