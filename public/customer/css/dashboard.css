@@ -905,6 +905,7 @@ display: none; /* Hide the entire AKU div on smaller screens */
     position: relative;
     background: linear-gradient(135deg, #868484, #9b9998);
     padding: 60px 0;
+    padding-top: 100px;
     overflow: hidden;
     text-align: center;
 }
