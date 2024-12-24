@@ -589,7 +589,7 @@ margin-bottom: 5px;
     justify-content: center; /* Menjaga navbar tetap di tengah */
     align-items: center;
     position: fixed; /* Navbar fixed */
-    top: 0; /* Menempel di bagian atas */
+    top: 20px; /* Menempel di bagian atas */
     left: 0;
     right: 0;
     z-index: 9000;
@@ -831,8 +831,8 @@ z-index: 9000;
     width: 100%;
     overflow: hidden;
     position: fixed;
-    top: 70px;
-    left: 20px;
+    top: 90px;
+    left: 0;
     position: fixed;
     z-index: 9000;
     }
