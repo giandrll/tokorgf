@@ -14,6 +14,14 @@
 
 </head>
 <body>
+  
+<div class="navbarm1">
+<div class="navbar-center">
+            <a href="/" class="navbar-link">Home</a>
+            <a href="/produksebelumlogin" class="navbar-link">Product</a>
+            <a href="javascript:void(0)" onclick="checkLogin()" class="navbar-link">About</a>
+        </div>
+    </div>
 <!-- Konten utama -->
 <nav class="navbar">
     <div class="navbar-container">
@@ -27,11 +35,6 @@
                     <p>{{ $item->nama_toko }}</p>
                 </div>
             @endforeach
-        </div>
-        <div class="navbar-center">
-            <a href="/" class="navbar-link">Home</a>
-            <a href="/produksebelumlogin" class="navbar-link">Product</a>
-            <a href="javascript:void(0)" onclick="checkLogin()" class="navbar-link">About</a>
         </div>
         <!-- Tombol untuk toggle sidebar pada mobile -->
         <div class="navbar-toggle" onclick="toggleSidebar()">☰</div>
