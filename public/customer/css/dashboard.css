@@ -608,32 +608,34 @@ margin-bottom: 5px;
 .sidebar-link:hover {
     background-color: #575757;
 }
-
-/* Join Section Styling */
+/* Styling untuk .sidebar-join agar elemen di dalamnya sejajar dan terpusat */
 .sidebar-join {
-    margin-top: 20px;
-    text-align: center;
+    display: flex; /* Menggunakan Flexbox */
+    align-items: center; /* Vertikal center */
+    justify-content: center; /* Menjaga elemen di tengah secara horizontal */
+    gap: 15px; /* Memberikan jarak antara teks dan tombol */
+    padding: 20px; /* Memberikan padding untuk jarak */
 }
 
 .sidebar-join-text {
-    color: white;
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 10px;
+    color: white;
 }
 
 .sidebar-join-link {
-    display: inline-block;
-    background-color: #f0a500;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 30px;
+    font-size: 16px;
     font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: #007bff; /* Warna latar belakang tombol */
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
 }
 
 .sidebar-join-link:hover {
-    background-color: #e08b00;
+    background-color: #0056b3; /* Warna latar belakang saat hover */
 }
 
 /* Animasi untuk Sidebar (Menampilkan Sidebar) */
