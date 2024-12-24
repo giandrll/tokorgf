@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Produk;
-use App\Models\setting;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -18,7 +18,7 @@ class CartController extends Controller
         if ($customer) {
             // Mengambil item keranjang berdasarkan customer_id
             $cartItems = Cart::where('customer_id', $customer->id)->with('produk')->get();
-            $data_setting = setting::all();
+            $data_setting = Setting::all();
             // Mengirim data $customer ke view
             return view('cart', compact('cartItems', 'customer', 'data_setting'));
         } else {
