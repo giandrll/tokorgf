@@ -662,7 +662,7 @@ margin-bottom: 5px;
 @media (min-width: 769px) {
     .navbar-center {
         display: flex;
-        justify-content: center;
+        justify-content: right;
         flex-grow: 1;
     }
 
