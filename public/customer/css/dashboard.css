@@ -966,29 +966,47 @@ border-radius: 10px; /* Optional: add rounded corners */
 }
 /* Styling for the AKU div */
 .AKU {
-display: flex;
-justify-content: flex-start; /* Aligns content to the left */
-align-items: center; /* Centers text vertically */
-padding: 10px 20px; /* Adds some padding for spacing */
-border-radius: 8px; /* Slightly rounded corners */
+    display: flex;
+    justify-content: flex-start; /* Aligns content to the left */
+    align-items: center; /* Centers text vertically */
+    padding: 10px 20px; /* Adds some padding for spacing */
+    border-radius: 8px; /* Slightly rounded corners */
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
 }
 
 /* Styling for the text inside the AKU div */
 .AKU p {
-margin: 0;
-font-size: 17px; /* Increase font size for visibility */
-font-weight: 700; /* Makes text bold */
-color: #fff; /* Sets text color to white */
-letter-spacing: 1px; /* Adds slight spacing between letters for readability */
-font-family: 'Changa', serif;
+    margin: 0;
+    font-size: 17px; /* Default font size for larger screens */
+    font-weight: 700; /* Makes text bold */
+    color: #fff; /* Sets text color to white */
+    letter-spacing: 1px; /* Adds slight spacing between letters for readability */
+    font-family: 'Changa', serif;
+    white-space: nowrap; /* Prevents text from wrapping in smaller div */
 }
 
 /* Media Query for very small devices (mobile phones) */
 @media (max-width: 768px) {
-.AKU {
-display: none; /* Hide the entire AKU div on smaller screens */
+    .AKU {
+        padding: 8px 15px; /* Adjust padding on smaller screens */
+    }
+
+    .AKU p {
+        font-size: 14px; /* Smaller font size on mobile */
+    }
 }
+
+/* Media Query for even smaller devices (e.g., phones in portrait mode) */
+@media (max-width: 480px) {
+    .AKU {
+        padding: 5px 10px; /* Adjust padding on very small screens */
+    }
+
+    .AKU p {
+        font-size: 12px; /* Further reduce font size for very small screens */
+    }
 }
+
 
 /* GENERAL STYLING */
 .productt-section {
