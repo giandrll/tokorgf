@@ -124,7 +124,7 @@
 
 /* Ukuran logo disesuaikan agar tidak terlalu besar */
 .navbar-logo {
-    width: 40px; /* Ukuran logo yang lebih kecil */
+    width: 60px; /* Ukuran logo yang lebih kecil */
     height: auto; /* Menjaga proporsi logo */
 }
 
