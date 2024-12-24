@@ -723,7 +723,7 @@ margin-bottom: 5px;
     display: flex;            /* Menggunakan flexbox untuk mengatur posisi link */
     justify-content: center;  /* Mengatur agar link berada di tengah */
     align-items: center;      /* Memastikan link terpusat secara vertikal */
-    gap: 10px;                /* Menambahkan jarak antar link */
+    gap: 6px;                /* Menambahkan jarak antar link */
 }
 /* Navbar links styling */
 .navbar-center a {
@@ -732,7 +732,7 @@ margin-bottom: 5px;
     padding: 0 10px;
     font-weight: bold;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 17px;
 }
 
 .navbar-center a:hover {
