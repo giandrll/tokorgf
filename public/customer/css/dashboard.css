@@ -547,6 +547,41 @@ margin-bottom: 5px;
 }
 /* Navbar Styling */
 /* Navbar Styling */
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Mulai disembunyikan di luar layar */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transition: left 0.3s ease; /* Animasi saat membuka/menutup sidebar */
+    z-index: 1000;
+    padding-top: 50px; /* Memberikan ruang untuk header */
+}
+
+.sidebar-link {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.sidebar-link:hover {
+    background-color: #575757;
+}
+
+/* Tombol untuk membuka sidebar di mobile */
+.navbar-toggle {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
 .navbar {
     background-color: #333;
     height: 70px; /* Tinggi navbar */
@@ -592,17 +627,12 @@ margin-bottom: 5px;
     font-weight: bold;
 }
 
-/* Styling untuk navbar-center (Link tengah) */
-.navbar-center {
-    display: flex;
-    left: 40px;
-    flex-grow: 1;
-}
 
+/* Navbar links styling */
 .navbar-center a {
     color: white;
     font-family: 'Sans-serif', Helvetica;
-    padding: 0 15px; /* Memberikan jarak antar link */
+    padding: 0 10px;
     font-weight: bold;
     text-decoration: none;
     font-size: 14px;
@@ -612,6 +642,34 @@ margin-bottom: 5px;
     color: #ddd;
 }
 
+/* Menambahkan styling untuk responsif */
+@media (max-width: 768px) {
+    .navbar-center {
+        display: none; /* Sembunyikan navbar-center pada layar kecil */
+    }
+
+    .navbar-toggle {
+        display: block; /* Tombol toggle muncul di layar kecil */
+    }
+
+    /* Sidebar akan muncul saat sidebar active */
+    .sidebar.open {
+        left: 0; /* Geser sidebar ke kanan ketika aktif */
+    }
+}
+
+/* Jika layar lebih besar, navbar-center tampil normal */
+@media (min-width: 769px) {
+    .navbar-center {
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+    }
+
+    .navbar-toggle {
+        display: none; /* Sembunyikan tombol toggle pada layar besar */
+    }
+}
 /* Styling untuk logo navbar */
 .navbar-logo {
     height: 65px; /* Logo default */
