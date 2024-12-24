@@ -116,7 +116,6 @@
 /* Styling untuk navbar-left */
 .navbar-left {
     position: fixed; /* Agar tetap di posisi kiri walau halaman di-scroll */
-    top: 50%; /* Posisikan di tengah secara vertikal */
     left: 0; /* Tempatkan di kiri halaman */
     transform: translateY(-50%); /* Agar posisi elemen tepat di tengah vertikal */
     z-index: 1000; /* Pastikan elemen ini berada di atas elemen lain */
