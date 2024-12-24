@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="customer/css/dashboard.css">
 
 </head>
-<body><nav class="navbar">
+<body>
+<!-- Konten utama -->
+<nav class="navbar">
     <div class="navbar-container">
-        <!-- Logo dan Nama Toko (Sebelah kiri) -->
+        <!-- Logo dan tombol untuk membuka sidebar di mobile -->
         <div class="navbar-left">
         @foreach ($data_setting as $item)
             <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
@@ -26,36 +28,26 @@
                 </div>
             @endforeach
         </div>
-
-        <!-- Pilihan Tengah -->
         <div class="navbar-center">
-            <a href="/">Home</a>
-            <a href="/produksebelumlogin">Product</a>
-            <a href="javascript:void(0)" onclick="checkLogin()">About</a>
+            <a href="/" class="navbar-link">Home</a>
+            <a href="/produksebelumlogin" class="navbar-link">Product</a>
+            <a href="javascript:void(0)" onclick="checkLogin()" class="navbar-link">About</a>
         </div>
-
-        <!-- Tombol untuk Toggle Sidebar pada mobile -->
+        <!-- Tombol untuk toggle sidebar pada mobile -->
         <div class="navbar-toggle" onclick="toggleSidebar()">☰</div>
     </div>
 </nav>
 
-<!-- Sidebar -->
-<div id="sidebar" class="sidebar">
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
     <div class="sidebar-close" onclick="toggleSidebar()">×</div>
     <div class="sidebar-content">
         <a href="/" class="sidebar-link">Home</a>
         <a href="/produksebelumlogin" class="sidebar-link">Product</a>
         <a href="javascript:void(0)" onclick="checkLogin()" class="sidebar-link">About</a>
-        <!-- Tombol Login untuk Sidebar di mobile dan desktop -->
-        <a href="/authcustomer" class="btn-login sidebar-link">Login</a>
+        <a href="/authcustomer" class="btn-login sidebar-link">Login</a> <!-- Login Button in Sidebar -->
     </div>
 </div>
-
-<!-- Tombol Login di Navbar untuk Desktop -->
-<div class="navbar-right">
-    <a href="/authcustomer" class="btn-login">Login</a> <!-- Login Button di Desktop -->
-</div>
-
 
     <div class="navbarm">
         <div class="marqueem">
