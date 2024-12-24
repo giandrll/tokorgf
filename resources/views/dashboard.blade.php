@@ -21,13 +21,13 @@
             @foreach ($data_setting as $item)
                 <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
             @endforeach
-        </div>
 
-        <!-- Nama Toko -->
-        <div class="AKU">
+            <div class="AKU">
             @foreach ($data_setting as $item)
                 <p>{{ $item->nama_toko }}</p>
             @endforeach
+        </div>
+
         </div>
 
         <!-- Pilihan Tengah -->
