@@ -495,7 +495,7 @@ transition: background-color 0.3s; /* Transisi halus untuk hover */
 background-color: #f0f0f0;       /* Warna latar belakang saat hover */
 } .video-branding {
     position: relative;
-    width: 90%; /* Mengatur lebar video menjadi 90% agar tidak mepet */
+    width: 70%; /* Mengatur lebar video menjadi 90% agar tidak mepet */
     max-width: 1200px; /* Membatasi lebar maksimum video */
     margin: 0 auto; /* Agar video berada di tengah layar */
     height: auto;
