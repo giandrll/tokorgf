@@ -120,6 +120,7 @@ padding: 20px;
     max-width: 1200px;
     margin: 50px auto;
     padding: 20px;
+    top: 200px;
     text-align: center;
     background: #fff;
     border-radius: 15px;
@@ -545,12 +546,11 @@ margin-bottom: 5px;
         font-size: 12px;
     }
 }
-/* Navbar Styling */
-/* Navbar Styling */
-/* Sidebar styling */
+
+/* Sidebar Styling */
 .sidebar {
     position: fixed;
-    top: 0;
+    top: 100px;
     left: -250px; /* Mulai disembunyikan di luar layar */
     width: 250px;
     height: 100%;
@@ -561,18 +561,103 @@ margin-bottom: 5px;
     padding-top: 50px; /* Memberikan ruang untuk header */
 }
 
+/* Close Button */
+.sidebar-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Logo Styling */
+.sidebar-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-logo-img {
+    width: 80%;
+    max-width: 200px;
+    height: auto;
+}
+/* Sidebar Link Styling */
 .sidebar-link {
     display: block;
     padding: 15px;
     text-decoration: none;
     color: white;
     font-size: 18px;
+    font-weight: 100;
     transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    /* Menambahkan font Roboto */
 }
 
+
+
+.sidebar-arrow {
+    margin-right: 20px; /* Memberikan jarak antara panah dan teks */
+}
+
+/* Hover Effect for Links */
 .sidebar-link:hover {
     background-color: #575757;
 }
+/* Join Section Styling */
+.sidebar-join {
+    margin-top: 20px;
+    display: flex; /* Menggunakan Flexbox */
+    justify-content: center; /* Menyusun elemen secara horizontal di tengah */
+    gap: 15px; /* Jarak antara tombol Login dan Sign Up */
+    text-align: center;
+}
+
+/* Styling untuk Login */
+.sidebar-join-link1 {
+    display: inline-block;
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect untuk Login */
+.sidebar-join-link1:hover {
+    background-color: #444444; /* Mengubah warna latar belakang saat hover */
+}
+
+/* Styling untuk Sign Up */
+.sidebar-join-link {
+    display: inline-block;
+    background-color: #333333; /* Ganti background ke #333 untuk keseragaman */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-color: white;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect untuk Sign Up */
+.sidebar-join-link:hover {
+    background-color: #ffffff;
+    color: #333; /* Mengubah warna teks menjadi gelap saat hover */
+}
+
+/* Animasi untuk Sidebar (Menampilkan Sidebar) */
+#sidebar.show {
+    left: 0; /* Menampilkan sidebar */
+}
+
 
 /* Tombol untuk membuka sidebar di mobile */
 .navbar-toggle {
@@ -593,7 +678,6 @@ margin-bottom: 5px;
     left: 0;
     right: 0;
     z-index: 9000;
-    border-bottom: 1px solid #f7f3f3; /* Border bawah navbar */
     padding: 0 20px; /* Memberikan padding di sisi kiri dan kanan */
 }
 
@@ -627,7 +711,20 @@ margin-bottom: 5px;
     font-weight: bold;
 }
 
+.navbar-center1 {
+    display: flex;
+    justify-content: center;  /* Mengatur konten agar berada di tengah secara horizontal */
+    align-items: center;      /* Mengatur konten agar berada di tengah secara vertikal */
+    width: 100%;              /* Memastikan lebar navbar-center1 adalah 100% */
+}
 
+/* Styling untuk navbar-center */
+.navbar-center {
+    display: flex;            /* Menggunakan flexbox untuk mengatur posisi link */
+    justify-content: center;  /* Mengatur agar link berada di tengah */
+    align-items: center;      /* Memastikan link terpusat secara vertikal */
+    gap: 10px;                /* Menambahkan jarak antar link */
+}
 /* Navbar links styling */
 .navbar-center a {
     color: white;
@@ -635,7 +732,7 @@ margin-bottom: 5px;
     padding: 0 10px;
     font-weight: bold;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .navbar-center a:hover {
@@ -662,7 +759,7 @@ margin-bottom: 5px;
 @media (min-width: 769px) {
     .navbar-center {
         display: flex;
-        justify-content: center;
+        justify-content: right;
         flex-grow: 1;
     }
 
@@ -720,6 +817,12 @@ margin-bottom: 5px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Menyembunyikan navbar-right pada layar lebih kecil dari 768px */
+@media (max-width: 768px) {
+    .navbar-right {
+        display: none; /* Menyembunyikan navbar-right */
+    }
+}
 /* Styling untuk tombol login */
 .btn-login {
     display: inline-block;
@@ -813,16 +916,16 @@ margin-bottom: 5px;
 }
 
 .navbarm {
-background-color: #333;
-height: 25px;
-width: 100%;
-overflow: hidden;
-position: fixed;
-top: 70px;
-left: 0;
-position: fixed;
-z-index: 9000;
-}
+    background-color: #535252;
+    height: 25px;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    position: fixed;
+    z-index: 9000;
+    }
 
 .marqueem {
 font-family: 'Poppins', sans-serif;
@@ -892,6 +995,7 @@ display: none; /* Hide the entire AKU div on smaller screens */
     position: relative;
     background: linear-gradient(135deg, #a09f9f, #9b9998);
     padding: 60px 0;
+    padding-top: 100px;
     overflow: hidden;
     text-align: center;
 }

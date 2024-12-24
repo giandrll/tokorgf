@@ -10,10 +10,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="customer/css/dashboard.css">
 
 </head>
 <body>
+  
+
 <!-- Konten utama -->
 <nav class="navbar">
     <div class="navbar-container">
@@ -28,26 +32,47 @@
                 </div>
             @endforeach
         </div>
-        <div class="navbar-center">
-            <a href="/" class="navbar-link">Home</a>
-            <a href="/produksebelumlogin" class="navbar-link">Product</a>
+        <div class="navbar-center1">
+          <div class="navbar-center">
+            <a href="/" class="navbar-link">Home |</a>
+            <a href="/produksebelumlogin" class="navbar-link">Product |</a>
             <a href="javascript:void(0)" onclick="checkLogin()" class="navbar-link">About</a>
+          </div>
+        </div>
+        <div class="navbar-right">
+        <a href="/authcustomer" class="btn-login sidebar-link">Login</a> <!-- Login Button in Sidebar -->
         </div>
         <!-- Tombol untuk toggle sidebar pada mobile -->
         <div class="navbar-toggle" onclick="toggleSidebar()">☰</div>
     </div>
 </nav>
-
-  <!-- Sidebar -->
-  <div id="sidebar" class="sidebar">
+<!-- Sidebar -->
+<div id="sidebar" class="sidebar">
+    <!-- Close Button -->
     <div class="sidebar-close" onclick="toggleSidebar()">×</div>
+
+    <!-- Sidebar Content -->
     <div class="sidebar-content">
-        <a href="/" class="sidebar-link">Home</a>
-        <a href="/produksebelumlogin" class="sidebar-link">Product</a>
-        <a href="javascript:void(0)" onclick="checkLogin()" class="sidebar-link">About</a>
-        <a href="/authcustomer" class="btn-login sidebar-link">Login</a> <!-- Login Button in Sidebar -->
+
+         <!-- Navigation Links with Arrow -->
+         <a href="/" class="sidebar-link">
+            <span class="sidebar-arrow">→ </span> Home
+        </a>
+        <a href="/produksebelumlogin" class="sidebar-link">
+            <span class="sidebar-arrow">→ </span> Product
+        </a>
+        <a href="javascript:void(0)" onclick="checkLogin()" class="sidebar-link">
+            <span class="sidebar-arrow">→ </span> About
+        </a>
+
+        <!-- Join Section -->
+        <div class="sidebar-join">
+            <a href="/authcustomer" class="sidebar-join-link1">Login</a>
+            <a href="/register" class="sidebar-join-link">Sign Up</a>
+        </div>
     </div>
 </div>
+
 
     <div class="navbarm">
         <div class="marqueem">
@@ -379,6 +404,25 @@ const SliderOne = {
         });
     }
 };
+
+// JavaScript untuk Toggle Sidebar
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("show"); // Mengaktifkan atau menonaktifkan kelas 'show'
+}
+
+// Untuk membuka sidebar
+function openSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.add("show");
+}
+
+// Untuk menutup sidebar
+function closeSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.remove("show");
+}
+
 
 // Second Slider Implementation
 const SliderTwo = {
