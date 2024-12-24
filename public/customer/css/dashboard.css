@@ -593,7 +593,6 @@ margin-bottom: 5px;
     left: 0;
     right: 0;
     z-index: 9000;
-    border-bottom: 1px solid #f7f3f3; /* Border bawah navbar */
     padding: 0 20px; /* Memberikan padding di sisi kiri dan kanan */
 }
 
@@ -813,21 +812,20 @@ margin-bottom: 5px;
 }
 
 .navbarm1 {
-background-color: #333;
+background-color: #535252;
 height: 20px;
 width: 100%;
 overflow: hidden;
 position: fixed;
 top: 0px;
 left: 0;
-border-bottom: 1px solid #fff;
 position: fixed;
 z-index: 9000;
 }
 
 
 .navbarm {
-    background-color: #333;
+    background-color: #535252;
     height: 25px;
     width: 100%;
     overflow: hidden;
