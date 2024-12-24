@@ -814,7 +814,6 @@
     </nav>
 
     <nav class="navbar">
-        <div class="navbar-container">
             <!-- Logo/Kiri -->
             <div class="navbar-left">
                 @foreach ($data_setting as $item)
@@ -846,7 +845,6 @@
             <div class="navbar-right">
 
             </div>
-        </div>
     </nav>
    
     <div class="container">
