@@ -820,6 +820,7 @@ overflow: hidden;
 position: fixed;
 top: 0px;
 left: 0;
+border-bottom: 3px solid #fff;
 position: fixed;
 z-index: 9000;
 }
