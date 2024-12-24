@@ -509,7 +509,7 @@
   
 
 .dress-name {
-    font-size: 16px; /* Ukuran font default */
+    font-size: 13px; /* Ukuran font default */
     font-weight: bold;
     width: 100%;
     text-align: center;              /* Membatasi tinggi elemen untuk 2 baris */
