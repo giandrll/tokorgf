@@ -105,19 +105,19 @@
                 </div>
     
                 <div class="total-css">
-                    <h4>Total Keranjang: <span class="text-success" id="totalAmount">Rp 0</span></h4>
-                    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center mt-3 gap-2">
-                       <button type="button" class="btn-abu">
-                        <a href="/dashboardproduk" class="btn-abu">
-                            <i class="fas fa-shopping-bag"></i> Lanjutkan Belanja
-                        </a>
-                       </button>
-                       
-                        <button type="button" class="btn-abu" onclick="processWhatsAppOrder()">
-                            <i class="fab fa-whatsapp"  ></i> Check Out Via WA
-                        </button>
-                    </div>
-                </div>
+    <h4>Total Keranjang: <span class="text-success" id="totalAmount">Rp 0</span></h4>
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center mt-3 gap-2">
+        <button type="button" class="btn-abu">
+            <a href="/dashboardproduk" class="btn-abu">
+                <i class="fas fa-shopping-bag"></i> Lanjutkan Belanja
+            </a>
+        </button>
+        <button type="button" class="btn-abu" onclick="processWhatsAppOrder()">
+            <i class="fab fa-whatsapp"></i> Check Out Via WA
+        </button>
+    </div>
+</div>
+
             </form>
         @endif
     </div>
