@@ -259,72 +259,158 @@ height: 50px;
 }
 }/* Style untuk link 'RGF Store' */
 
+/* Reset default margin/padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* Brand Section */
 .brand2 {
-display: flex;
-justify-content: center; /* Mengatur konten agar berada di tengah secara horizontal */
-align-items: center; /* Mengatur konten agar berada di tengah secara vertikal */
-height: 30vh;
-padding-bottom: 40px; /* Mengisi tinggi viewport */
-background-color: #fff; /* Latar belakang putih */
+    display: flex;
+    justify-content: center; /* Mengatur konten agar berada di tengah secara horizontal */
+    align-items: center; /* Mengatur konten agar berada di tengah secara vertikal */
+    height: 30vh;
+    padding-bottom: 40px; /* Ruang ekstra di bawah */
+    background-color: #fff; /* Latar belakang putih */
 }
 
+/* Konten Brand */
 .brand-content {
-text-align: center; /* Mengatur teks agar rata tengah */
-max-width: 600px; /* Maksimal lebar konten */
-padding: 20px; /* Ruang dalam untuk konten */
-background-color: #fff; /* Latar belakang putih untuk konten *//* Bayangan halus untuk efek kedalaman */
-border-radius: 8px; /* Sudut melengkung */
+    text-align: center; /* Mengatur teks agar rata tengah */
+    max-width: 600px; /* Maksimal lebar konten */
+    padding: 20px; /* Ruang dalam untuk konten */
+    background-color: #fff; /* Latar belakang putih */
+    border-radius: 8px; /* Sudut melengkung */
 }
 
+/* Heading h6 */
 h6 {
-font-family: 'Roboto', sans-serif; /* Font untuk h6 */
-color: #000; /* Teks hitam */
-font-weight: 600; /* Berat font normal */
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    font-weight: 600; /* Berat font normal */
 }
 
+/* Heading h1 */
 h1 {
-font-family: 'small-caps bold', sans-serif;
-color: #000; /* Teks hitam */
-margin: 10px 0; /* Margin vertikal */
-font-weight: 900; /* Berat font tebal */
+    font-family: 'small-caps bold', sans-serif;
+    color: #000; /* Teks hitam */
+    margin: 10px 0; /* Margin vertikal */
+    font-weight: 900; /* Berat font tebal */
 }
 
+/* Paragraf p */
 p {
-font-family: 'Roboto', sans-serif; /* Font untuk p */
-color: #000; /* Teks hitam */
-line-height: 1.5; /* Jarak antar baris */
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    line-height: 1.5; /* Jarak antar baris */
 }
+
+/* Tombol Shop Now */
 .shop-now-container {
-text-align: center; /* Center the button */
-margin: 0px; /* Add some margin */
+    text-align: center;
+    margin: 0px; /* Add some margin */
 }
 
 .shop-now-button {
-display: inline-block; /* Make the button an inline-block */
-padding: 10px 24px; /* Add some padding */
-background-color: black; /* Black background */
-color: white; /* White text */
-text-decoration: none; /* Remove underline from the link */
-font-size: 18px; /* Increase font size */
-border-radius: 35px; /* Rounded corners */
-transition: background-color 0.3s ease; /* Smooth transition */
+    display: inline-block; /* Make the button an inline-block */
+    padding: 10px 24px; /* Add some padding */
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline from the link */
+    font-size: 18px; /* Increase font size */
+    border-radius: 35px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 .shop-now-button:hover {
-background-color: #333; /* Darker background on hover */
-}/* Reset default margin/padding */
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    background-color: #333; /* Darker background on hover */
 }
+
+/* H3 Heading with padding */
 .h3p {
-text-align: center;
-margin: 20px 0;
-color: #000000;
-font-size: 35px;
-font-weight: 700;
+    text-align: center;
+    margin: 20px 0;
+    color: #000000;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+/* Responsif - Mengatur tampilan pada layar kecil (maksimal 768px) */
+@media (max-width: 768px) {
+    /* Brand Section */
+    .brand2 {
+        height: 25vh; /* Menurunkan tinggi pada layar kecil */
+        padding-bottom: 30px; /* Menurunkan ruang di bawah */
+    }
+
+    .brand-content {
+        max-width: 90%; /* Lebar konten menyesuaikan layar */
+        padding: 15px; /* Mengurangi padding */
+    }
+
+    h1 {
+        font-size: 24px; /* Menurunkan ukuran font */
+        margin: 8px 0;
+    }
+
+    h6 {
+        font-size: 14px; /* Menurunkan ukuran font */
+    }
+
+    p {
+        font-size: 14px; /* Menurunkan ukuran font */
+        line-height: 1.4; /* Menurunkan jarak antar baris */
+    }
+
+    /* Tombol Shop Now */
+    .shop-now-button {
+        font-size: 16px; /* Menurunkan ukuran font */
+        padding: 8px 20px; /* Mengurangi padding */
+    }
+
+    .h3p {
+        font-size: 28px; /* Mengurangi ukuran font pada h3p */
+    }
+}
+
+/* Responsif - Layar lebih kecil (maksimal 480px) */
+@media (max-width: 480px) {
+    /* Brand Section */
+    .brand2 {
+        height: 20vh; /* Menurunkan tinggi pada layar sangat kecil */
+        padding-bottom: 20px; /* Menurunkan ruang di bawah */
+    }
+
+    .brand-content {
+        max-width: 100%; /* Lebar konten menyesuaikan layar */
+        padding: 10px; /* Mengurangi padding lebih lanjut */
+    }
+
+    h1 {
+        font-size: 20px; /* Menurunkan ukuran font lebih kecil */
+        margin: 6px 0;
+    }
+
+    h6 {
+        font-size: 12px; /* Menurunkan ukuran font lebih kecil */
+    }
+
+    p {
+        font-size: 12px; /* Menurunkan ukuran font lebih kecil */
+        line-height: 1.3; /* Menurunkan jarak antar baris */
+    }
+
+    /* Tombol Shop Now */
+    .shop-now-button {
+        font-size: 14px; /* Menurunkan ukuran font lebih kecil */
+        padding: 6px 16px; /* Padding lebih kecil */
+    }
+
+    .h3p {
+        font-size: 22px; /* Menurunkan ukuran font pada h3p */
+    }
 }
 /* Container Produk */
 .featured-products {
@@ -350,9 +436,35 @@ font-weight: 700;
 
 /* Hover effect for product */
 .product:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Efek geser ke atas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek kedalaman */
 }
+
+/* Responsif untuk layar kecil (maksimal 768px) */
+@media (max-width: 768px) {
+    .featured-products {
+        justify-content: center; /* Tengah kan produk pada layar kecil */
+    }
+
+    .product {
+        width: 250px; /* Lebar produk sedikit lebih kecil */
+        margin-bottom: 20px; /* Jarak antar produk */
+    }
+}
+
+/* Responsif untuk layar sangat kecil (maksimal 480px) */
+@media (max-width: 480px) {
+    .featured-products {
+        justify-content: center; /* Tengah kan produk */
+        gap: 10px; /* Jarak antar produk lebih kecil */
+    }
+
+    .product {
+        width: 200px; /* Lebar produk lebih kecil lagi */
+        margin-bottom: 15px; /* Jarak antar produk sedikit lebih kecil */
+    }
+}
+
 
 /* Gambar Produk */
 .image-container {
@@ -481,7 +593,7 @@ box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Meningkatkan bayangan saat hover *
 
 .btn-login {
 display: inline-block;            /* Membuat link berperilaku seperti tombol */
-padding: 10px 20px;              /* Memberikan padding untuk tampilan yang baik */
+padding: 10px 10px;              /* Memberikan padding untuk tampilan yang baik */
 background-color: white;         /* Latar belakang putih */
 color: black;                    /* Warna teks hitam */
 border: none;                    /* Menghilangkan border default */
@@ -495,7 +607,7 @@ transition: background-color 0.3s; /* Transisi halus untuk hover */
 background-color: #f0f0f0;       /* Warna latar belakang saat hover */
 } .video-branding {
     position: relative;
-    width: 90%; /* Mengatur lebar video menjadi 90% agar tidak mepet */
+    width: 70%; /* Mengatur lebar video menjadi 90% agar tidak mepet */
     max-width: 1200px; /* Membatasi lebar maksimum video */
     margin: 0 auto; /* Agar video berada di tengah layar */
     height: auto;
