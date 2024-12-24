@@ -499,7 +499,16 @@
   position: absolute;
   width: 100%;
   padding: 9px;
-}.dress-name {
+}
+/* Wrapper untuk nama produk */
+.product-name-wrapper {
+    width: 100%;            /* Pastikan lebar wrapper sesuai dengan konten */
+    padding: 0 15px;        /* Padding untuk jarak di sekitar teks */
+    overflow: hidden;       /* Menyembunyikan konten yang melebihi batas */
+  }
+  
+
+.dress-name {
     font-size: 16px; /* Ukuran font default */
     font-weight: bold;
     width: 100%;
