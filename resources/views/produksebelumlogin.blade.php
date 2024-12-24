@@ -126,7 +126,7 @@
     display: flex;
     justify-content: space-around;
     /* Menjaga elemen tetap bersebelahan */
-    width: 100%;
+    width: 12%;
 }
 
 /* Navbar Center Links */
