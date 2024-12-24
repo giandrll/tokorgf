@@ -257,11 +257,15 @@
 <h3 class="h3p"> Sedang Trend !</h3>
 <div class="produkandalan">
     <div class="andalan">
-        <img src="fotokami/c0lpat.jpeg" alt="Product 1">
+      @foreach ($data_setting as $item)
+      <img src="{{ asset('foto/fotoSetting/' . $item->fotosedangtrend_slide1 ) }}" alt="Slide1" >
+      @endforeach    
     </div>
     <div class="andalan">
-        <img src="fotokami/c0lpat.jpeg" alt="Product 2">
-    </div>
+      @foreach ($data_setting as $item)
+      <img src="{{ asset('foto/fotoSetting/' . $item->fotosedangtrend_slide2 ) }}" alt="Slide2">
+      @endforeach   
+     </div>
 </div>
 
 <div class="brand2">
