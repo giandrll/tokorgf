@@ -674,7 +674,7 @@ margin-bottom: 5px;
     justify-content: center; /* Menjaga navbar tetap di tengah */
     align-items: center;
     position: fixed; /* Navbar fixed */
-    top: 20px; /* Menempel di bagian atas */
+    top: 0; /* Menempel di bagian atas */
     left: 0;
     right: 0;
     z-index: 9000;
@@ -711,7 +711,20 @@ margin-bottom: 5px;
     font-weight: bold;
 }
 
+.navbar-center1 {
+    display: flex;
+    justify-content: center;  /* Mengatur konten agar berada di tengah secara horizontal */
+    align-items: center;      /* Mengatur konten agar berada di tengah secara vertikal */
+    width: 100%;              /* Memastikan lebar navbar-center1 adalah 100% */
+}
 
+/* Styling untuk navbar-center */
+.navbar-center {
+    display: flex;            /* Menggunakan flexbox untuk mengatur posisi link */
+    justify-content: center;  /* Mengatur agar link berada di tengah */
+    align-items: center;      /* Memastikan link terpusat secara vertikal */
+    gap: 10px;                /* Menambahkan jarak antar link */
+}
 /* Navbar links styling */
 .navbar-center a {
     color: white;
@@ -902,26 +915,13 @@ margin-bottom: 5px;
     }
 }
 
-.navbarm1 {
-background-color: #535252;
-height: 20px;
-width: 100%;
-overflow: hidden;
-position: fixed;
-top: 0px;
-left: 0;
-position: fixed;
-z-index: 9000;
-}
-
-
 .navbarm {
     background-color: #535252;
     height: 25px;
     width: 100%;
     overflow: hidden;
     position: fixed;
-    top: 90px;
+    top: 70px;
     left: 0;
     position: fixed;
     z-index: 9000;

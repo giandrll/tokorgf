@@ -17,13 +17,7 @@
 </head>
 <body>
   
-<div class="navbarm1">
-<div class="navbar-center">
-            <a href="/" class="navbar-link">Home |</a>
-            <a href="/produksebelumlogin" class="navbar-link">Product |</a>
-            <a href="javascript:void(0)" onclick="checkLogin()" class="navbar-link">About</a>
-        </div>
-    </div>
+
 <!-- Konten utama -->
 <nav class="navbar">
     <div class="navbar-container">
@@ -37,6 +31,13 @@
                     <p>{{ $item->nama_toko }}</p>
                 </div>
             @endforeach
+        </div>
+        <div class="navbar-center1">
+          <div class="navbar-center">
+            <a href="/" class="navbar-link">Home |</a>
+            <a href="/produksebelumlogin" class="navbar-link">Product |</a>
+            <a href="javascript:void(0)" onclick="checkLogin()" class="navbar-link">About</a>
+          </div>
         </div>
         <div class="navbar-right">
         <a href="/authcustomer" class="btn-login sidebar-link">Login</a> <!-- Login Button in Sidebar -->
@@ -69,11 +70,6 @@
             <a href="/authcustomer" class="sidebar-join-link1">Login</a>
             <a href="/register" class="sidebar-join-link">Sign Up</a>
         </div>
-        <div class="sidebar-logo">
-        @foreach ($data_setting as $item)
-            <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
-            @endforeach       
-       </div>
     </div>
 </div>
 
