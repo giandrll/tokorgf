@@ -481,7 +481,7 @@ box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Meningkatkan bayangan saat hover *
 
 .btn-login {
 display: inline-block;            /* Membuat link berperilaku seperti tombol */
-padding: 10px 20px;              /* Memberikan padding untuk tampilan yang baik */
+padding: 10px 10px;              /* Memberikan padding untuk tampilan yang baik */
 background-color: white;         /* Latar belakang putih */
 color: black;                    /* Warna teks hitam */
 border: none;                    /* Menghilangkan border default */
