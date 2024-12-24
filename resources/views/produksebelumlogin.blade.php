@@ -88,6 +88,7 @@
             padding: 20px;
 
         }
+
 /* Navbar Styling */
 .navbar {
     width: 100%;
@@ -113,29 +114,19 @@
     max-width: 1200px;
     margin: auto;
 }
-/* Styling untuk navbar-left */
-.navbar-left {
-    position: fixed; /* Agar tetap di posisi kiri walau halaman di-scroll */
-    top: 50%; /* Posisikan di tengah secara vertikal */
-    left: 0; /* Tempatkan di kiri halaman */
-    transform: translateY(-50%); /* Agar posisi elemen tepat di tengah vertikal */
-    z-index: 1000; /* Pastikan elemen ini berada di atas elemen lain */
-    padding: 10px; /* Beri sedikit ruang */
-}
 
-/* Logo dalam navbar-left */
-.navbar-left .navbar-logo {
-    width: 50px; /* Ukuran logo, sesuaikan dengan kebutuhan */
-    height: auto; /* Pastikan logo tidak terdistorsi */
+/* Navbar Left (Logo) */
+.navbar-logo {
+    width: 55px;
+    height: auto;
 }
-
 
 /* Navbar Center (Middle Links) */
 .navbar-center {
     display: flex;
     justify-content: space-around;
     /* Menjaga elemen tetap bersebelahan */
-    width: 100%;
+    width: 12%;
 }
 
 /* Navbar Center Links */
@@ -191,9 +182,9 @@
 
 /* Mobile Styling (for screens smaller than 768px) */
 @media (max-width: 768px) {
-    /* Pastikan logo tetap muncul di kiri */
+    /* Sembunyikan logo pada layar kecil */
     .navbar-logo {
-        display: block;
+        display: none;
     }
 
     /* Navbar center tetap berada di tengah */
@@ -211,25 +202,7 @@
     .nav-item {
         margin: 0 10px; /* Kurangi jarak antar item di layar kecil */
     }
-
-    /* Navbar Right (login) */
-    .navbar-right {
-        display: none; /* Sembunyikan bagian kanan pada tampilan kecil jika perlu */
-    }
-
-    /* Atur logo dan navbar-center untuk responsif */
-    .navbar {
-        flex-direction: column; /* Posisikan logo di atas dan navbar-center di bawah */
-        padding: 10px 0;
-    }
-
-    .navbar-container {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center; /* Teks di tengah */
-    }
 }
-
 
         .brand2 {
             display: flex;
