@@ -88,7 +88,6 @@
             padding: 20px;
 
         }
-
 /* Navbar Styling */
 .navbar {
     width: 100%;
@@ -119,7 +118,6 @@
 .navbar-logo {
     width: 55px;
     height: auto;
-    position: relative;
 }
 
 /* Navbar Center (Middle Links) */
@@ -127,7 +125,7 @@
     display: flex;
     justify-content: space-around;
     /* Menjaga elemen tetap bersebelahan */
-    width: 12%;
+    width: 100%;
 }
 
 /* Navbar Center Links */
@@ -183,9 +181,9 @@
 
 /* Mobile Styling (for screens smaller than 768px) */
 @media (max-width: 768px) {
-    /* Sembunyikan logo pada layar kecil */
+    /* Pastikan logo tetap muncul di kiri */
     .navbar-logo {
-        display: none;
+        display: block;
     }
 
     /* Navbar center tetap berada di tengah */
@@ -203,7 +201,25 @@
     .nav-item {
         margin: 0 10px; /* Kurangi jarak antar item di layar kecil */
     }
+
+    /* Navbar Right (login) */
+    .navbar-right {
+        display: none; /* Sembunyikan bagian kanan pada tampilan kecil jika perlu */
+    }
+
+    /* Atur logo dan navbar-center untuk responsif */
+    .navbar {
+        flex-direction: column; /* Posisikan logo di atas dan navbar-center di bawah */
+        padding: 10px 0;
+    }
+
+    .navbar-container {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center; /* Teks di tengah */
+    }
 }
+
 
         .brand2 {
             display: flex;
