@@ -207,6 +207,26 @@
                                     </div>
                                 </div>
 
+                                <div class="card mb-4">
+                                    <div class="card-header bg-primary text-white">
+                                        <h5 class="mb-0">Produk Sedang Hits</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="fotosedanghits">Upload Foto Sedang Hits</label>
+                                            <input type="file" name="fotosedanghits[]" class="form-control" accept="image/*" multiple>
+                                            @if ($setting && $setting->fotosedanghits)
+                                                <div class="mt-3">
+                                                    @foreach (json_decode($setting->fotosedanghits, true) as $foto)
+                                                        <img src="{{ asset('foto/fotoSetting/hits/' . $foto) }}" alt="Foto Sedang Hits" 
+                                                             class="img-thumbnail mb-2" style="max-height: 150px; object-fit: cover;">
+                                                    @endforeach
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 <button type="submit" class="btn btn-primary">Simpan Pengaturan</button>
                             </form>
                         </div>

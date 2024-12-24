@@ -31,6 +31,7 @@ class SettingController extends Controller
             'fotokolaburasi_slide3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
             'fotosedangtrend_slide1' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
             'fotosedangtrend_slide2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'fotosedanghits.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg', // Validation for fotosedanghits
         ]);
 
         $setting = Setting::first();
@@ -126,6 +127,23 @@ class SettingController extends Controller
             $file->move(public_path('foto/fotoSetting'), $filename);
             $setting->fotosedangtrend_slide2 = $filename;
         }
+
+
+   
+    // Handling file uploads for fotosedanghits
+    if ($request->hasFile('fotosedanghits')) {
+        $hitsPhotos = [];
+        foreach ($request->file('fotosedanghits') as $file) {
+            // Define file name
+            $filename = time() . '_' . $file->getClientOriginalName();
+            // Save file to the correct directory
+            $file->move(public_path('foto/fotoSetting/hits'), $filename);
+            // Store filenames in an array
+            $hitsPhotos[] = $filename;
+        }
+        // Save the file names as JSON to the database
+        $setting->fotosedanghits = json_encode($hitsPhotos);
+    }
 
         $setting->save();
 

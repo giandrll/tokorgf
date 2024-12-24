@@ -60,20 +60,25 @@
 
     
     <section class="productt-section" id="produk">
-      <h3 class="h4p">OUR PRODUCTS</h3>
+      <h3 class="h4p">SEDANG HITS!!!</h3>
       <div class="sliderr-container">
           <div class="slidess" id="slidess">
-              @foreach ($data_produk as $produk)
-              <div class="slidee">
-                  <div class="productt-card">
+            @foreach ($data_setting as $item)
+               @if ($item->fotosedanghits)
+                 @foreach (json_decode($item->fotosedanghits, true) as $foto)
+                  <div class="slidee">
+                    <div class="productt-card">
                       <a href="produksebelumlogin">
-                          <div class="image-wrapper">
-                              <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" alt="{{ $produk->nama_produk }}">
-                          </div>
-                      </a>
-                  </div>
-              </div>
-              @endforeach
+                        <div class="image-wrapper">
+                            <!-- Update the image path to use 'hits' directory -->
+                            <img src="{{ asset('foto/fotoSetting/hits/' . $foto) }}" alt="Foto Sedang Hits">
+                        </div>
+                    </a>
+                </div>
+             </div>
+            @endforeach
+             @endif
+            @endforeach
           </div>
       </div>
   </section>

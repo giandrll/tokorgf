@@ -31,13 +31,28 @@ class setting extends Model
         'fotokolaburasi_slide3',
         'fotosedangtrend_slide1',
         'fotosedangtrend_slide2',
-
-
-
-
-
-
+        'fotosedanghits',
 
 
     ];
-}
+    
+        public function getFotosedanghitsAttribute($value)
+        {
+            return json_decode($value, true) ?? [];
+        }
+    
+        /**
+         * Mutator for fotosedanghits.
+         * This converts an array into a JSON string before saving to the database.
+         */
+        public function setFotosedanghitsAttribute($value)
+        {
+            $this->attributes['fotosedanghits'] = json_encode($value);
+        }
+    
+    
+        
+    }
+    
+    
+
