@@ -89,91 +89,120 @@
 
         }
 
- /* Navbar Styling */
- .navbar {
-            width: 100%;
-            background-color: #333;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0px 0px;
-            position: fixed;
-            bottom: 0;
-            /* Make the navbar stick to the bottom */
-            left: 0;
-            z-index: 1000;
-            /* Ensure it's on top */
-            box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.3);
-        }
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0px;
+    position: fixed;
+    bottom: 0;
+    /* Make the navbar stick to the bottom */
+    left: 0;
+    z-index: 1000;
+    /* Ensure it's on top */
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.3);
+}
 
-        .navbar-container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1200px;
-            margin: auto;
-        }
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
 
-        /* Navbar Left (Logo) */
-        .navbar-logo {
-            width: 55px;
-            height: auto;
-        }
-        .navbar-center {
-            display: flex;
-            justify-content: space-around;
-            /* Menjaga elemen tetap bersebelahan */
-        }
+/* Navbar Left (Logo) */
+.navbar-logo {
+    width: 55px;
+    height: auto;
+}
 
-        /* Navbar Center (Middle Links) */
-        .navbar-center a {
-            text-decoration: none;
-            color: white;
-            padding: 10px 10px;
-            font-size: 16px;
-        }
+/* Navbar Center (Middle Links) */
+.navbar-center {
+    display: flex;
+    justify-content: space-around;
+    /* Menjaga elemen tetap bersebelahan */
+    width: 100%;
+}
 
-        .navbar-center a:hover {
-            /* background-color: #575757; */
-            border-radius: 5px;
-        }
+/* Navbar Center Links */
+.navbar-center a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 10px;
+    font-size: 16px;
+}
 
-        /* Navbar Right (Login) */
-        .navbar-right a {
-            text-decoration: none;
-            color: white;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
+.navbar-center a:hover {
+    /* background-color: #575757; */
+    border-radius: 5px;
+}
 
-        .navbar-right a:hover {
-            background-color: #575757;
-            border-radius: 5px;
-        }
-        .nav-item {
-            display: inline-flex;
-            flex-direction: column;
-            /* Agar icon di atas teks */
-            align-items: center;
-            text-decoration: none;
-            color: inherit;
-            margin: 0 15px;
-            /* Memberi sedikit jarak antara item */
-        }
+/* Navbar Right (Login) */
+.navbar-right a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+}
 
-        .nav-item i {
-            font-size: 24px;
-            /* Ukuran ikon */
-        }
+.navbar-right a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
 
-        .nav-item span {
-            font-size: 12px;
-            /* Ukuran teks */
-            margin-top: 4px;
-        }
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+.nav-item {
+    display: inline-flex;
+    flex-direction: column;
+    /* Agar icon di atas teks */
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    margin: 0 15px;
+    /* Memberi sedikit jarak antara item */
+}
 
+.nav-item i {
+    font-size: 24px;
+    /* Ukuran ikon */
+}
+
+.nav-item span {
+    font-size: 12px;
+    /* Ukuran teks */
+    margin-top: 4px;
+}
+
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+/* Mobile Styling (for screens smaller than 768px) */
+@media (max-width: 768px) {
+    /* Sembunyikan logo pada layar kecil */
+    .navbar-logo {
+        display: none;
+    }
+
+    /* Navbar center tetap berada di tengah */
+    .navbar-center {
+        justify-content: center;
+    }
+
+    /* Navbar container tidak berubah */
+    .navbar-container {
+        width: 100%;
+        padding: 0 10px; /* Tambahkan sedikit padding untuk ruang */
+    }
+
+    /* Navbar item adjustments */
+    .nav-item {
+        margin: 0 10px; /* Kurangi jarak antar item di layar kecil */
+    }
+}
 
         .brand2 {
             display: flex;
