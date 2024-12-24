@@ -33,6 +33,9 @@
             <a href="/produksebelumlogin" class="navbar-link">Product</a>
             <a href="javascript:void(0)" onclick="checkLogin()" class="navbar-link">About</a>
         </div>
+        <div class="navbar-right">
+            <a href="/authcustomer" class="btn-login">Login</a>
+        </div>
         <!-- Tombol untuk toggle sidebar pada mobile -->
         <div class="navbar-toggle" onclick="toggleSidebar()">☰</div>
     </div>
