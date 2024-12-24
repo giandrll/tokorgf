@@ -977,7 +977,7 @@ border-radius: 10px; /* Optional: add rounded corners */
 /* Styling for the text inside the AKU div */
 .AKU p {
     margin: 0;
-    font-size: 17px; /* Default font size for larger screens */
+    font-size: 19px; /* Default font size for larger screens */
     font-weight: 700; /* Makes text bold */
     color: #fff; /* Sets text color to white */
     letter-spacing: 1px; /* Adds slight spacing between letters for readability */
@@ -992,7 +992,7 @@ border-radius: 10px; /* Optional: add rounded corners */
     }
 
     .AKU p {
-        font-size: 14px; /* Smaller font size on mobile */
+        font-size: 17px; /* Smaller font size on mobile */
     }
 }
 
@@ -1003,7 +1003,7 @@ border-radius: 10px; /* Optional: add rounded corners */
     }
 
     .AKU p {
-        font-size: 12px; /* Further reduce font size for very small screens */
+        font-size: 15px; /* Further reduce font size for very small screens */
     }
 }
 
