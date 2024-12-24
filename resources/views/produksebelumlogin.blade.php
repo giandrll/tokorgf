@@ -119,7 +119,7 @@
 .navbar-logo {
     width: 55px;
     height: auto;
-    position: left;
+    position: relative;
 }
 
 /* Navbar Center (Middle Links) */
