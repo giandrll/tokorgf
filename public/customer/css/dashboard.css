@@ -594,7 +594,8 @@ margin-bottom: 5px;
     transition: background-color 0.3s;
     display: flex;
     align-items: center;
-    font-family: 'Roboto', sans-serif; /* Menambahkan font Roboto */
+    font-family: 'Open Sans', sans-serif;
+    /* Menambahkan font Roboto */
 }
 
 
