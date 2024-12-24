@@ -832,7 +832,7 @@ z-index: 9000;
     overflow: hidden;
     position: fixed;
     top: 70px;
-    left: 0;
+    left: 20px;
     position: fixed;
     z-index: 9000;
     }
