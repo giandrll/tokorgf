@@ -887,3 +887,19 @@ border-radius: 10px; /* Optional: add rounded corners */
     }
 }
 
+.icon-hover {
+    font-size: 28px; /* Ukuran ikon */
+    color: white;
+    /* Warna latar belakang */
+    padding: 5px; /* Ruang di sekitar ikon */
+    border-radius: 50%; /* Membuat bentuk lingkaran */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: inline-flex; /* Untuk memastikan ikon berada di tengah */
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-hover:hover {
+    transform: translateY(-20px) scale(1.2); /* Naik ke atas dan membesar */
+    background-color: #333  ; /* Latar belakang lebih gelap */
+}
