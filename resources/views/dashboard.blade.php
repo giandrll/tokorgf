@@ -52,12 +52,6 @@
 
     <!-- Sidebar Content -->
     <div class="sidebar-content">
-        <!-- Logo -->
-        <div class="sidebar-logo">
-        @foreach ($data_setting as $item)
-            <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
-            @endforeach       
-       </div>
 
          <!-- Navigation Links with Arrow -->
          <a href="/" class="sidebar-link">
@@ -78,6 +72,11 @@
             <p class="sidebar-join-text">Join Us!</p>
             <a href="/register" class="sidebar-join-link">Sign Up</a>
         </div>
+        <div class="sidebar-logo">
+        @foreach ($data_setting as $item)
+            <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
+            @endforeach       
+       </div>
     </div>
 </div>
 
