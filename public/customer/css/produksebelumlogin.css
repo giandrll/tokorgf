@@ -500,13 +500,16 @@
   width: 100%;
   padding: 9px;
 }
-
 .dress-name {
-  font-size: 13px;
-  font-weight: bold;
-  width: 100%;
-  text-align: center;
+    display: -webkit-box;        /* Membuat elemen berperilaku seperti block box */
+    -webkit-line-clamp: 2;       /* Membatasi jumlah baris teks */
+    -webkit-box-orient: vertical; /* Menentukan arah konten box (vertikal) */
+    overflow: hidden;            /* Menyembunyikan teks yang berlebihan */
+    text-overflow: ellipsis;     /* Menambahkan elipsis "..." ketika teks terpotong */
+    line-height: 1.2em;          /* Menentukan jarak antar baris */
+    max-height: 2.4em;           /* Membatasi tinggi elemen untuk dua baris */
 }
+
 
 .product-container {
   margin: 10px 0;
