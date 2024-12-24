@@ -551,7 +551,7 @@ margin-bottom: 5px;
 .sidebar {
     position: fixed;
     top: 100px;
-    left: -250px; /* Mulai disembunyikan di luar layar */
+    right: -250px; /* Mulai disembunyikan di luar layar */
     width: 250px;
     height: 100%;
     background-color: #333;
