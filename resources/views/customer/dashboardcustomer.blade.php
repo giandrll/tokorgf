@@ -99,7 +99,27 @@
         </form>
     </div>
 
-
+    <section class="productt-section" id="produk">
+        <h3 class="h4p">OUR PRODUCTS</h3>
+        <div class="sliderr-container">
+            <div class="slidess" id="slidess">
+                @foreach ($data_produk as $produk)
+                <div class="slidee">
+                    <div class="productt-card">
+                        <a href="dashboardproduk">
+                            <div class="image-wrapper">
+                                <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" alt="{{ $produk->nama_produk }}">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    
+    
+{{-- 
     <div class="video-branding">
         <!-- Video autoplay tanpa kontrol -->
         <video autoplay muted loop>
@@ -107,7 +127,7 @@
             <source src="{{ asset('video_setting/' . $item->video_toko) }}" type="video/mp4">
             Browser Anda tidak mendukung pemutaran video.
             @endforeach
-        </video>
+        </video> --}}
 
         <!-- Teks di tengah video -->
         <div class="text-overlay">
@@ -322,6 +342,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
+
         let currentSlide = 0;
 
         function showSlide(index) {
@@ -360,6 +381,54 @@
                 modal.style.display = "none";
             }
         }
+
+
+// Mendapatkan elemen slider
+const slides = document.getElementById('slidess');
+let currentIndex = 0;
+
+// Menyalin produk pertama ke akhir untuk membuat loop
+const firstSlide = slides.children[0];
+const lastSlide = slides.children[slides.children.length - 1];
+
+// Menambahkan slide pertama di akhir (infinite loop)
+const clonedFirstSlide = firstSlide.cloneNode(true);
+slides.appendChild(clonedFirstSlide);
+
+// Fungsi untuk memindahkan slide (menggeser kiri atau kanan)
+function moveSlide(direction) {
+    const slideCount = slides.children.length; // Jumlah slide
+    currentIndex = (currentIndex + direction + slideCount) % slideCount; // Menghitung index yang valid
+    updateSliderPosition();
+}
+
+// Memperbarui posisi slider berdasarkan index saat ini
+function updateSliderPosition() {
+    const slideWidth = slides.children[0].offsetWidth; // Mendapatkan lebar slide
+    slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`; // Memindahkan slider
+}
+
+// Mengatur interval auto-slide setiap 3 detik (3000ms)
+let autoSlide = setInterval(() => moveSlide(1), 3000);
+
+// Menghentikan auto-slide saat hover dan mengaktifkannya kembali saat mouse keluar
+slides.addEventListener('mouseover', () => clearInterval(autoSlide)); // Stop auto-slide saat hover
+slides.addEventListener('mouseout', () => {
+    autoSlide = setInterval(() => moveSlide(1), 1000); // Mulai lagi setelah mouse keluar
+});
+
+// Menangani akhir dari slider (ketika mencapai elemen terakhir)
+slides.addEventListener('transitionend', () => {
+    if (currentIndex === slides.children.length - 1) {
+        slides.style.transition = 'none'; // Hentikan transisi
+        currentIndex = slides.children.length - slides.children.length; // Kembali ke slide pertama
+        updateSliderPosition(); // Memperbarui posisi
+        setTimeout(() => {
+            slides.style.transition = 'transform 0.5s ease-in-out'; // Mulai transisi kembali
+        }, 50); // Tunggu sejenak untuk memastikan tidak ada efek transisi yang terlihat
+    }
+});
+
     </script>
 </body>
 
