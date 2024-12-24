@@ -720,6 +720,7 @@ margin-bottom: 5px;
 
 /* Styling untuk navbar-center */
 .navbar-center {
+    color: white;
     display: flex;            /* Menggunakan flexbox untuk mengatur posisi link */
     justify-content: center;  /* Mengatur agar link berada di tengah */
     align-items: center;      /* Memastikan link terpusat secara vertikal */
