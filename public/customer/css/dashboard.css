@@ -597,10 +597,10 @@ margin-bottom: 5px;
     font-family: 'Roboto', sans-serif; /* Menambahkan font Roboto */
 }
 
-}
+
 
 .sidebar-arrow {
-    margin-right: 10px; /* Memberikan jarak antara panah dan teks */
+    margin-right: 20px; /* Memberikan jarak antara panah dan teks */
 }
 
 /* Hover Effect for Links */
