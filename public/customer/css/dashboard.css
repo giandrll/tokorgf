@@ -719,3 +719,77 @@ display: none; /* Hide the entire AKU div on smaller screens */
 }
 }
 
+/* GENERAL STYLING */
+.productt-section {
+    position: relative;
+    background: linear-gradient(135deg, #868484, #9b9998);
+    padding: 60px 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.h4p {
+    font-size: 2rem; /* Ukuran font yang cukup besar */
+    font-weight: bold; /* Menebalkan teks */
+    color: #333; /* Warna teks */
+    text-transform: uppercase; /* Mengubah teks menjadi huruf kapital */
+    letter-spacing: 2px; /* Memberikan jarak antar huruf */
+    text-align: center; /* Mengatur teks agar berada di tengah */
+    margin: 20px 0; /* Menambahkan jarak atas dan bawah */
+    padding: 20px; /* Menambahkan ruang di sekitar teks */
+    border-bottom: 2px solid #a5a4a1; /* Memberikan garis bawah dekoratif */
+    background: linear-gradient(90deg, #5e5e5c, #999897); /* Latar gradasi */
+    color: white; /* Warna teks putih untuk kontras */
+    border-radius: 5px; /* Membuat sudut elemen sedikit melengkung */
+}
+/* SLIDER WRAPPER */
+.sliderr-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slidess {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slidee {
+    flex: 0 0 33.33%; /* 3 produk per slide */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.productt-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 90%; /* Sesuaikan ukuran card produk */
+    margin: 0 10px; /* Tambahkan jarak antar produk */
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .slidee {
+        flex: 0 0 100%; /* Untuk layar kecil, tampilkan satu produk per slide */
+    }
+}
+
+
+

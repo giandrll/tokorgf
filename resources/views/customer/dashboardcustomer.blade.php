@@ -233,8 +233,8 @@
 
             </div>
             <div class="navigation">
-                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                <button class="prev" onclick="SliderTwo.moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="SliderTwo.moveSlide(1)">&#10095;</button>
             </div>
         </div>
     </div>
@@ -342,93 +342,141 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
+               
+// First Slider Implementation
+const SliderOne = {
+    slides: null,
+    currentIndex: 0,
+    autoSlide: null,
+    
+    initialize() {
+        this.slides = document.getElementById('slidess');
+        if (!this.slides) return;
 
-        let currentSlide = 0;
+        // Clone first slide for infinite loop
+        const firstSlide = this.slides.children[0];
+        const clonedFirstSlide = firstSlide.cloneNode(true);
+        this.slides.appendChild(clonedFirstSlide);
 
-        function showSlide(index) {
-            const slides = document.querySelectorAll('.slide');
-            const totalSlides = slides.length;
+        // Set up event listeners
+        this.setupEventListeners();
+        this.startAutoSlide();
+    },
 
-            if (index >= totalSlides) {
-                currentSlide = 0;
-            } else if (index < 0) {
-                currentSlide = totalSlides - 1;
-            } else {
-                currentSlide = index;
+    moveSlide(direction) {
+        const slideCount = this.slides.children.length;
+        this.currentIndex = (this.currentIndex + direction + slideCount) % slideCount;
+        this.updateSliderPosition();
+    },
+
+    updateSliderPosition() {
+        const slideWidth = this.slides.children[0].offsetWidth;
+        this.slides.style.transform = `translateX(-${this.currentIndex * slideWidth}px)`;
+    },
+
+    startAutoSlide() {
+        this.autoSlide = setInterval(() => this.moveSlide(1), 3000);
+    },
+
+    stopAutoSlide() {
+        if (this.autoSlide) {
+            clearInterval(this.autoSlide);
+        }
+    },
+
+    setupEventListeners() {
+        // Mouse events
+        this.slides.addEventListener('mouseover', () => this.stopAutoSlide());
+        this.slides.addEventListener('mouseout', () => this.startAutoSlide());
+
+        // Handle infinite loop transition
+        this.slides.addEventListener('transitionend', () => {
+            if (this.currentIndex === this.slides.children.length - 1) {
+                this.slides.style.transition = 'none';
+                this.currentIndex = 0;
+                this.updateSliderPosition();
+                setTimeout(() => {
+                    this.slides.style.transition = 'transform 0.5s ease-in-out';
+                }, 50);
             }
-
-            const offset = -currentSlide * 100;
-            document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
-        }
-
-        function moveSlide(direction) {
-            showSlide(currentSlide + direction);
-        }
-
-        // Automatic slide
-        setInterval(() => {
-            moveSlide(1);
-        }, 5000); // Ganti slide setiap 5 detik
-
-        // Inisialisasi untuk menampilkan slide pertama
-        showSlide(currentSlide);
-
-        function toggleSearchModal() {
-            const modal = document.getElementById("searchModal");
-            if (modal.style.display === "none" || modal.style.display === "") {
-                modal.style.display = "block";
-            } else {
-                modal.style.display = "none";
-            }
-        }
-
-
-// Mendapatkan elemen slider
-const slides = document.getElementById('slidess');
-let currentIndex = 0;
-
-// Menyalin produk pertama ke akhir untuk membuat loop
-const firstSlide = slides.children[0];
-const lastSlide = slides.children[slides.children.length - 1];
-
-// Menambahkan slide pertama di akhir (infinite loop)
-const clonedFirstSlide = firstSlide.cloneNode(true);
-slides.appendChild(clonedFirstSlide);
-
-// Fungsi untuk memindahkan slide (menggeser kiri atau kanan)
-function moveSlide(direction) {
-    const slideCount = slides.children.length; // Jumlah slide
-    currentIndex = (currentIndex + direction + slideCount) % slideCount; // Menghitung index yang valid
-    updateSliderPosition();
-}
-
-// Memperbarui posisi slider berdasarkan index saat ini
-function updateSliderPosition() {
-    const slideWidth = slides.children[0].offsetWidth; // Mendapatkan lebar slide
-    slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`; // Memindahkan slider
-}
-
-// Mengatur interval auto-slide setiap 3 detik (3000ms)
-let autoSlide = setInterval(() => moveSlide(1), 3000);
-
-// Menghentikan auto-slide saat hover dan mengaktifkannya kembali saat mouse keluar
-slides.addEventListener('mouseover', () => clearInterval(autoSlide)); // Stop auto-slide saat hover
-slides.addEventListener('mouseout', () => {
-    autoSlide = setInterval(() => moveSlide(1), 1000); // Mulai lagi setelah mouse keluar
-});
-
-// Menangani akhir dari slider (ketika mencapai elemen terakhir)
-slides.addEventListener('transitionend', () => {
-    if (currentIndex === slides.children.length - 1) {
-        slides.style.transition = 'none'; // Hentikan transisi
-        currentIndex = slides.children.length - slides.children.length; // Kembali ke slide pertama
-        updateSliderPosition(); // Memperbarui posisi
-        setTimeout(() => {
-            slides.style.transition = 'transform 0.5s ease-in-out'; // Mulai transisi kembali
-        }, 50); // Tunggu sejenak untuk memastikan tidak ada efek transisi yang terlihat
+        });
     }
+};
+
+// Second Slider Implementation
+const SliderTwo = {
+    currentSlide: 0,
+    slideInterval: null,
+
+    initialize() {
+        this.showSlide(0);
+        this.startAutoSlide();
+    },
+
+    showSlide(index) {
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        if (index >= totalSlides) {
+            this.currentSlide = 0;
+        } else if (index < 0) {
+            this.currentSlide = totalSlides - 1;
+        } else {
+            this.currentSlide = index;
+        }
+
+        const offset = -this.currentSlide * 100;
+        const slidesContainer = document.querySelector('.slides');
+        if (slidesContainer) {
+            slidesContainer.style.transform = `translateX(${offset}%)`;
+        }
+    },
+
+    moveSlide(direction) {
+        this.showSlide(this.currentSlide + direction);
+    },
+
+    startAutoSlide() {
+        this.slideInterval = setInterval(() => {
+            this.moveSlide(1);
+        }, 5000);
+    },
+
+    stopAutoSlide() {
+        if (this.slideInterval) {
+            clearInterval(this.slideInterval);
+        }
+    }
+};
+
+// Search Modal Implementation
+const SearchModal = {
+    modal: null,
+
+    initialize() {
+        this.modal = document.getElementById("searchModal");
+    },
+
+    toggle() {
+        if (!this.modal) return;
+        
+        if (this.modal.style.display === "none" || this.modal.style.display === "") {
+            this.modal.style.display = "block";
+        } else {
+            this.modal.style.display = "none";
+        }
+    }
+};
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    SliderOne.initialize();
+    SliderTwo.initialize();
+    SearchModal.initialize();
 });
 
+// Make toggle function available globally for onclick handlers
+window.toggleSearchModal = () => SearchModal.toggle();
     </script>
 </body>
 

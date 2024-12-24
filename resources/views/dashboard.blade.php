@@ -51,7 +51,31 @@
           @endforeach
         </div>
     </div>
-<div class="video-branding">
+
+
+    
+    <section class="productt-section" id="produk">
+      <h3 class="h4p">OUR PRODUCTS</h3>
+      <div class="sliderr-container">
+          <div class="slidess" id="slidess">
+              @foreach ($data_produk as $produk)
+              <div class="slidee">
+                  <div class="productt-card">
+                      <a href="dashboardproduk">
+                          <div class="image-wrapper">
+                              <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" alt="{{ $produk->nama_produk }}">
+                          </div>
+                      </a>
+                  </div>
+              </div>
+              @endforeach
+          </div>
+      </div>
+  </section>
+
+
+
+{{-- <div class="video-branding">
     <!-- Video autoplay tanpa kontrol -->
 
     <video autoplay muted loop>
@@ -65,7 +89,7 @@
     <div class="text-overlay">
        RGF STORE
     </div>
-</div>
+</div> --}}
     <div class="brand2">
     <div class="brand-content">
         <h6>Brand Kami</h6>
@@ -274,35 +298,119 @@ function checkLogin() {
         }
     });
 }
-        let currentSlide = 0;
+      // First Slider Implementation
+const SliderOne = {
+    slides: null,
+    currentIndex: 0,
+    autoSlide: null,
+    
+    initialize() {
+        this.slides = document.getElementById('slidess');
+        if (!this.slides) return;
 
-function showSlide(index) {
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
+        // Clone first slide for infinite loop
+        const firstSlide = this.slides.children[0];
+        const clonedFirstSlide = firstSlide.cloneNode(true);
+        this.slides.appendChild(clonedFirstSlide);
 
-    if (index >= totalSlides) {
-        currentSlide = 0;
-    } else if (index < 0) {
-        currentSlide = totalSlides - 1;
-    } else {
-        currentSlide = index;
+        // Set up event listeners
+        this.setupEventListeners();
+        this.startAutoSlide();
+    },
+
+    moveSlide(direction) {
+        const slideCount = this.slides.children.length;
+        this.currentIndex = (this.currentIndex + direction + slideCount) % slideCount;
+        this.updateSliderPosition();
+    },
+
+    updateSliderPosition() {
+        const slideWidth = this.slides.children[0].offsetWidth;
+        this.slides.style.transform = `translateX(-${this.currentIndex * slideWidth}px)`;
+    },
+
+    startAutoSlide() {
+        this.autoSlide = setInterval(() => this.moveSlide(1), 3000);
+    },
+
+    stopAutoSlide() {
+        if (this.autoSlide) {
+            clearInterval(this.autoSlide);
+        }
+    },
+
+    setupEventListeners() {
+        // Mouse events
+        this.slides.addEventListener('mouseover', () => this.stopAutoSlide());
+        this.slides.addEventListener('mouseout', () => this.startAutoSlide());
+
+        // Handle infinite loop transition
+        this.slides.addEventListener('transitionend', () => {
+            if (this.currentIndex === this.slides.children.length - 1) {
+                this.slides.style.transition = 'none';
+                this.currentIndex = 0;
+                this.updateSliderPosition();
+                setTimeout(() => {
+                    this.slides.style.transition = 'transform 0.5s ease-in-out';
+                }, 50);
+            }
+        });
     }
+};
 
-    const offset = -currentSlide * 100;
-    document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
-}
+// Second Slider Implementation
+const SliderTwo = {
+    currentSlide: 0,
+    slideInterval: null,
 
-function moveSlide(direction) {
-    showSlide(currentSlide + direction);
-}
+    initialize() {
+        this.showSlide(0);
+        this.startAutoSlide();
+    },
 
-// Automatic slide
-setInterval(() => {
-    moveSlide(1);
-}, 5000); // Ganti slide setiap 5 detik
+    showSlide(index) {
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
 
-// Inisialisasi untuk menampilkan slide pertama
-showSlide(currentSlide);
+        if (index >= totalSlides) {
+            this.currentSlide = 0;
+        } else if (index < 0) {
+            this.currentSlide = totalSlides - 1;
+        } else {
+            this.currentSlide = index;
+        }
+
+        const offset = -this.currentSlide * 100;
+        const slidesContainer = document.querySelector('.slides');
+        if (slidesContainer) {
+            slidesContainer.style.transform = `translateX(${offset}%)`;
+        }
+    },
+
+    moveSlide(direction) {
+        this.showSlide(this.currentSlide + direction);
+    },
+
+    startAutoSlide() {
+        this.slideInterval = setInterval(() => {
+            this.moveSlide(1);
+        }, 5000);
+    },
+
+    stopAutoSlide() {
+        if (this.slideInterval) {
+            clearInterval(this.slideInterval);
+        }
+    }
+};
+
+
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    SliderOne.initialize();
+    SliderTwo.initialize();
+});
 
     </script>
 </body>
