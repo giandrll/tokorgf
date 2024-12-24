@@ -546,13 +546,11 @@ margin-bottom: 5px;
         font-size: 12px;
     }
 }
-/* Navbar Styling */
-/* Navbar Styling */
-/* Sidebar styling */
+
 /* Sidebar Styling */
 .sidebar {
     position: fixed;
-    top: 0;
+    top: 100px;
     left: -250px; /* Mulai disembunyikan di luar layar */
     width: 250px;
     height: 100%;
