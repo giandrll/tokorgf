@@ -61,16 +61,16 @@
 
          <!-- Navigation Links with Arrow -->
          <a href="/" class="sidebar-link">
-            <span class="sidebar-arrow">→</span> Home
+            <span class="sidebar-arrow">→ </span> Home
         </a>
         <a href="/produksebelumlogin" class="sidebar-link">
-            <span class="sidebar-arrow">→</span> Product
+            <span class="sidebar-arrow">→ </span> Product
         </a>
         <a href="javascript:void(0)" onclick="checkLogin()" class="sidebar-link">
-            <span class="sidebar-arrow">→</span> About
+            <span class="sidebar-arrow">→ </span> About
         </a>
         <a href="/authcustomer" class="sidebar-link">
-            <span class="sidebar-arrow">→</span> Login
+            <span class="sidebar-arrow">→ </span> Login
         </a>
 
         <!-- Join Section -->
