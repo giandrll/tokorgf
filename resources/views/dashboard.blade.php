@@ -14,36 +14,36 @@
 
 </head>
 <body>
-
 <nav class="navbar">
-        <div class="navbar-container">
-            <!-- Logo/Kiri -->
-            <div class="navbar-left">
-                @foreach ($data_setting as $item)
-
+    <div class="navbar-container">
+        <!-- Logo/Kiri -->
+        <div class="navbar-left">
+            @foreach ($data_setting as $item)
                 <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
-                @endforeach
-            </div>
-            <div class="AKU">
-                @foreach ($data_setting as $item)
-                    <p>{{ $item->nama_toko }}</p>
-                @endforeach
-            </div>
+            @endforeach
+        </div>
 
-            <!-- Pilihan Tengah -->
-            <div class="navbar-center">
-                <a href="/" >Home</a>
-                <a href="/produksebelumlogin">Product</a>
-                <a href="javascript:void(0)" onclick="checkLogin()">About</a>
-            </div>
+        <!-- Nama Toko -->
+        <div class="AKU">
+            @foreach ($data_setting as $item)
+                <p>{{ $item->nama_toko }}</p>
+            @endforeach
+        </div>
 
-            <!-- Pilihan Kanan -->
-            <div class="navbar-right">
-                <a href="/authcustomer" class="btn-login">Login</a>
-            </div>
+        <!-- Pilihan Tengah -->
+        <div class="navbar-center">
+            <a href="/">Home</a>
+            <a href="/produksebelumlogin">Product</a>
+            <a href="javascript:void(0)" onclick="checkLogin()">About</a>
+        </div>
 
-        </div> 
+        <!-- Pilihan Kanan -->
+        <div class="navbar-right">
+            <a href="/authcustomer" class="btn-login">Login</a>
+        </div>
+    </div> 
 </nav>
+
     <div class="navbarm">
         <div class="marqueem">
           @foreach ($data_setting as $item)

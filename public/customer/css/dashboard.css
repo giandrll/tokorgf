@@ -545,20 +545,20 @@ margin-bottom: 5px;
         font-size: 12px;
     }
 }
-
 /* Navbar Styling */
 .navbar {
     background-color: #333;
     height: 70px; /* Tinggi navbar */
     display: flex;
+    justify-content: center; /* Menjaga navbar tetap di tengah */
     align-items: center;
-    justify-content: center;
     position: fixed; /* Navbar fixed */
     top: 0; /* Menempel di bagian atas */
     left: 0;
     right: 0;
     z-index: 9000;
     border-bottom: 1px solid #f7f3f3; /* Border bawah navbar */
+    padding: 0 20px; /* Memberikan padding di sisi kiri dan kanan */
 }
 
 /* Kontainer untuk Navbar */
@@ -567,14 +567,28 @@ margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px; /* Maksimal lebar navbar */
 }
 
 /* Styling untuk bagian kiri navbar */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 .navbar-left a {
     color: rgb(255, 253, 253);
     padding: 0 10px;
     text-decoration: none;
     font-size: 14px;
+}
+
+/* Styling untuk nama toko */
+.AKU p {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 /* Styling untuk navbar-center (Link tengah) */
@@ -587,13 +601,13 @@ margin-bottom: 5px;
 .navbar-center a {
     color: white;
     font-family: 'Sans-serif', Helvetica;
-    padding: 0 10px;
+    padding: 0 15px; /* Memberikan jarak antar link */
     font-weight: bold;
     text-decoration: none;
     font-size: 14px;
 }
 
-.navbar-center a:hover, .navbar-left a:hover {
+.navbar-center a:hover {
     color: #ddd;
 }
 
@@ -601,7 +615,7 @@ margin-bottom: 5px;
 .navbar-logo {
     height: 65px; /* Logo default */
     width: auto;
-    max-height: 100%; /* Pastikan tidak lebih besar dari navbar */
+    max-height: 100%; /* Pastikan logo tidak lebih besar dari navbar */
     transition: height 0.3s ease; /* Transisi saat mengubah ukuran */
 }
 
@@ -625,7 +639,7 @@ margin-bottom: 5px;
 .navbar-right {
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    justify-content: flex-end; /* Menjaga tombol login di kanan */
 }
 
 .navbar-right a {
