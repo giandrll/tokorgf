@@ -3,15 +3,11 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use App\Models\Kasir;
 use App\Models\Produk;
-use App\Models\Payment;
 use App\Models\WaOrder;
 use App\Models\Customer;
-use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use App\Models\kategoriproduk;
-use App\Models\DetailTransaksi;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 

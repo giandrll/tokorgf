@@ -6,6 +6,12 @@
         padding: 40px 0 20px;
     }
 
+    @media (max-width: 768px) {
+    .footer {
+        margin-bottom: 65px;
+    }
+
+}
 
 .footer .container {
     display: flex;

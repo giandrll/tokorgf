@@ -26,6 +26,13 @@
                     <p>{{ $item->nama_toko }}</p>
                 @endforeach
             </div>
+            <div class="navbar-center1">
+                <div class="navbar-center1">
+                  <a href="/" class="navbar-link">Home</a>|
+                  <a href="/produksebelumlogin" class="navbar-link">Product</a>|
+                  <a href="javascript:void(0)" onclick="checkLogin()" class="navbar-link">About</a>
+                </div>
+              </div>
 
         
                 <!-- Cart Icon -->
@@ -190,7 +197,7 @@
         </div>
     </div>
 
-    @include('footer.footer')
+    @include('footer.footerdsbrutm')
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

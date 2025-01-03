@@ -16,7 +16,6 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\AuthAdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthCustomerController;
-use App\Http\Controllers\LaporanProdukController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\KategoriProdukController;
 use App\Http\Controllers\DashboardProdukController;

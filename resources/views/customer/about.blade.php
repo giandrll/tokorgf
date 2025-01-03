@@ -439,7 +439,7 @@ background-color: #333  ; /* Latar belakang lebih gelap */
                     <a href="/dashboardcustomer" class="nav-item">
                         <div class="icon-container">
                             <i class="fas fa-home icon-hover"></i>
-                        </div>                   
+                        </div>
                         <span>Home</span>
                     </a>
                     <a href="/dashboardproduk" class="nav-item">
@@ -451,6 +451,7 @@ background-color: #333  ; /* Latar belakang lebih gelap */
                         <span>About</span>
                     </a>
                 </div>
+    
     
     
                 <!-- Pilihan Kanan -->

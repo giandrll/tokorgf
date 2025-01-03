@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Produk;
 use App\Models\Setting;
-use App\Models\Kategoriproduk;
+use App\Models\kategoriproduk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +23,7 @@ class ProdukSebelumloginController extends Controller
             ->paginate(8); // Menambahkan pagination dengan 8 item per halaman
     
         // Ambil data kategori dan setting
-        $data_kategori = Kategoriproduk::all();
+        $data_kategori = kategoriproduk::all();
         $data_setting = Setting::all();
                      
         // Data yang akan dikirim ke tampilan

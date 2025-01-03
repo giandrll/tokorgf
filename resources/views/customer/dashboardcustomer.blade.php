@@ -108,7 +108,7 @@
                    @foreach (json_decode($item->fotosedanghits, true) as $foto)
                     <div class="slidee">
                       <div class="productt-card">
-                        <a href="produksebelumlogin">
+                        <a href="dashboardproduk">
                           <div class="image-wrapper">
                               <!-- Update the image path to use 'hits' directory -->
                               <img src="{{ asset('foto/fotoSetting/hits/' . $foto) }}" alt="Foto Sedang Hits">

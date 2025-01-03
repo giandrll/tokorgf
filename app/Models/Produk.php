@@ -26,7 +26,7 @@ class Produk extends Model
 
     public function kategori()
     {
-        return $this->belongsTo(KategoriProduk::class, 'id_kategori');
+        return $this->belongsTo(kategoriproduk::class, 'id_kategori');
     }
 
     public function waOrder()

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Models\Produk;
 use App\Models\Setting;
-use App\Models\Kategoriproduk;
+use App\Models\kategoriproduk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,7 +28,7 @@ class DashboardProdukController extends Controller
             })
             ->paginate(8); // Add pagination with 8 items per page
 
-        $data_kategori = Kategoriproduk::all();
+        $data_kategori = kategoriproduk::all();
         $data_setting = Setting::all();
         $selectedCategory = $data_kategori->where('id', $kategoriId)->first();
 

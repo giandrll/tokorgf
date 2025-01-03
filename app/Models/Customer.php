@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\transaksi;
 use Illuminate\Foundation\Auth\User as Authenticatable; // Menggunakan User sebagai Authenticatable
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -31,10 +30,6 @@ class Customer extends Authenticatable
         'remember_token',
     ];
 
-    public function transaksi()
-    {
-        return $this->hasMany(Transaksi::class);
-    }
     
 
 }

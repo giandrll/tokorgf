@@ -86,10 +86,10 @@
                                     <label for="textbranding_toko">Text Branding</label>
                                     <textarea name="textbranding_toko" id="textbranding_toko" class="form-control" rows="5">{{ $setting->textbranding_toko ?? '' }}</textarea>
                                 </div>
-
+ 
                                 <div class="container-fluid">
                                     <!-- Video Store Section -->
-                                    <div class="card mb-4">
+                                    {{-- <div class="card mb-4">
                                         <div class="card-header bg-primary text-white">
                                             <h5 class="mb-0">Video Toko</h5>
                                         </div>
@@ -111,7 +111,7 @@
                                                 </small>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 
                                     <!-- Featured Photos Section -->
                                     <div class="card mb-4">
