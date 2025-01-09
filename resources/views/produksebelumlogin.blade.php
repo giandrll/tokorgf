@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>RGF Store</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logomerah.png">
+    @foreach ($data_setting as $item)
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}">
+    @endforeach
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -21,6 +23,12 @@
     <nav class="navbar3">
         <div class="navbar-container3">
             <!-- Store Name -->
+            <div class="navbar-left">
+                @foreach ($data_setting as $item)
+                    
+                <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo1">
+                @endforeach
+            </div>
             <div class="AKU">
                 @foreach ($data_setting as $item)
                     <p>{{ $item->nama_toko }}</p>
@@ -30,7 +38,7 @@
                 <div class="navbar-center1">
                   <a href="/" class="navbar-link">Home</a>|
                   <a href="/produksebelumlogin" class="navbar-link">Product</a>|
-                  <a href="javascript:void(0)" onclick="checkLogin()" class="navbar-link">About</a>
+                  <a href="javascript:void(0)" onclick="checkabout()" class="navbar-link">About</a>
                 </div>
               </div>
 
@@ -197,7 +205,7 @@
         </div>
     </div>
 
-    @include('footer.footerdsbrutm')
+    @include('footer.footer')
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

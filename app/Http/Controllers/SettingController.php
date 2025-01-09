@@ -11,7 +11,8 @@ class SettingController extends Controller
     public function index()
     {
         $setting = Setting::first(); // Mengambil data setting pertama
-        return view('admin.dashboardadmin.setting', compact('setting'));
+        $data_setting = Setting::all();
+        return view('admin.dashboardadmin.setting', compact('setting','data_setting'));
     }
 
     // Simpan perubahan setting

@@ -210,91 +210,164 @@ body {
     /* Jarak bawah (opsional, sesuai dengan mb-4) */
 }
 
-/* Styling for Total Keranjang */
-.total-css {
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 30px;
+.shopee-checkout {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
-/* Styling for the Total Amount */
-.total-css h4 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-/* Styling for the amount (text-success) */
-.total-css .text-success {
-    font-size: 20px;
-    font-weight: 700;
-}
-
-/* Flexbox container for buttons */
-.d-flex {
+.checkout-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 16px;
     display: flex;
-    flex-direction: column;
-    gap: 15px; /* Space between buttons */
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Flexbox layout for small screen */
-@media (min-width: 576px) {
-    .d-flex {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
-
-/* Styling for the buttons */
-.btn-abu {
-    padding: 12px 20px;
-    background-color: #6c757d; /* Default gray color */
-    color: white;
-    font-size: 14px;
-    border: none;
-    border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-decoration: none;
-    text-align: center;
-}
-
-/* Hover effect for buttons */
-.btn-abu:hover {
-    background-color: #5a6268;
-    transform: translateY(-2px);
-}
-
-/* Icon Styling inside the buttons */
-.btn-abu i {
-    margin-right: 8px; /* Adds space between icon and text */
-}
-
-/* Responsive Styling for Buttons and Text */
-@media (max-width: 576px) {
-    .btn-abu {
-        width: 100%; /* Make buttons full width on small screens */
-    }
-    .total-css {
-        padding: 15px; /* Decrease padding for smaller devices */
-    }
-    .total-css h4 {
-        font-size: 16px; /* Smaller font size on smaller screens */
-    }
-}
-
-.quantity-wrapper {
+/* Select All Section */
+.select-all-section {
     display: flex;
     align-items: center;
-    width: 120px;
-    /* Lebar keseluruhan */
-    border: 1px solid #eaeaea;
-    border-radius: 5px;
-    overflow: hidden;
+    gap: 24px;
 }
 
+/* Checkbox Styling */
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.checkbox-wrapper input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 2px;
+}
+
+.checkbox-wrapper:hover input ~ .checkmark {
+    background-color: #fff5f3;
+}
+
+.checkbox-wrapper input:checked ~ .checkmark {
+    background-color: #000000;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-wrapper input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-wrapper .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.select-all-text {
+    font-size: 14px;
+    color: #222222;
+}
+
+/* Total Section Styling */
+.total-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.total-label {
+    font-size: 14px;
+    color: #757575;
+}
+
+.total-amount {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000; /* Shopee orange color */
+}
+
+/* Checkout Button Styling */
+.checkout-button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.checkout-button:hover {
+    background-color: #000000;
+}
+
+.checkout-button i {
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .checkout-content {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .select-all-section {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .total-section {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .checkout-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Safe Area for iOS Devices */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .shopee-checkout {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
 .minus-btn,
 .plus-btn {
     width: 35px;
@@ -411,6 +484,42 @@ margin-right: 10px; /* Jarak dengan elemen di sebelah kanan */
 background-color: #8e8e8e; /* Warna lebih gelap saat hover */
 }
 
+.navbar8 {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 26px 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.close-icon {
+    font-size: 30px; /* Increase the size of the close icon */
+    color: #333;
+    cursor: pointer;
+    margin-right: 15px; /* Add some space between the icon and the title */
+}
+
+.page-title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 24px; /* Size of the page title */
+    font-weight: 600;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.cart-count {
+    font-size: 18px;
+    font-weight: bold;
+    color: #31302f; /* Bright color to make the cart count stand out */
+    margin-left: 5px; /* Small space between the text and the count */
+}
 
 
 /* Style untuk link 'RGF Store' */

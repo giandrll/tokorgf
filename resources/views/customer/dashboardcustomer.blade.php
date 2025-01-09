@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>RGF Store</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logomerah.png">
+    @foreach ($data_setting as $item)
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}">
+    @endforeach
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -59,11 +61,25 @@
     <nav class="navbar3">
         <div class="navbar-container3">
             <!-- Store Name -->
+            <div class="navbar-left">
+                @foreach ($data_setting as $item)
+
+                <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo1">
+                @endforeach
+            </div>
             <div class="AKU">
                 @foreach ($data_setting as $item)
                     <p>{{ $item->nama_toko }}</p>
                 @endforeach
             </div>
+
+            <div class="navbar-center1">
+                <div class="navbar-center1">
+                    <a href="/dashboardcustomer" class="navbar-link">Home</a>|
+                    <a href="/dashboardproduk" class="navbar-link">Product</a>|
+                    <a href="/customer/about" class="navbar-link">About</a>
+                </div>
+              </div>
 
             <!-- Search and Cart Section -->
             <div class="d-flex align-items-center">
@@ -165,9 +181,8 @@
         @endforeach      </a>
     </div>
     <div class="product-info">
-      <h5>T-shirt Oversize | RGF Apparel</h5>
+      <h5>Inilah produk andalan kami, pilihan terbaik yang telah terbukti memuaskan banyak pelanggan!</h5>
       <div class="price">
-        <span class="new-price">Rp 105.000</span>
       </div>
     </div>
   </div>
@@ -184,9 +199,8 @@
         @endforeach      </a>
     </div>
     <div class="product-info">
-      <h5>T-shirt Oversize | RGF Apparel</h5>
+      <h5>Inilah produk andalan kami, pilihan terbaik yang telah terbukti memuaskan banyak pelanggan!</h5>
       <div class="price">
-        <span class="new-price">Rp 105.000</span>
       </div>
     </div>
   </div>
@@ -203,9 +217,8 @@
         @endforeach      </a>
     </div>
     <div class="product-info">
-      <h5>T-shirt Oversize | RGF Apparel</h5>
+      <h5>Inilah produk andalan kami, pilihan terbaik yang telah terbukti memuaskan banyak pelanggan!</h5>
       <div class="price">
-        <span class="new-price">Rp 105.000</span>
       </div>
     </div>
   </div>
@@ -270,7 +283,7 @@
         @endforeach      </a>
     </div>
     <div class="product-info">
-        <h5>HOODIE Fluto | RGF STORE X RezaAlfa</h5>
+        <h5>Hasil kerja sama yang tidak biasa, produk kolaborasi ini adalah perpaduan sempurna dari inovasi dan gaya.</h5>
 
     </div>
 </div>
@@ -288,7 +301,7 @@
         </a>
     </div>
     <div class="product-info">
-        <h5>T-Shirt Have Or Fun | RGF STORE X Giandrll</h5>
+        <h5>Hasil kerja sama yang tidak biasa, produk kolaborasi ini adalah perpaduan sempurna dari inovasi dan gaya.</h5>
     </div>
 </div>
 
@@ -305,7 +318,7 @@
         </a>
     </div>
     <div class="product-info">
-        <h5>Crewneck Kojek | RGF STORE X FauzanM</h5>
+        <h5>Hasil kerja sama yang tidak biasa, produk kolaborasi ini adalah perpaduan sempurna dari inovasi dan gaya.</h5>
     </div>
 </div>
 </div>

@@ -5,8 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logomerah.png">
+    @foreach ($data_setting as $item)
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}">
+    @endforeach
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
        <!-- Sertakan SweetAlert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -147,6 +152,14 @@ color: #333; /* Warna ikon */
     color: #333;
 }
 
+
+.close-icon {
+    font-size: 30px; /* Increase the size of the close icon */
+    color: #333;
+    cursor: pointer;
+    margin-right: 15px; /* Add some space between the icon and the title */
+}
+
 .page-title {
     flex-grow: 1;
     text-align: center;
@@ -162,127 +175,116 @@ color: #333; /* Warna ikon */
 
 /* Navbar Styling */
 .navbar {
-width: 100%;
-background-color: #333;
-color: white;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 0px 0px;
-position: fixed;
-bottom: 0;
-/* Make the navbar stick to the bottom */
-left: 0;
-z-index: 1000;
-/* Ensure it's on top */
-box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.3);
+    width: 90%; /* Reduced from 100% to create floating effect */
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 20px; /* Added space from bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 1000;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 20px; /* Added rounded corners */
+    padding: 12px 20px; /* Increased padding */
+    max-width: 480px; /* Maximum width for larger screens */
 }
 
 .navbar-container {
-display: flex;
-justify-content: space-between;
-width: 100%;
-max-width: 1200px;
-margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
 }
 
 /* Navbar Left (Logo) */
 .navbar-left {
-display: flex;
-align-items: center;
-/* Agar logo tetap di kiri dan sejajar dengan item lainnya */
+    display: flex;
+    align-items: center;
 }
 
-/* Ukuran logo disesuaikan agar tidak terlalu besar */
 .navbar-logo {
-width: 60px; /* Ukuran logo yang lebih kecil */
-height: auto; /* Menjaga proporsi logo */
+    width: 40px; /* Reduced logo size */
+    height: auto;
+    margin-right: 10px;
 }
-
 
 /* Navbar Center (Middle Links) */
 .navbar-center {
-display: flex;
-justify-content: space-around;
-/* Menjaga elemen tetap bersebelahan */
-width: 50%;
+    display: flex;
+    justify-content: space-around;
+    width: 100%; /* Increased to take full width */
 }
 
 /* Navbar Center Links */
 .navbar-center a {
-text-decoration: none;
-color: white;
-padding: 10px 10px;
-font-size: 16px;
-}
-
-.navbar-center a:hover {
-/* background-color: #575757; */
-border-radius: 5px;
-}
-
-/* Navbar Right (Login) */
-.navbar-right a {
-text-decoration: none;
-color: white;
-padding: 10px 20px;
-font-size: 16px;
-}
-
-.navbar-right a:hover {
-background-color: #575757;
-border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px;
+    font-size: 16px;
 }
 
 .nav-item {
-display: inline-flex;
-flex-direction: column;
-/* Agar icon di atas teks */
-align-items: center;
-text-decoration: none;
-color: inherit;
-margin: 0 15px;
-/* Memberi sedikit jarak antara item */
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    margin: 0 12px;
+    padding: 8px 0;
+    transition: all 0.3s ease; /* Smooth hover effect */
 }
 
 .nav-item i {
-font-size: 24px;
-/* Ukuran ikon */
+    font-size: 22px;
+    margin-bottom: 4px;
 }
 
 .nav-item span {
-font-size: 12px;
-/* Ukuran teks */
-margin-top: 4px;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.nav-item:hover {
+    transform: translateY(-2px); /* Slight lift effect on hover */
+    color: #f0f0f0;
 }
 
 /* Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-/* Mobile Styling (for screens smaller than 768px) */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-/* Sembunyikan logo pada layar kecil */
-.navbar-logo {
-display: none;
+    .navbar {
+        width: 94%; /* Slightly wider on mobile */
+        bottom: 15px;
+        padding: 10px 15px;
+    }
+    
+    .nav-item {
+        margin: 0 8px;
+    }
+    
+    .navbar-logo {
+        display: none;
+    }
+    
+    .nav-item i {
+        font-size: 20px;
+    }
+    
+    .nav-item span {
+        font-size: 11px;
+    }
 }
 
-/* Navbar center tetap berada di tengah */
-.navbar-center {
-justify-content: center;
+@media (min-width: 769px) {
+    .navbar {
+        display: none;
+    }
 }
-
-/* Navbar container tidak berubah */
-.navbar-container {
-width: 100%;
-padding: 0 10px; /* Tambahkan sedikit padding untuk ruang */
-}
-
-/* Navbar item adjustments */
-.nav-item {
-margin: 0 10px; /* Kurangi jarak antar item di layar kecil */
-}
-}
-
 .store-link {
     font-family: 'Cursive', Brush Script MT;
     /* Ganti dengan font yang diinginkan */
@@ -430,7 +432,7 @@ background-color: #333  ; /* Latar belakang lebih gelap */
                 <!-- Logo/Kiri -->
                 <div class="navbar-left">
                     @foreach ($data_setting as $item)
-                        
+    
                     <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
                     @endforeach
                 </div>
@@ -453,14 +455,12 @@ background-color: #333  ; /* Latar belakang lebih gelap */
                 </div>
     
     
-    
                 <!-- Pilihan Kanan -->
                 <div class="navbar-right">
     
                 </div>
             </div>
         </nav>
-        
         <div class="profile-header mt-4">
             <a href="{{ route('customer.profile') }}">
                 <img src="{{ asset('storage/customer_photos/' . $customer->foto) }}" alt="User Avatar" id="userAvatar">

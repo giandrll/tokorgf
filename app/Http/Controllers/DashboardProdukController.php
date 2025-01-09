@@ -32,7 +32,7 @@ class DashboardProdukController extends Controller
         $data_setting = Setting::all();
         $selectedCategory = $data_kategori->where('id', $kategoriId)->first();
 
-        return view('dashboardproduk', [
+        return view('customer.dashboardproduk', [
             'title' => 'Our Products',
             'data_produk' => $data_produk,
             'customer' => $customer,

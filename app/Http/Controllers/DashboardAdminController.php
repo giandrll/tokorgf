@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Produk;
+use App\Models\Setting;
 use App\Models\WaOrder;
 use App\Models\Customer;
 use Illuminate\Http\Request;
@@ -25,7 +26,8 @@ class DashboardAdminController extends Controller
     public function dashboard()
     {
         $dashboardData = $this->getDashboardData();
-        return view('admin.dashboardadmin.admin', compact('dashboardData'));
+        $data_setting = Setting::all();
+        return view('admin.dashboardadmin.admin', compact('dashboardData','data_setting'));
     }
 
     private function getDashboardData()

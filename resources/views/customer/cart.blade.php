@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logomerah.png">
+    @foreach ($data_setting as $item)
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}">
+    @endforeach
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="customer/css/cart.css">
 
     <title>Keranjang Belanja</title>
@@ -17,26 +20,13 @@
 </head>
 
 <body>
-
-    <nav class="navbar">
-        <div class="navbar-container">
-            <!-- Logo/Kiri -->
-            <div class="navbar-left">
-                @foreach ($data_setting as $item)
-                    <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
-                @endforeach
-            </div>
-
-            <!-- Pilihan Tengah -->
-            <div class="navbar-center">
-                <a href="/dashboardcustomer"><i class="fas fa-home"></i> Home</a>
-                <a href="/dashboardproduk"><i class="fas fa-cubes"></i> Product</a>
-                <a href="/customer/about"><i class="fas fa-user"></i> About</a>
-                
-            </div>
-
-            <!-- Pilihan Kanan -->
-
+    <nav class="navbar8">
+        <i class="fas fa-arrow-left close-icon" onclick="closePage()"></i> <!-- Icon close dari Font Awesome -->
+        <div class="page-title">
+            Keranjang Saya 
+            <span class="cart-count">
+                ({{ $cartItems->sum('jumlah') }}) <!-- Display the total quantity of items in the cart -->
+            </span>
         </div>
     </nav>
     <div class="custom-div">
@@ -102,27 +92,39 @@
                             </div>
                         </div>
                     @endforeach
+                </div>   
+                <div class="shopee-checkout">
+                    <div class="checkout-content">
+                        <div class="select-all-section">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" id="selectAll" onchange="toggleSelectAll()">
+                                <span class="checkmark"></span>
+                                <span class="select-all-text">Pilih Semua</span>
+                            </label>
+                            <div class="total-section">
+                                <div class="total-label">Total Pesanan:</div>
+                                <div class="total-amount" id="totalAmount">Rp 0</div>
+                            </div>
+                        </div>
+                        <button type="button" class="checkout-button" onclick="processWhatsAppOrder()">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Checkout Sekarang</span>
+                        </button>
+                    </div>
                 </div>
-    
-                <div class="total-css">
-    <h4>Total Keranjang: <span class="text-success" id="totalAmount">Rp 0</span></h4>
-    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center mt-3 gap-2">
-        <button type="button" class="btn-abu">
-            <a href="/dashboardproduk" class="btn-abu">
-                <i class="fas fa-shopping-bag"></i> Lanjutkan Belanja
-            </a>
-        </button>
-        <button type="button" class="btn-abu" onclick="processWhatsAppOrder()">
-            <i class="fab fa-whatsapp"></i> Check Out Via WA
-        </button>
-    </div>
-</div>
+                
 
             </form>
         @endif
     </div>
     @foreach ($data_setting as $item)
     <script>
+
+function closePage() {
+        window.history.back(); // Kembali ke halaman sebelumnya
+    }
+
+
             function confirmDelete(id) {
         Swal.fire({
             title: 'Anda yakin?',
@@ -139,34 +141,87 @@
         });
     }
 
-    function updateTotal() {
-        let total = 0;
-        document.querySelectorAll('.product-checkbox:checked').forEach(checkbox => {
-            const productCard = checkbox.closest('.product-card');
-            const quantity = parseInt(productCard.querySelector('.jumlah-input').value);
-            const price = parseFloat(checkbox.dataset.price);
-            total += price * quantity;
+   // Function to toggle all product selections
+function toggleSelectAll() {
+    const selectAllCheckbox = document.getElementById('selectAll');
+    const productCheckboxes = document.querySelectorAll('.product-checkbox');
+    
+    productCheckboxes.forEach(checkbox => {
+        checkbox.checked = selectAllCheckbox.checked;
+    });
+    
+    updateTotal(); // Using the enhanced updateTotal function
+}
+
+// Main function to update total based on selected products and their quantities
+function updateTotal() {
+    let total = 0;
+    const checkedProducts = document.querySelectorAll('.product-checkbox:checked');
+    
+    checkedProducts.forEach(checkbox => {
+        const productCard = checkbox.closest('.product-card');
+        const quantity = parseInt(productCard.querySelector('.jumlah-input').value) || 1;
+        const price = parseFloat(checkbox.dataset.price) || 0;
+        total += price * quantity;
+    });
+    
+    document.getElementById('totalAmount').innerText = 'Rp ' + total.toLocaleString('id-ID');
+}
+
+// Function to decrease quantity
+function decreaseQuantity(itemId) {
+    const input = document.getElementById('jumlah_' + itemId);
+    const currentValue = parseInt(input.value);
+    
+    if (currentValue > 1) {
+        input.value = currentValue - 1;
+        updateTotal();
+    }
+}
+
+// Function to increase quantity
+function increaseQuantity(itemId, maxStock) {
+    const input = document.getElementById('jumlah_' + itemId);
+    const currentValue = parseInt(input.value);
+    
+    if (currentValue < maxStock) {
+        input.value = currentValue + 1;
+        updateTotal();
+    }
+}
+
+// Event listener for quantity input changes
+function setupQuantityInputListeners() {
+    document.querySelectorAll('.jumlah-input').forEach(input => {
+        input.addEventListener('change', function() {
+            const maxStock = parseInt(this.dataset.maxStock);
+            const value = parseInt(this.value);
+            
+            // Validate input
+            if (isNaN(value) || value < 1) {
+                this.value = 1;
+            } else if (value > maxStock) {
+                this.value = maxStock;
+            }
+            
+            updateTotal();
         });
-    
-        document.getElementById('totalAmount').innerText = 'Rp ' + total.toLocaleString('id-ID');
-    }
-    
-    function decreaseQuantity(itemId) {
-        const input = document.getElementById('jumlah_' + itemId);
-        if (parseInt(input.value) > 1) {
-            input.value = parseInt(input.value) - 1;
-            updateTotal();
-        }
-    }
-    
-    function increaseQuantity(itemId, maxStock) {
-        const input = document.getElementById('jumlah_' + itemId);
-        if (parseInt(input.value) < maxStock) {
-            input.value = parseInt(input.value) + 1;
-            updateTotal();
-        }
-    }
-    
+    });
+}
+
+// Event listener for checkbox changes
+function setupCheckboxListeners() {
+    document.querySelectorAll('.product-checkbox').forEach(checkbox => {
+        checkbox.addEventListener('change', updateTotal);
+    });
+}
+
+// Initialize all listeners when document is ready
+document.addEventListener('DOMContentLoaded', function() {
+    setupQuantityInputListeners();
+    setupCheckboxListeners();
+    updateTotal(); // Initial total calculation
+});
     async function processWhatsAppOrder() {
         try {
             const selectedCheckboxes = document.querySelectorAll('.product-checkbox:checked');

@@ -20,7 +20,7 @@ class CartController extends Controller
             $cartItems = Cart::where('customer_id', $customer->id)->with('produk')->get();
             $data_setting = Setting::all();
             // Mengirim data $customer ke view
-            return view('cart', compact('cartItems', 'customer', 'data_setting'));
+            return view('customer.cart', compact('cartItems', 'customer', 'data_setting'));
         } else {
             return redirect()->route('login')->with('error', 'Anda harus login sebagai customer.');
         }

@@ -4,8 +4,15 @@
         background-color: #EEEEEE;
         color: white;
         padding: 40px 0 20px;
-        margin-bottom: 70px;
+        padding-bottom: 20px;
     }
+
+    @media (max-width: 768px) {
+    .footer {
+        padding-bottom: 100px;
+    }
+
+}
 
 
 .footer .container {

@@ -194,25 +194,27 @@
 
     <!-- Modal Hapus Produk -->
     @foreach ($data_produk as $d)
-        <div class="modal fade" id="modalHapus{{ $d->id }}" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Hapus Produk</h5>
-                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Apakah Anda yakin ingin menghapus produk <strong>{{ $d->nama_produk }}</strong>?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <form method="POST" action="/produk/hapus/{{ $d->id }}">
-                            @csrf
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-danger">Hapus</button>
-                        </form>
-                    </div>
+    <div class="modal fade" id="modalHapus{{ $d->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hapus Produk</h5>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <p>Apakah Anda yakin ingin menghapus produk <strong>{{ $d->nama_produk }}</strong>?</p>
+                </div>
+                <div class="modal-footer">
+                    <form method="POST" action="/produk/destroy/{{ $d->id }}">
+                        @csrf
+                        @method('DELETE') <!-- Correct method here -->
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger">Hapus</button>
+                    </form>
                 </div>
             </div>
         </div>
-    @endforeach
+    </div>
+@endforeach
+
 @endsection

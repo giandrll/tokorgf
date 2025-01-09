@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\kategoriproduk;
+use App\Models\Setting;
 use Illuminate\Http\Request;
+use App\Models\kategoriproduk;
 
 class KategoriProdukController extends Controller
 {
@@ -12,6 +13,7 @@ class KategoriProdukController extends Controller
         $data = [
             'title' => 'Data Kategori Produk',
             'data_kategori' => kategoriproduk::all(),
+            'data_setting' => Setting::all(),
         ];
         return view('admin.dashboardadmin.kategoriproduk', $data);
     }
@@ -37,7 +39,7 @@ class KategoriProdukController extends Controller
 
         public function destroy($id)
         {
-            $kategoriproduk = kategorikroduk::find($id);
+            $kategoriproduk = kategoriproduk::find($id);
             if ($kategoriproduk) {
                 $kategoriproduk->delete();
                 return redirect('/kategoriproduk')->with('success', 'Data berhasil dihapus');

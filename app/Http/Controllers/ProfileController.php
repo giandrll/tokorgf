@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Setting;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +15,8 @@ class ProfileController extends Controller
     public function profile()
     {
         $customer = Auth::guard('customer')->user();
-        return view('customer.profile', compact('customer'));
+        $data_setting = Setting::all();
+        return view('customer.profile', compact('customer','data_setting'));
     }
 
     // Fungsi untuk mengupdate profil

@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>RGF Store</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/logomerah.png">
+    @foreach ($data_setting as $item)
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}">
+    @endforeach
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,69 +20,77 @@
 <body>
   
 
-<!-- Konten utama -->
-<nav class="navbar">
-    <div class="navbar-container">
-        <!-- Logo dan tombol untuk membuka sidebar di mobile -->
-        <div class="navbar-left">
-        @foreach ($data_setting as $item)
-            <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
-           
-                <div class="AKU">
-                    <p>{{ $item->nama_toko }}</p>
-                </div>
-            @endforeach
-        </div>
-        <div class="navbar-center1">
-          <div class="navbar-center">
-            <a href="/" class="navbar-link">Home</a>|
-            <a href="/produksebelumlogin" class="navbar-link">Product</a>|
-            <a href="javascript:void(0)" onclick="checkLogin()" class="navbar-link">About</a>
+<nav class="navbar3">
+  <div class="navbar-container3">
+      <!-- Store Name -->
+      <div class="navbar-left">
+          @foreach ($data_setting as $item)
+
+          <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo1">
+          @endforeach
+      </div>
+      <div class="AKU">
+          @foreach ($data_setting as $item)
+              <p>{{ $item->nama_toko }}</p>
+          @endforeach
+      </div>
+
+      <div class="navbar-center1">
+          <div class="navbar-center1">
+              <a href="/" class="navbar-link">Home</a>|
+              <a href="/produksebelumlogin" class="navbar-link">Product</a>|
+              <a href="javascript:void(0)" onclick="checkabout()" class="navbar-link">About</a>
           </div>
         </div>
-        <div class="navbar-right">
-        <a href="/authcustomer" class="btn-login sidebar-link">Login</a> <!-- Login Button in Sidebar -->
-        </div>
-        <!-- Tombol untuk toggle sidebar pada mobile -->
-        <div class="navbar-toggle" onclick="toggleSidebar()">☰</div>
-    </div>
-</nav>
-<!-- Sidebar -->
-<div id="sidebar" class="sidebar">
-    <!-- Close Button -->
-    <div class="sidebar-close" onclick="toggleSidebar()">×</div>
-
-    <!-- Sidebar Content -->
-    <div class="sidebar-content">
-
-         <!-- Navigation Links with Arrow -->
-         <a href="/" class="sidebar-link">
-            <span class="sidebar-arrow">→ </span> Home
-        </a>
-        <a href="/produksebelumlogin" class="sidebar-link">
-            <span class="sidebar-arrow">→ </span> Product
-        </a>
-        <a href="javascript:void(0)" onclick="checkLogin()" class="sidebar-link">
-            <span class="sidebar-arrow">→ </span> About
-        </a>
-
-        <!-- Join Section -->
-        <div class="sidebar-join">
-            <a href="/authcustomer" class="sidebar-join-link1">Login</a>
-            <a href="/register" class="sidebar-join-link">Sign Up</a>
-        </div>
-    </div>
+       <div class="navbar-right">
+         <a href="/authcustomer" class="btn-login sidebar-link">Login</a>
+       </div>
+       </div>
 </div>
-
-
-    <div class="navbarm">
+</nav>
+ <div class="navbarm">
         <div class="marqueem">
           @foreach ($data_setting as $item)
           Hai,{{$item->textbranding_toko}}</div>
           @endforeach
         </div>
     </div>
+    <nav class="navbar">
+      <div class="navbar-container">
+          <!-- Logo/Kiri -->
+          <div class="navbar-left">
+              @foreach ($data_setting as $item)
+                  
+              <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
+              @endforeach
+          </div>
 
+          <div class="navbar-center">
+              <a href="/" class="nav-item">
+                  <div class="icon-container">
+                      <i class="fas fa-home icon-hover"></i>
+                  </div>                   
+                  <span>Home</span>
+              </a>
+              <a href="/produksebelumlogin" class="nav-item">
+                  <i class="fas fa-cubes icon-hover"></i>
+                  <span>Product</span>
+              </a>
+              <a href="javascript:void(0)" class="nav-item" onclick="checkabout()">
+                  <i class="fas fa-user icon-hover"></i>
+                  <span>About</span>
+              </a>
+              
+          </div>
+
+
+          <!-- Pilihan Kanan -->
+          <div class="navbar-right">
+
+          </div>
+      </div>
+  </nav>
+ 
 
     
     <section class="productt-section" id="produk">
@@ -150,7 +160,7 @@
       </a>
     </div>
     <div class="product-info">
-      <h5>T-shirt Oversize | RGF Apparel</h5>
+      <h5>Inilah produk andalan kami, pilihan terbaik yang telah terbukti memuaskan banyak pelanggan!</h5>
     </div>
   </div>
 
@@ -168,7 +178,7 @@
      </a>
     </div>
     <div class="product-info">
-      <h5>T-shirt Oversize | RGF Apparel</h5>
+      <h5>Inilah produk andalan kami, pilihan terbaik yang telah terbukti memuaskan banyak pelanggan!</h5>
     </div>
   </div>
 
@@ -185,7 +195,7 @@
         @endforeach      </a>
     </div>
     <div class="product-info">
-      <h5>T-shirt Oversize | RGF Apparel</h5>
+      <h5>Inilah produk andalan kami, pilihan terbaik yang telah terbukti memuaskan banyak pelanggan!</h5>
     </div>
   </div>
 </div>
@@ -241,7 +251,7 @@
     </a>
     </div>
     <div class="product-info">
-      <h5>HOODIE Fluto | RGF STORE X RezaAlfa</h5>
+      <h5>Hasil kerja sama yang tidak biasa, produk kolaborasi ini adalah perpaduan sempurna dari inovasi dan gaya.</h5>
     </div>
   </div>
 
@@ -259,7 +269,7 @@
     </a>
     </div>
     <div class="product-info">
-      <h5>T-Shirt Have Or Fun | RGF STORE X Giandrll</h5>
+      <h5>Hasil kerja sama yang tidak biasa, produk kolaborasi ini adalah perpaduan sempurna dari inovasi dan gaya.</h5>
     </div>
   </div>
 
@@ -277,7 +287,7 @@
     </a>
     </div>
     <div class="product-info">
-      <h5>Crewneck Kojek | RGF STORE X FauzanM</h5>
+      <h5>Hasil kerja sama yang tidak biasa, produk kolaborasi ini adalah perpaduan sempurna dari inovasi dan gaya.</h5>
     </div>
   </div>
 </div>
@@ -313,7 +323,7 @@
     <span class="help-text">Butuh Bantuan? Klik di sini!</span>
 </a>
 
-@include('footer.footerdsbrutm')
+@include('footer.footer')
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -330,7 +340,7 @@ function toggleSidebar() {
 
 
 
-function checkLogin() {
+function checkabout() {
     Swal.fire({
         title: 'Anda harus login terlebih dahulu!',
         text: "Silakan login untuk mengakses halaman About.",

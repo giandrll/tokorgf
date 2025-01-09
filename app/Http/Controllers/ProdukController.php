@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
-use App\Models\kategoriproduk;
+use App\Models\Setting;
 use Illuminate\Http\Request;
+use App\Models\kategoriproduk;
 
 class ProdukController extends Controller
 {
@@ -13,6 +14,7 @@ class ProdukController extends Controller
     {
         $data = [
             'title' => 'Data Produk',
+            'data_setting' => Setting::all(),
             'data_kategori' => kategoriproduk::all(),
             'data_produk' => Produk::join('kategoriproduk', 'kategoriproduk.id', '=', 'produk.id_kategori')
                 ->select('produk.*', 'kategoriproduk.nama_kategori')

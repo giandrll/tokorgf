@@ -148,6 +148,6 @@ class OrderController extends Controller
             return redirect()->back()->with('error', 'Invoice hanya tersedia untuk pesanan yang sudah dibayar');
         }
         
-        return view('invoice', compact('order', 'data_setting'));
+        return view('admin.invoice', compact('order', 'data_setting'));
     }
 }
