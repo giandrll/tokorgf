@@ -104,7 +104,6 @@
 </div> --}}
     <div class="brand2">
     <div class="brand-content">
-        <h6>Brand Kami</h6>
         @foreach ($data_setting as $item)
         <h1>{{ $item->nama_toko }}</h1>
        @endforeach
