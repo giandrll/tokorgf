@@ -36,129 +36,7 @@ body {
     padding: 20px;
 
 }
-/* Navbar Styling */
-.navbar {
-    width: 90%; /* Reduced from 100% to create floating effect */
-    background-color: #333;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    bottom: 20px; /* Added space from bottom */
-    left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
-    z-index: 1000;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 20px; /* Added rounded corners */
-    padding: 12px 20px; /* Increased padding */
-    max-width: 480px; /* Maximum width for larger screens */
-}
 
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: auto;
-}
-
-/* Navbar Left (Logo) */
-.navbar-left {
-    display: flex;
-    align-items: center;
-}
-
-.navbar-logo {
-    width: 40px; /* Reduced logo size */
-    height: auto;
-    margin-right: 10px;
-}
-
-.navbar-logo1 {
-    width: 40px; /* Reduced logo size */
-    height: auto;
-    margin-right: 10px;
-}
-
-/* Navbar Center (Middle Links) */
-.navbar-center {
-    display: flex;
-    justify-content: space-around;
-    width: 100%; /* Increased to take full width */
-}
-
-/* Navbar Center Links */
-.navbar-center a {
-    text-decoration: none;
-    color: white;
-    padding: 8px 16px;
-    font-size: 16px;
-}
-
-.nav-item {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: inherit;
-    margin: 0 12px;
-    padding: 8px 0;
-    transition: all 0.3s ease; /* Smooth hover effect */
-}
-
-.nav-item i {
-    font-size: 22px;
-    margin-bottom: 4px;
-}
-
-.nav-item span {
-    font-size: 12px;
-    margin-top: 4px;
-}
-
-.nav-item:hover {
-    transform: translateY(-2px); /* Slight lift effect on hover */
-    color: #f0f0f0;
-}
-
-/* Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .navbar {
-        width: 94%; /* Slightly wider on mobile */
-        bottom: 15px;
-        padding: 10px 15px;
-    }
-    
-    .nav-item {
-        margin: 0 8px;
-    }
-    
-    .navbar-logo {
-        display: none;
-    }
-    .navbar-logo1 {
-        width: 40px; /* Reduced logo size */
-    height: auto;
-    margin-right: -40px;
-    }
-    
-    .nav-item i {
-        font-size: 20px;
-    }
-    
-    .nav-item span {
-        font-size: 11px;
-    }
-}
-
-@media (min-width: 769px) {
-    .navbar {
-        display: none;
-    }
-}
 
 .brand2 {
     display: flex;
@@ -335,6 +213,11 @@ background-color: #e0e0e0; /* Efek hover pada item daftar */
 
 }
 
+.navbar-logo1 {
+    width: 40px; /* Reduced logo size */
+height: auto;
+margin-right: 10px;
+}
 .navbar-container3 {
     display: flex;
     justify-content: space-between;
@@ -395,6 +278,11 @@ background-color: #e0e0e0; /* Efek hover pada item daftar */
   @media (max-width: 768px) {
     .navbar-center1 {
         display: none; /* Sembunyikan navbar-center pada layar kecil */
+    }
+    .navbar-logo1 {
+        width: 40px; /* Reduced logo size */
+    height: auto;
+    margin-right: -40px;
     }
   
   }

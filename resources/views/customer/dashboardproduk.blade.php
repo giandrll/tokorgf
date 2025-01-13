@@ -36,7 +36,7 @@
             <div class="navbar-center1">
                 <div class="navbar-center1">
                   <a href="/dashboardcustomer" class="navbar-link">Home</a>|
-                  <a href="/dashboardproduk" class="navbar-link">Product</a>|
+                  <a href="#" class="navbar-link">Product</a>|
                   <a href="/customer/about" class="navbar-link">About</a>
                 </div>
               </div>
@@ -50,40 +50,7 @@
         </div>
     </nav>
 
-    <nav class="navbar">
-        <div class="navbar-container">
-            <!-- Logo/Kiri -->
-            <div class="navbar-left">
-                @foreach ($data_setting as $item)
-
-                <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
-                @endforeach
-            </div>
-
-            <div class="navbar-center">
-                <a href="/dashboardcustomer" class="nav-item">
-                    <div class="icon-container">
-                        <i class="fas fa-home icon-hover"></i>
-                    </div>
-                    <span>Home</span>
-                </a>
-                <a href="/dashboardproduk" class="nav-item">
-                    <i class="fas fa-cubes icon-hover"></i>
-                    <span>Product</span>
-                </a>
-                <a href="/customer/about" class="nav-item">
-                    <i class="fas fa-user icon-hover"></i>
-                    <span>About</span>
-                </a>
-            </div>
-
-
-            <!-- Pilihan Kanan -->
-            <div class="navbar-right">
-
-            </div>
-        </div>
-    </nav>
+    @include('navbar.navbar')
 
    <div class="container">
     <h1 class="mb-4" style="padding-top: 50px;">Our Products</h1>

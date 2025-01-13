@@ -34,168 +34,12 @@
 
       
 
-
-        .navbar-nav {
-            display: inline-flex;
-            margin-right: 100px;
-            margin-top: 30px;
-            /* Mengatur item navbar dalam satu baris */
-        }
-
-        .nav-item {
-            margin-right: 9px;
-            top: 10px;
-            /* Jarak antar item navbar */
-        }
-
-        .navbar-brand {
-            display: inline-block;
-            /* Memungkinkan untuk mengatur lebar dan tinggi */
-            overflow-x: auto;
-            /* Membuat elemen dapat digulir secara horizontal */
-            white-space: nowrap;
-            /* Mencegah konten membungkus ke baris berikutnya */
-            max-width: 100%;
-            margin-left: 30px;
-            margin-top: 30px;
-            /* Batasi lebar maksimum */
-        }
-
-        .navbar-brand img {
-            max-width: none;
-            /* Menghindari pemotongan gambar */
-            height: auto;
-            /* Menjaga aspek rasio gambar */
-        }
-
         .content {
             padding: 20px;
 
         }
 
-/* Navbar Styling */
-.navbar {
-  width: 90%; /* Reduced from 100% to create floating effect */
-  background-color: #333;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  bottom: 20px; /* Added space from bottom */
-  left: 50%;
-  transform: translateX(-50%); /* Center horizontally */
-  z-index: 1000;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 20px; /* Added rounded corners */
-  padding: 12px 20px; /* Increased padding */
-  max-width: 480px; /* Maximum width for larger screens */
-}
 
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin: auto;
-}
-
-/* Navbar Left (Logo) */
-.navbar-left {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-logo {
-  width: 40px; /* Reduced logo size */
-  height: auto;
-  margin-right: 10px;
-}
-
-.navbar-logo1 {
-  width: 40px; /* Reduced logo size */
-  height: auto;
-  margin-right: 10px;
-}
-
-/* Navbar Center (Middle Links) */
-.navbar-center {
-  display: flex;
-  justify-content: space-around;
-  width: 100%; /* Increased to take full width */
-}
-
-/* Navbar Center Links */
-.navbar-center a {
-  text-decoration: none;
-  color: white;
-  padding: 8px 16px;
-  font-size: 16px;
-}
-
-.nav-item {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  margin: 0 12px;
-  padding: 8px 0;
-  transition: all 0.3s ease; /* Smooth hover effect */
-}
-
-.nav-item i {
-  font-size: 22px;
-  margin-bottom: 4px;
-}
-
-.nav-item span {
-  font-size: 12px;
-  margin-top: 4px;
-}
-
-.nav-item:hover {
-  transform: translateY(-2px); /* Slight lift effect on hover */
-  color: #f0f0f0;
-}
-
-/* Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .navbar {
-      width: 94%; /* Slightly wider on mobile */
-      bottom: 15px;
-      padding: 10px 15px;
-  }
-  
-  .nav-item {
-      margin: 0 8px;
-  }
-  
-  .navbar-logo {
-      display: none;
-  }
-  .navbar-logo1 {
-    width: 40px; /* Reduced logo size */
-    height: auto;
-    margin-right: -40px;
-  }
-  
-  .nav-item i {
-      font-size: 20px;
-  }
-  
-  .nav-item span {
-      font-size: 11px;
-  }
-}
-
-@media (min-width: 769px) {
-  .navbar {
-      display: none;
-  }
-}
         .brand2 {
             display: flex;
             justify-content: center;
@@ -355,29 +199,34 @@
     background-color: #e0e0e0; /* Efek hover pada item daftar */
 }
  /* Navbar Styling */
- .navbar3 {
-            background-color: #333;
-            color: white;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 5px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 50px;
-            border-bottom: 1px solid #f7f3f3;
+.navbar3 {
+  background-color: #333;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  border-bottom: 1px solid #f7f3f3;
 
-        }
+}
 
-        .navbar-container3 {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-       
+.navbar-logo1 {
+  width: 40px; /* Reduced logo size */
+height: auto;
+margin-right: 10px;
+}
+.navbar-container3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 /* Styling for the AKU div */
 .AKU {
   display: flex;
@@ -398,53 +247,58 @@
   font-family: 'Poppins', sans-serif;
 }
 
-        .navbar-center1 {
-          display: flex;
-          justify-content: center;  /* Mengatur konten agar berada di tengah secara horizontal */
-          align-items: center;      /* Mengatur konten agar berada di tengah secara vertikal */
-          width: 100%;              /* Memastikan lebar navbar-center1 adalah 100% */
-        }
-        
-        /* Styling untuk navbar-center */
-        .navbar-center1 {
-          color: white;
-          display: flex;            /* Menggunakan flexbox untuk mengatur posisi link */
-          justify-content: center;  /* Mengatur agar link berada di tengah */
-          align-items: center;      /* Memastikan link terpusat secara vertikal */
-          gap: 6px;                /* Menambahkan jarak antar link */
-        }
-        /* Navbar links styling */
-        .navbar-center1 a {
-          color: white;
-          font-family: 'Sans-serif', Helvetica;
-          padding: 0 10px;
-          font-weight: bold;
-          text-decoration: none;
-          font-size: 17px;
-        }
-        
-        .navbar-center1 a:hover {
-          color: #ddd;
-        }
-        
-        /* Menambahkan styling untuk responsif */
-        @media (max-width: 768px) {
-          .navbar-center1 {
-              display: none; /* Sembunyikan navbar-center pada layar kecil */
-          }
-        
-        }
-        
-        /* Jika layar lebih besar, navbar-center tampil normal */
-        @media (min-width: 769px) {
-          .navbar-center1 {
-              display: flex;
-              justify-content: right;
-              flex-grow: 1;
-          }
-        
-        }
-        
+.navbar-center1 {
+  display: flex;
+  justify-content: center;  /* Mengatur konten agar berada di tengah secara horizontal */
+  align-items: center;      /* Mengatur konten agar berada di tengah secara vertikal */
+  width: 100%;              /* Memastikan lebar navbar-center1 adalah 100% */
+}
+
+/* Styling untuk navbar-center */
+.navbar-center1 {
+  color: white;
+  display: flex;            /* Menggunakan flexbox untuk mengatur posisi link */
+  justify-content: center;  /* Mengatur agar link berada di tengah */
+  align-items: center;      /* Memastikan link terpusat secara vertikal */
+  gap: 6px;                /* Menambahkan jarak antar link */
+}
+/* Navbar links styling */
+.navbar-center1 a {
+  color: white;
+  font-family: 'Sans-serif', Helvetica;
+  padding: 0 10px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar-center1 a:hover {
+  color: #ddd;
+}
+
+/* Menambahkan styling untuk responsif */
+@media (max-width: 768px) {
+  .navbar-center1 {
+      display: none; /* Sembunyikan navbar-center pada layar kecil */
+  }
+  .navbar-logo1 {
+      width: 40px; /* Reduced logo size */
+  height: auto;
+  margin-right: -40px;
+  }
+
+}
+
+/* Jika layar lebih besar, navbar-center tampil normal */
+@media (min-width: 769px) {
+  .navbar-center1 {
+      display: flex;
+      justify-content: right;
+      flex-grow: 1;
+  }
+
+}
+
 
 
         .cardkategori {

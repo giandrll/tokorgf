@@ -37,7 +37,7 @@
             <div class="navbar-center1">
                 <div class="navbar-center1">
                   <a href="/" class="navbar-link">Home</a>|
-                  <a href="/produksebelumlogin" class="navbar-link">Product</a>|
+                  <a href="#" class="navbar-link">Product</a>|
                   <a href="javascript:void(0)" onclick="checkabout()" class="navbar-link">About</a>
                 </div>
               </div>
@@ -52,42 +52,8 @@
         </div>
     </nav>
 
-    <nav class="navbar">
-        <div class="navbar-container">
-            <!-- Logo/Kiri -->
-            <div class="navbar-left">
-                @foreach ($data_setting as $item)
-                    
-                <img src="{{ asset('foto/fotoSetting/' . $item->logo_toko) }}" alt="Logo" class="navbar-logo">
-                @endforeach
-            </div>
+    @include('navbar.navbarbelumlogin')
 
-            <div class="navbar-center">
-                <a href="/" class="nav-item">
-                    <div class="icon-container">
-                        <i class="fas fa-home icon-hover"></i>
-                    </div>                   
-                    <span>Home</span>
-                </a>
-                <a href="#" class="nav-item">
-                    <i class="fas fa-cubes icon-hover"></i>
-                    <span>Product</span>
-                </a>
-                <a href="javascript:void(0)" class="nav-item" onclick="checkabout()">
-                    <i class="fas fa-user icon-hover"></i>
-                    <span>About</span>
-                </a>
-                
-            </div>
-
-
-            <!-- Pilihan Kanan -->
-            <div class="navbar-right">
-
-            </div>
-        </div>
-    </nav>
-   
     <div class="container">
         <h1 class="mb-4" style="padding-top: 50px;">Our Products</h1>
         <div class="row">
