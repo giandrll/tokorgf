@@ -204,15 +204,17 @@
                 {{-- @dd($data_setting) --}}
                 @foreach ($data_produk as $produk)
                     <div class="slide">
+                        <a href="dashboardproduk">
                         <div class="product-card">
-                            <a href="dashboardproduk">
+                           
                             <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" alt="{{ $produk->nama_produk }}">
-                            </a>
+                           
                             <h4>{{ $produk->nama_produk }}</h4>
                             <p>Rp {{ number_format($produk->harga, 0, ',', '.') }}</p>
                             {{-- <p>Stok: {{ $produk->stok }}</p>
                             <p>Size: {{ $produk->size }}</p> <!-- Tambahkan size di sini --> --}}
                         </div>
+                    </a>
                     </div>
                 @endforeach
 
@@ -295,14 +297,18 @@
 <h3 class="h3p"> Sedang Trend !</h3>
 <div class="produkandalan">
     <div class="andalan">
+        <a href="/dashboardproduk">
             @foreach ($data_setting as $item)
             <img src="{{ asset('foto/fotoSetting/' . $item->fotosedangtrend_slide1 ) }}" alt="Slide1" >
             @endforeach
+        </a>
         </div>
         <div class="andalan">
+            <a href="/dashboardproduk">
             @foreach ($data_setting as $item)
             <img src="{{ asset('foto/fotoSetting/' . $item->fotosedangtrend_slide2 ) }}" alt="Slide2">
             @endforeach
+            </a>
         </div>
     </div>
 
