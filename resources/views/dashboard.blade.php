@@ -104,7 +104,6 @@
 </div> --}}
     <div class="brand2">
     <div class="brand-content">
-        <h6>Brand Kami</h6>
         @foreach ($data_setting as $item)
         <h1>{{ $item->nama_toko }}</h1>
        @endforeach
@@ -176,13 +175,13 @@
         <div class="slides">
             @foreach($data_produk as $produk)
                 <div class="slide">
+                  <a href="produksebelumlogin">
                     <div class="product-card">
-                        <a href="produksebelumlogin">
                         <img src="{{ asset('foto/fotoproduk/' . $produk->foto) }}" alt="{{ $produk->nama_produk }}">
-                    </a>
                         <h4>{{ $produk->nama_produk }}</h4>
                         <p>Rp {{ number_format($produk->harga, 0, ',', '.') }}</p>
-                    </div>
+                      </div>
+                    </a>
                 </div>
             @endforeach
         </div>
